@@ -7,11 +7,11 @@ const SignUpForm = () => {
 
     const [signUpData, setSignUpData] = useState({
         username: '',
-        new_password: '',
-        confirmed_password: '',
+        password1: '',
+        password2: '',
     })
 
-    const { username, new_password, confirmed_password } = signUpData
+    const { username, password1, password2 } = signUpData
 
     const history = useHistory()
 
@@ -58,32 +58,32 @@ const SignUpForm = () => {
                                 {message}
                             </Alert>
                         ))}
-                        <Form.Group controlId="new_password">
+                       <Form.Group controlId="password1">
                             <Form.Label className="d-none">Password</Form.Label>
                             <Form.Control 
-                                type="password" 
+                                type="text" 
                                 placeholder="Enter Password" 
-                                name="new_password"
-                                value={new_password}
+                                name="password1"
+                                value={password1}
                                 onChange={handleChange}
                             />
                         </Form.Group>
-                        {errors.new_password?.map((message, idx) => (
-                            <Alert key={idx} variant="warning">
+                        {errors.password1?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
                                 {message}
                             </Alert>
                         ))}
-                        <Form.Group controlId="confirmed_password">
+                        <Form.Group controlId="password2">
                             <Form.Label className="d-none">Password</Form.Label>
                             <Form.Control 
                                 type="password" 
                                 placeholder="Confirm Password" 
-                                name="confirmed_password"
-                                value={confirmed_password}
+                                name="password2"
+                                value={password2}
                                 onChange={handleChange} 
                             />
                         </Form.Group>
-                        {errors.confirmed_password?.map((message, idx) => (
+                        {errors.password2?.map((message, idx) => (
                             <Alert key={idx} variant="warning">
                                 {message}
                             </Alert>

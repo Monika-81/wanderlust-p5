@@ -4,6 +4,7 @@ import { Container, Navbar, Nav, Button, Form, FormControl } from 'react-bootstr
 import { NavLink } from 'react-router-dom'
 import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext'
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle'
+import { removeTokenTimestamp } from '../utils/utils'
 
 function NavBar() {
     const currentUser = useCurrentUser()
@@ -15,6 +16,7 @@ function NavBar() {
         try {
             await axios.post('/dj-rest-auth/logout/')
             setCurrentUser(null)
+            removeTokenTimestamp();
         } catch (err) {
             console.log(err)
         }

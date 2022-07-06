@@ -3,37 +3,39 @@ import {  Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useSetCurrentUser } from "../../context/CurrentUserContext";
+import { setTokenTimestamp } from "../../utils/utils";
 
 const SignInForm = () => {
-    const setCurrentUser = useSetCurrentUser()
+    const setCurrentUser = useSetCurrentUser();
 
     const [signInData, setSignInData] = useState({
         username: '',
         password: ''
-    })
+    });
 
-    const {username, password} = signInData
-    const history = useHistory()
-    const [errors, setErrors] = useState({})
+    const {username, password} = signInData;
+    const history = useHistory();
+    const [errors, setErrors] = useState({});
 
     const handleChange = (event) => {
         setSignInData({
             ...signInData,
             [event.target.name]: event.target.value,
-        })
-    }
+        });
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
             const {data} = await axios.post("/dj-rest-auth/login/", signInData);
             setCurrentUser(data.user)
+            setTokenTimestamp(data)
             history.push("/");
         } catch (err) {
             setErrors(err.response?.data);
             console.log(err.response?.data)
         }
-    }
+    };
 
     return (
         <Row>

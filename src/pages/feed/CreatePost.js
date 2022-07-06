@@ -1,12 +1,46 @@
-import React from 'react'
-import { Col, Row, Container, Form, Button } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Col, Row, Container, Form, Button, Image } from 'react-bootstrap'
 
 const CreatePost = () => {
+  const [postData, setPostData] = useState({
+    title: '',
+    subtitle: '',
+    content: '',
+    image: '',
+  })
+
+  const {title, subtitle, content, image} = postData
+
+  const handleChange = (event) => {
+    setPostData({
+      ...postData,
+      [event.target.name]: event.target.value
+    })
+  }
+
+  const handleImageChange = (event) => {
+    if (event.target.files.length){
+      URL.revokeObjectURL(image)
+      setPostData({
+        ...postData,
+        image: URL.createObjectURL(event.target.files[0])
+      })
+    }
+  }
 
   return (
       <Row>
           <Col>
-          PICTURE preview         
+            <figure>
+              <Image src={image} rounded />
+            </figure>
+            <div>
+              <Form.Label
+                htmlFor="image-upload"
+                >
+                Change the image
+              </Form.Label>
+            </div>      
           </Col>
           <Col>
             <Container>
@@ -18,6 +52,8 @@ const CreatePost = () => {
                         type="text" 
                         placeholder="Enter title" 
                         name="title"
+                        value={title}
+                        onChange={handleChange}
                       />
                       </Form.Group>
                       <Form.Group controlId="subtitle">
@@ -26,6 +62,8 @@ const CreatePost = () => {
                           type="text" 
                           placeholder="Enter a subtitle" 
                           name="subtitle"
+                          value={subtitle}
+                          onChange={handleChange}
                         />
                       </Form.Group>
                       <Form.Group controlId="content">
@@ -35,6 +73,8 @@ const CreatePost = () => {
                           row={6}
                           placeholder="Enter content" 
                           name="content"
+                          value={content}
+                          onChange={handleChange}
                         />
                       </Form.Group>
                       <Form.Group controlId="image">
@@ -46,6 +86,7 @@ const CreatePost = () => {
                         <Form.File
                           id="image-upload"
                           accept="image/*"
+                          onChange={handleImageChange}
                         />
                       </Form.Group>
                       <Button variant="primary" type="submit">

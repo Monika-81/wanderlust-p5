@@ -1,8 +1,12 @@
 import React from 'react'
 import { Container, Navbar, Nav, Button, Form, FormControl } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import { useCurrentUser } from '../context/CurrentUserContext'
 
 const NavBar = () => {
+    const currentUser = useCurrentUser()
+    const loggedInName = <>{currentUser?.username}</>
+
   return (
     <div>
         <Navbar expand='false' bg="light" >
@@ -26,6 +30,8 @@ const NavBar = () => {
                     <NavLink to="/add" activeClassName=''>Add</NavLink>
                     <NavLink to="/profile" activeClassName=''>Profile</NavLink>
                     <NavLink to="/signin" activeClassName=''>Sign In</NavLink>
+                    <NavLink to="/signup" activeClassName=''>Sign Up</NavLink>
+                    {currentUser ? loggedInName : 'none'}
                     </Nav>
                     <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />

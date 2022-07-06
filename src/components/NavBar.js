@@ -1,10 +1,11 @@
 import React from 'react'
-import { Container, Navbar, NavDropdown, Button, Form, FormControl } from 'react-bootstrap'
+import { Container, Navbar, Nav, Button, Form, FormControl } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
   return (
     <div>
-        <Navbar expand="lg" bg="light" >
+        <Navbar expand='false' bg="light" >
             <Container className='justify-content-center'>
                 <Navbar.Brand>
                 <img
@@ -17,17 +18,20 @@ const NavBar = () => {
                 <h1>WANDERLUST</h1>
                 <p>Let's dream and get inspired together!</p>
                 </Navbar.Brand>
-                <NavDropdown alignLeft >
-                    <NavDropdown.Item href="#action/3.1">Feed</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Liked</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Profile</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.3">Sign in!</NavDropdown.Item>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="mx-auto">
+                    <NavLink to="/feed">Feed</NavLink>
+                    <NavLink to="/liked">Liked</NavLink>
+                    <NavLink to="/add">Add</NavLink>
+                    <NavLink to="/profile">Profile</NavLink>
+                    <NavLink to="/signin">Sign In</NavLink>
+                    </Nav>
                     <Form inline>
-                        <FormControl type="text" placeholder="Search" />
-                        <Button>Search</Button>
+                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                        <Button variant="outline-primary">Search</Button>
                     </Form>
-                </NavDropdown>
+                </Navbar.Collapse>
             </Container>
         </Navbar>
     </div>

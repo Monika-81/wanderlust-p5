@@ -26,11 +26,12 @@ const SignInForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-          const {data} = await axios.post("/dj-rest-auth/login/", signInData);
-          setCurrentUser(data.user)
-          history.push("/");
+            const {data} = await axios.post("/dj-rest-auth/login/", signInData);
+            setCurrentUser(data.user)
+            history.push("/");
         } catch (err) {
-          setErrors(err.response?.data);
+            setErrors(err.response?.data);
+            console.log(err.response?.data)
         }
     }
 
@@ -46,7 +47,7 @@ const SignInForm = () => {
                                 type="text" 
                                 placeholder="Enter Username" 
                                 name="username"
-                                value={username}
+                                value={username} 
                                 onChange={handleChange}
                             />
                         </Form.Group>
@@ -73,7 +74,7 @@ const SignInForm = () => {
                         </Button>
                         <p>Or Register!</p>
                         {errors.non_field_errors?.map((message, idx) => (
-                            <Alert className="mt-3" variant='warning' key={idx}>{message}</Alert>
+                            <Alert variant='warning' key={idx}>{message}</Alert>
                             )
                         )}
                     </Form>

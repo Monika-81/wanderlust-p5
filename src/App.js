@@ -4,6 +4,8 @@ import { Container } from 'react-bootstrap';
 import {Route, Switch} from 'react-router-dom'
 import './api/axiosDefaults'
 import SignUpForm from './pages/auth/SignUpForm';
+import SignInForm from './pages/auth/SignInForm';
+
 
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
           <Route exact path="/liked" render={() => <h1>Liked</h1>} />
           <Route exact path="/add" render={() => <h1>Add</h1>} />
           <Route exact path="/profile" render={() => <h1>Profile</h1>} />
-          <Route exact path="/signin" render={() => <SignUpForm/>} />
+          <Route exact path="/signup" render={() => <SignUpForm/>} />
+          <Route exact path="/signin" render={() => <SignInForm/>} />
+
         </Switch>
         <h1>Pictures area</h1>
       </Container>

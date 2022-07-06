@@ -21,11 +21,11 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
-                    <NavLink to="/feed">Feed</NavLink>
-                    <NavLink to="/liked">Liked</NavLink>
-                    <NavLink to="/add">Add</NavLink>
-                    <NavLink to="/profile">Profile</NavLink>
-                    <NavLink to="/signin">Sign In</NavLink>
+                    <NavLink exact to="/feed" activeClassName=''>Feed</NavLink>
+                    <NavLink to="/liked" activeClassName=''>Liked</NavLink>
+                    <NavLink to="/add" activeClassName=''>Add</NavLink>
+                    <NavLink to="/profile" activeClassName=''>Profile</NavLink>
+                    <NavLink to="/signin" activeClassName=''>Sign In</NavLink>
                     </Nav>
                     <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />

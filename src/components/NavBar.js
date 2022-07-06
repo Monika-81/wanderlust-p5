@@ -47,7 +47,7 @@ function NavBar() {
                         <Nav className="mx-auto">
                             <NavLink exact to="/feed" activeClassName=''>Feed</NavLink>
                             <NavLink to="/liked" activeClassName=''>Liked</NavLink>
-                            <NavLink to="/add" activeClassName=''>Add</NavLink>
+                            <NavLink to="/feed/create" activeClassName=''>Add post</NavLink>
                             <NavLink to="/profile" activeClassName=''>Profile</NavLink>
                             <NavLink to="/signin" activeClassName=''>Sign In</NavLink>
                             <NavLink to="/signup" activeClassName=''>Sign Up</NavLink>

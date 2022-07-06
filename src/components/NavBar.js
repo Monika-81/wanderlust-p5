@@ -1,11 +1,27 @@
 import React from 'react'
+import axios from 'axios'
 import { Container, Navbar, Nav, Button, Form, FormControl } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
-import { useCurrentUser } from '../context/CurrentUserContext'
+import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext'
 
 const NavBar = () => {
     const currentUser = useCurrentUser()
-    const loggedInName = <>{currentUser?.username}</>
+    const setCurrentUser = useSetCurrentUser()
+
+    const handleSignOut = async () => {
+        try {
+            await axios.post('/dj-rest-auth/logout/');
+            setCurrentUser(null);
+        } catch (err) {
+            console.log(err)
+        }
+    } 
+
+    const loggedInName = 
+        <>
+            {currentUser?.username}
+            <NavLink to="/" onClick={handleSignOut}>Sign Out</NavLink>
+        </>
 
   return (
     <div>
@@ -31,7 +47,7 @@ const NavBar = () => {
                     <NavLink to="/profile" activeClassName=''>Profile</NavLink>
                     <NavLink to="/signin" activeClassName=''>Sign In</NavLink>
                     <NavLink to="/signup" activeClassName=''>Sign Up</NavLink>
-                    {currentUser ? loggedInName : 'none'}
+                    {currentUser ? loggedInName : 'Not logged in'}
                     </Nav>
                     <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />

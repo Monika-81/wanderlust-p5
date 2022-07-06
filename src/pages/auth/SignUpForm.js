@@ -61,7 +61,7 @@ const SignUpForm = () => {
                        <Form.Group controlId="password1">
                             <Form.Label className="d-none">Password</Form.Label>
                             <Form.Control 
-                                type="text" 
+                                type="password" 
                                 placeholder="Enter Password" 
                                 name="password1"
                                 value={password1}

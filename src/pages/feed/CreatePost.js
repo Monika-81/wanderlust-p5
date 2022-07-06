@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
-import { Col, Row, Container, Form, Button, Image } from 'react-bootstrap'
+import React, { useRef, useState } from 'react'
+import { Col, Row, Container, Form, Button, Image, Alert } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom'
+import { axiosReq } from "../../api/axiosDefaults";
 
 const CreatePost = () => {
+
   const [postData, setPostData] = useState({
     title: '',
     subtitle: '',
@@ -10,6 +13,12 @@ const CreatePost = () => {
   })
 
   const {title, subtitle, content, image} = postData
+
+  const imageInput = useRef(null)
+
+  const history = useHistory()
+
+  const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
     setPostData({
@@ -25,6 +34,26 @@ const CreatePost = () => {
         ...postData,
         image: URL.createObjectURL(event.target.files[0])
       })
+    }
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const formData = new FormData()
+
+    formData.append('title', title)
+    formData.append('subtitle', subtitle)
+    formData.append('content', content)
+    formData.append('image', imageInput.current.files[0])
+
+    try {
+      const {data} = await axiosReq.post('/feed/', formData)
+      history.push(`/feed/${data.id}`)
+    } catch (err) {
+      console.log(err)
+      if (err.response?.status !== 401){
+        setErrors(err.response?.data)
+      } 
     }
   }
 
@@ -45,7 +74,7 @@ const CreatePost = () => {
           <Col>
             <Container>
               <h1>Create post</h1>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                   <Form.Group controlId="title">
                     <Form.Label className="d-none">Title</Form.Label>
                       <Form.Control 
@@ -56,6 +85,10 @@ const CreatePost = () => {
                         onChange={handleChange}
                       />
                       </Form.Group>
+                      {errors?.title?.map((message, idx) => (
+                        <Alert variant='warning' key={idx}>{message}</Alert>
+                        )
+                      )}
                       <Form.Group controlId="subtitle">
                         <Form.Label className="d-none">Subtitle</Form.Label>
                         <Form.Control 
@@ -66,6 +99,12 @@ const CreatePost = () => {
                           onChange={handleChange}
                         />
                       </Form.Group>
+                      {errors?.subtitle?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                        )
+                      )}
                       <Form.Group controlId="content">
                         <Form.Label className="d-none">Content</Form.Label>
                         <Form.Control 
@@ -77,7 +116,13 @@ const CreatePost = () => {
                           onChange={handleChange}
                         />
                       </Form.Group>
-                      <Form.Group controlId="image">
+                      {errors?.content?.map((message, idx) => (
+                        <Alert variant="warning" key={idx}>
+                          {message}
+                        </Alert>
+                        )
+                      )}
+                      <Form.Group>
                         <Form.Label 
                           htmlFor="image-upload"
                           src=''
@@ -89,6 +134,10 @@ const CreatePost = () => {
                           onChange={handleImageChange}
                         />
                       </Form.Group>
+                      {errors?.image?.map((message, idx) => (
+                        <Alert variant='warning' key={idx}>{message}</Alert>
+                        )
+                      )}
                       <Button variant="primary" type="submit">
                           Create Post
                       </Button>

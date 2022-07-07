@@ -1,8 +1,71 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Form, Image, InputGroup } from 'react-bootstrap';
+import { axiosRes } from "../../api/axiosDefaults";
+import { Link } from "react-router-dom";
 
-const CreateComment = () => {
+const CreateComment = (props) => {
+  const {
+    post, 
+    setPost, 
+    setComments, 
+    profile_image, 
+    profile_id
+  } = props;
+
+  const [content, setContent] = useState('');
+
+  const handleChange = (event) => {
+    setContent(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const { data } = await axiosRes.post('/comments/', {
+        content, post
+      });
+      setComments((prevComments) => ({
+        ...prevComments,
+        results: [data, ...prevComments.results],
+      }));
+      setPost((prevPost) => ({
+        results: [
+          {
+            ...prevPost.results[0],
+            comments_count: prevPost.results[0].comments_count + 1,
+          },
+        ],
+      }));
+      setContent('');
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+
   return (
-    <div>here goes comments</div>
+    <Form onSubmit={handleSubmit}>
+      <Form.Group>
+        <InputGroup>
+          <Link to={`/profiles/${profile_id}`}>
+            <Image src={profile_image} />
+          </Link>
+          <Form.Control
+            placeholder="Add comment..."
+            as="textarea"
+            value={content}
+            onChange={handleChange}
+            rows={3}
+          />
+        </InputGroup>
+      </Form.Group>
+      <button
+        disabled={!content.trim()}
+        type="submit"
+      >
+        post
+      </button>
+    </Form>
   )
 }
 

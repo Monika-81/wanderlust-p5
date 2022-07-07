@@ -1,5 +1,5 @@
 import React from 'react'
-import { Media } from 'react-bootstrap'
+import { Image, Media } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const Comment = (props) => {
@@ -16,11 +16,11 @@ const Comment = (props) => {
         <hr />
         <Media>
             <Link to={`/profiles/${profile_id}`}>
-                {profile_image}
+                <Image src={profile_image} />
             </Link>
-            <Media.Body className='align-self-center ml-2'>
-                <span>{owner}</span>
-                <span>{updated_at}</span>
+            <Media.Body>
+                <span>{owner} </span>
+                <span> {updated_at}</span>
                 <p>{content}</p>
             </Media.Body>
         </Media>

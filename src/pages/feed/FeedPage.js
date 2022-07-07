@@ -6,6 +6,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 import { fetchMoreData } from '../../utils/utils';
 import Post from './Post';
 
+
 function FeedPage({message, filter = ''}) {
     const [posts, setPosts] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -45,7 +46,7 @@ function FeedPage({message, filter = ''}) {
                             hasMore={!!posts.next}
                             next={() => fetchMoreData(posts, setPosts)}
                         >
-                        <CardDeck spacing={4}>
+                        <CardDeck className="col-10">
                             {posts.results.map((post) => (
                                     <Post key={post.id} {...post} setPosts={setPosts}/>
                                 ))

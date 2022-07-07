@@ -39,7 +39,7 @@ const Post = (props) => {
 
 
     return (
-        <Card className="col-12 col-md-6 col-lg-4">
+        <Card>
             <Link to={`/posts/${id}/`} >
                 <Card.Img variant="top" src={image} alt={title} height={500} />
             </Link>

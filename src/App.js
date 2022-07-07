@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm/>} />
           <Route exact path="/signin" render={() => <SignInForm/>} />
         </Switch>
-        <h1>Pictures area</h1>
+        <h1>Footer?</h1>
       </Container>
     </div>
   );

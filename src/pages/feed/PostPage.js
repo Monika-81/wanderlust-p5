@@ -29,7 +29,7 @@ const PostPage = () => {
   return (
     <Row>
         <Col>
-            <Post />
+            <Post {...post.results[0]} setPosts={setPost} postPage />
         </Col>
     </Row>
   )

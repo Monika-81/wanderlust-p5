@@ -2,6 +2,8 @@ import React from 'react'
 import { Card } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { useCurrentUser } from '../../context/CurrentUserContext';
+import { DotDropdown } from "../../components/DotDropdown";
+import { axiosRes } from '../../api/axiosDefaults';
 
 const Post = (props) => {
     const {
@@ -22,19 +24,40 @@ const Post = (props) => {
     const is_owner = currentUser?.username === owner;
     const history = useHistory();
 
+    const handleEdit = () => {
+        history.push(`/posts/${id}/`);
+    };
+
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/posts/${id}/`);
+            history.goBack();
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
 
   return (
     <Card>
-        <Link to={`/posts/${id}`} >
-            <Card.Img variant="top" src={image} alt={title} />
+        <Link to={`/posts/${id}/`} >
+            <Card.Img variant="top" src={image} alt={title} height={500} />
         </Link>
         <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
-            </Card.Text>
+            <Card.Title>{title}</Card.Title>
+            <Card.Subtitle>{subtitle}</Card.Subtitle>
+            <Card.Text>{content}</Card.Text>
         </Card.Body>
+        <Card.Footer>
+            <span>{owner}</span>
+            <span>{updated_at}</span>
+            {is_owner && postPage && (
+                <DotDropdown
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                />
+            )}
+        </Card.Footer>
     </Card>
   )
 }

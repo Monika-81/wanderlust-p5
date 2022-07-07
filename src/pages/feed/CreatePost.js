@@ -139,8 +139,18 @@ const CreatePost = () => {
                         <Alert variant='warning' key={idx}>{message}</Alert>
                         )
                       )}
-                      <Button variant="primary" type="submit">
+                      <Button 
+                        variant="primary" 
+                        type="submit"
+                      >
                           Create Post
+                      </Button>
+                      <Button 
+                        variant="primary" 
+                        type="submit"
+                        onClick={() => history.goBack()}
+                      >
+                          Cancel Post
                       </Button>
                   </Form>
               </Container>

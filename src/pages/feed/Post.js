@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import { DotDropdown } from "../../components/DotDropdown";
@@ -38,28 +38,28 @@ const Post = (props) => {
     }
 
 
-  return (
-    <Card>
-        <Link to={`/posts/${id}/`} >
-            <Card.Img variant="top" src={image} alt={title} height={500} />
-        </Link>
-        <Card.Body>
-            {title && <Card.Title>{title}</Card.Title>}
-            {subtitle && <Card.Subtitle>{subtitle}</Card.Subtitle>}
-            {content && <Card.Text>{content}</Card.Text>}
-        </Card.Body>
-        <Card.Footer>
-            <span>{owner}</span>
-            <span>{updated_at}</span>
-            {is_owner && postPage && (
-                <DotDropdown
-                    handleEdit={handleEdit}
-                    handleDelete={handleDelete}
-                />
-            )}
-        </Card.Footer>
-    </Card>
-  )
+    return (
+        <Card className="col-12 col-md-6 col-lg-4">
+            <Link to={`/posts/${id}/`} >
+                <Card.Img variant="top" src={image} alt={title} height={500} />
+            </Link>
+            <Card.Body>
+                {title && <Card.Title>{title}</Card.Title>}
+                {subtitle && <Card.Subtitle>{subtitle}</Card.Subtitle>}
+                {content && <Card.Text>{content}</Card.Text>}
+            </Card.Body>
+            <Card.Footer>
+                <span>{owner}</span>
+                <span>{updated_at}</span>
+                {is_owner && postPage && (
+                    <DotDropdown
+                        handleEdit={handleEdit}
+                        handleDelete={handleDelete}
+                    />
+                )}
+            </Card.Footer>
+        </Card>
+    )
 }
 
 export default Post;

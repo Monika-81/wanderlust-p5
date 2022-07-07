@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Col, Container, Form, Row} from "react-bootstrap";
+import {CardDeck, Col, Container, Form, Row} from "react-bootstrap";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useLocation } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
@@ -38,27 +38,29 @@ function FeedPage({message, filter = ''}) {
             <Col>
             {hasLoaded ? (
                 <>
-                {posts.results.length ? (
-                    <InfiniteScroll
-                        children={
-                            posts.results.map((post) => (
-                                <Post key={post.id} {...post} setPosts={setPosts} />
-                            ))
-                        }
-                        dataLength={posts.results.length}
-                        hasMore={!!posts.next}
-                        next={() => fetchMoreData(posts, setPosts)}
-                    />
-                ) : ( 
-                    <Container>
-                        {message}
-                    </Container>
-                )}
+                    { posts.results.length ? (
+                        <InfiniteScroll
+                            style={{ overflow: "unset" }}
+                            dataLength={posts.results.length}
+                            hasMore={!!posts.next}
+                            next={() => fetchMoreData(posts, setPosts)}
+                        >
+                        <CardDeck spacing={4}>
+                            {posts.results.map((post) => (
+                                    <Post key={post.id} {...post} setPosts={setPosts}/>
+                                ))
+                            }
+                        </CardDeck>
+                        </InfiniteScroll>
+                    ) : (
+                        <Container>
+                            {message}
+                        </Container>
+                    )}
                 </>
             ) : (
-                console.log('loading spinner')
+                console.log('loading...')
             )}
-
             </Col>
         </Row>
     )

@@ -66,7 +66,7 @@ const CreateComment = (props) => {
         post
       </button>
     </Form>
-  )
+  );
 }
 
-export default CreateComment
+export default CreateComment;

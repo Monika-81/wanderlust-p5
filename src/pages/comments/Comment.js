@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Image, Media } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { axiosRes } from '../../api/axiosDefaults';
 import { DotDropdown } from '../../components/DotDropdown';
 import { useCurrentUser } from '../../context/CurrentUserContext';
+import EditComment from './EditComment';
 
 const Comment = (props) => {
   const {
@@ -19,6 +20,7 @@ const Comment = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const [ showEditComment, setShowEditComment] = useState(false);
 
 
   const handleDelete = async () => {
@@ -51,11 +53,22 @@ const Comment = (props) => {
             <Media.Body>
                 <span>{owner} </span>
                 <span> {updated_at}</span>
-                <p>{content}</p>
+                {showEditComment ? (
+                  <EditComment 
+                    id={id}
+                    content={content}
+                    profile_id={profile_id}
+                    profile_image={profile_image}
+                    setComments={setComments}
+                    setShowEditComment={setShowEditComment}  
+                  />
+                ) : (
+                  <p>{content}</p>
+                )}
             </Media.Body>
-            {is_owner (
+            {is_owner && !showEditComment && (
               <DotDropdown
-                handleEdit={handleEdit}
+                handleEdit={() => setShowEditComment(true)}
                 handleDelete={handleDelete}
               />
             )}

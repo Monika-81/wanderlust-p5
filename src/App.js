@@ -8,6 +8,7 @@ import SignInForm from './pages/auth/SignInForm';
 import CreatePost from './pages/feed/CreatePost';
 import PostPage from './pages/feed/PostPage';
 import EditPost from './pages/feed/EditPost';
+import FeedPage from './pages/feed/FeedPage';
 
 
 function App() {
@@ -16,7 +17,11 @@ function App() {
       <NavBar />
       <Container>
         <Switch>
-          <Route exact path="/" render={() => <h1>Home</h1>} />
+          <Route 
+            exact path="/" 
+            render={() => <FeedPage 
+            message="No results found. Pleaase adjust search criteria."/>} 
+          />
           <Route exact path="/posts" render={() => <h1>Feed</h1>} />
           <Route exact path="/posts/create" render={() => <CreatePost/>} />
           <Route exact path="/posts/:id" render={() => <PostPage/>} />

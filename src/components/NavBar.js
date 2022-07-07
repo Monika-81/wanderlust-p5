@@ -47,6 +47,7 @@ function NavBar() {
                         aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
+                        <NavLink exact to="/" activeClassName=''>Home</NavLink>
                             <NavLink exact to="/posts" activeClassName=''>Feed</NavLink>
                             <NavLink to="/liked" activeClassName=''>Liked</NavLink>
                             <NavLink to="/posts/create" activeClassName=''>Add post</NavLink>

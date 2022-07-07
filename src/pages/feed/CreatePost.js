@@ -28,34 +28,34 @@ const CreatePost = () => {
   }
 
   const handleImageChange = (event) => {
-    if (event.target.files.length){
-      URL.revokeObjectURL(image)
+    if (event.target.files.length) {
+      URL.revokeObjectURL(image);
       setPostData({
         ...postData,
-        image: URL.createObjectURL(event.target.files[0])
-      })
+        image: URL.createObjectURL(event.target.files[0]),
+      });
     }
-  }
+  };
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    const formData = new FormData()
+    event.preventDefault();
+    const formData = new FormData();
 
-    formData.append('title', title)
-    formData.append('subtitle', subtitle)
-    formData.append('content', content)
-    formData.append('image', imageInput.current.files[0])
+    formData.append("title", title);
+    formData.append("subtitle", subtitle);
+    formData.append("content", content);
+    formData.append("image", imageInput.current.files[0]);
 
     try {
-      const {data} = await axiosReq.post('/feed/', formData)
-      history.push(`/feed/${data.id}`)
+      const { data } = await axiosReq.post("/posts/", formData);
+      history.push(`/posts/${data.id}`);
     } catch (err) {
-      console.log(err)
-      if (err.response?.status !== 401){
-        setErrors(err.response?.data)
-      } 
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
     }
-  }
+  };
 
   return (
       <Row>
@@ -132,6 +132,7 @@ const CreatePost = () => {
                           id="image-upload"
                           accept="image/*"
                           onChange={handleImageChange}
+                          ref={imageInput}
                         />
                       </Form.Group>
                       {errors?.image?.map((message, idx) => (

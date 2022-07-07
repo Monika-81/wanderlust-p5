@@ -16,9 +16,9 @@ function App() {
       <Container>
         <Switch>
           <Route exact path="/" render={() => <h1>Home</h1>} />
-          <Route exact path="/feed" render={() => <h1>Feed</h1>} />
+          <Route exact path="/posts" render={() => <h1>Feed</h1>} />
           <Route exact path="/liked" render={() => <h1>Liked</h1>} />
-          <Route exact path="/feed/create" render={() => <CreatePost/>} />
+          <Route exact path="/posts/create" render={() => <CreatePost/>} />
           <Route exact path="/profile" render={() => <h1>Profile</h1>} />
           <Route exact path="/signup" render={() => <SignUpForm/>} />
           <Route exact path="/signin" render={() => <SignInForm/>} />

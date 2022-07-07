@@ -25,7 +25,7 @@ const Post = (props) => {
     const history = useHistory();
 
     const handleEdit = () => {
-        history.push(`/posts/${id}/`);
+        history.push(`/posts/${id}/edit`);
     };
 
     const handleDelete = async () => {
@@ -44,9 +44,9 @@ const Post = (props) => {
             <Card.Img variant="top" src={image} alt={title} height={500} />
         </Link>
         <Card.Body>
-            <Card.Title>{title}</Card.Title>
-            <Card.Subtitle>{subtitle}</Card.Subtitle>
-            <Card.Text>{content}</Card.Text>
+            {title && <Card.Title>{title}</Card.Title>}
+            {subtitle && <Card.Subtitle>{subtitle}</Card.Subtitle>}
+            {content && <Card.Text>{content}</Card.Text>}
         </Card.Body>
         <Card.Footer>
             <span>{owner}</span>

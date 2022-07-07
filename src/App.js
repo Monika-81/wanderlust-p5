@@ -7,6 +7,7 @@ import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
 import CreatePost from './pages/feed/CreatePost';
 import PostPage from './pages/feed/PostPage';
+import EditPost from './pages/feed/EditPost';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/posts" render={() => <h1>Feed</h1>} />
           <Route exact path="/posts/create" render={() => <CreatePost/>} />
           <Route exact path="/posts/:id" render={() => <PostPage/>} />
+          <Route exact path="/posts/:id/edit" render={() => <EditPost/>} />
           <Route exact path="/liked" render={() => <h1>Liked</h1>} />
           <Route exact path="/profile" render={() => <h1>Profile</h1>} />
           <Route exact path="/signup" render={() => <SignUpForm/>} />

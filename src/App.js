@@ -40,8 +40,8 @@ function App() {
           <Route exact path="/profile/:id/edit" render={() => <EditProfile />} />
           <Route exact path="/profile/:id/edit/password"render={() => <EditPassword/>} />
         </Switch>
-        <h1>Link to top of page</h1>
       </Container>
+      <h1>Link to top of page</h1>
     </div>
   );
 }

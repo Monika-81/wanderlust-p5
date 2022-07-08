@@ -17,7 +17,7 @@ function ProfilePage() {
     const currentUser = useCurrentUser();
 
     const { pageProfile } = useProfileData();
-    const setProfileData = useSetProfileData();
+    const {setProfileData, handleFollow} = useSetProfileData();
     const [profile] = pageProfile.results;
     const is_owner = currentUser?.username === profile?.owner;
 
@@ -54,9 +54,13 @@ function ProfilePage() {
                 />
                 </Col>
                 <Col>
-                    <h3>{profile?.owner}</h3>
-                    {profile?.is_owner && <EditProfileDropdown id={profile?.id} />}
-                    <p>{profile?.content}</p>
+                    <Row className='justify-content-center'>
+                        <h3>{profile?.owner}</h3>
+                        {profile?.is_owner && <EditProfileDropdown id={profile?.id} />}
+                    </Row>
+                    <Row className='justify-content-center'>
+                        {profile?.content && <Row>{profile.content}</Row>}
+                    </Row>
                     <Row>
                         <Col>
                             <div>{profile?.followers_count}</div>
@@ -67,7 +71,19 @@ function ProfilePage() {
                             <div>following</div>
                         </Col>
                     </Row>
-                    <p>Follow button</p>
+                    <Row className='justify-content-center'>
+                        { currentUser && !is_owner && (
+                            profile?.following_id ? (
+                                <Button onClick={() => {}}>
+                                    Unfollow
+                                </Button>
+                            ) : (
+                                <Button onClick={() => handleFollow(profile)}>
+                                    Follow
+                                </Button>
+                            )
+                        )}
+                    </Row>
                 </Col>
             </Row>
         </>

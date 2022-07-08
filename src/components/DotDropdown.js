@@ -1,5 +1,6 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
+import { useHistory } from "react-router-dom";
 
 
 const DotMenu = React.forwardRef(({ onClick }, ref) => (
@@ -17,7 +18,6 @@ const DotMenu = React.forwardRef(({ onClick }, ref) => (
     return (
       <Dropdown>
         <Dropdown.Toggle as={DotMenu} />
-  
         <Dropdown.Menu
           popperConfig={{ strategy: "fixed" }}
         >
@@ -37,3 +37,30 @@ const DotMenu = React.forwardRef(({ onClick }, ref) => (
       </Dropdown>
     );
   };
+
+  export function EditProfileDropdown({ id }) {
+    const history = useHistory();
+    return (
+      <Dropdown>
+        <Dropdown.Toggle as={DotMenu} />
+        <Dropdown.Menu
+          popperConfig={{ strategy: "fixed" }}
+        >
+          <Dropdown.Item
+            onClick={() => history.push(`/profile/${id}/edit`)}
+            aria-label="edit-profile"
+          >
+            <i className="fas fa-edit" />
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={() => history.push(`/profiles/${id}/edit/password`)}
+            aria-label="edit-password"
+          >
+            <i className="fas fa-key" />
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+
+
+    )
+  }

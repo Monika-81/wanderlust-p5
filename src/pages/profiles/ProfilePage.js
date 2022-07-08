@@ -7,6 +7,8 @@ import { useProfileData, useSetProfileData } from '../../context/ProfileContext'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchMoreData } from '../../utils/utils';
 import Post from '../feed/Post';
+import { EditProfileDropdown } from '../../components/DotDropdown'
+
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -45,6 +47,7 @@ function ProfilePage() {
 
     const userProfile = (
         <>
+        {profile?.is_owner && <EditProfileDropdown id={profile?.id} />}
             <Row>
                 <Col>
                 <Image
@@ -95,7 +98,7 @@ function ProfilePage() {
                 </InfiniteScroll>
             ) : (
                <Container>
-                    No results found, ${profile?.owner} hasn't posted yet
+                    No results found, {profile?.owner} hasn't posted yet
                </Container>
             )}
         </>

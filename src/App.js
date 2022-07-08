@@ -11,6 +11,8 @@ import EditPost from './pages/feed/EditPost';
 import FeedPage from './pages/feed/FeedPage';
 import ProfilePage from './pages/profiles/ProfilePage';
 import { useCurrentUser } from './context/CurrentUserContext';
+import EditProfile from './pages/profiles/EditProfile';
+import EditPassword from './pages/profiles/EditPassword';
 
 
 function App() {
@@ -35,7 +37,8 @@ function App() {
           <Route exact path="/profile/:id" render={() => <ProfilePage />} />
           <Route exact path="/signup" render={() => <SignUpForm/>} />
           <Route exact path="/signin" render={() => <SignInForm/>} />
-
+          <Route exact path="/profile/:id/edit" render={() => <EditProfile />} />
+          <Route exact path="/profile/:id/edit/password"render={() => <EditPassword/>} />
         </Switch>
         <h1>Link to top of page</h1>
       </Container>

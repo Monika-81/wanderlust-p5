@@ -7,10 +7,10 @@ import useClickOutsideToggle from '../hooks/useClickOutsideToggle'
 import { removeTokenTimestamp } from '../utils/utils'
 
 function NavBar() {
-    const currentUser = useCurrentUser()
-    const setCurrentUser = useSetCurrentUser()
+    const currentUser = useCurrentUser();
+    const setCurrentUser = useSetCurrentUser();
 
-    const { expanded, setExpanded, ref } = useClickOutsideToggle()
+    const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
     const handleSignOut = async () => {
         try {
@@ -22,9 +22,10 @@ function NavBar() {
         }
     }
 
-    const loggedInName = <>
+    const loggedInLinks = <>
         {currentUser?.username}
         <NavLink to="/" onClick={handleSignOut}>Sign Out</NavLink>
+        <NavLink to={`/profile/${currentUser?.profile_id}`} activeClassName=''>Profile</NavLink>
     </>
 
     return (
@@ -51,10 +52,9 @@ function NavBar() {
                             <NavLink exact to="/posts" activeClassName=''>Feed</NavLink>
                             <NavLink to="/liked" activeClassName=''>Liked</NavLink>
                             <NavLink to="/posts/create" activeClassName=''>Add post</NavLink>
-                            <NavLink to="/profile" activeClassName=''>Profile</NavLink>
                             <NavLink to="/signin" activeClassName=''>Sign In</NavLink>
                             <NavLink to="/signup" activeClassName=''>Sign Up</NavLink>
-                            {currentUser ? loggedInName : 'Not logged in'}
+                            {currentUser ? loggedInLinks : 'Not logged in'}
                         </Nav>
                         <Form inline>
                             <FormControl type="text" placeholder="Search" className="mr-sm-2" />

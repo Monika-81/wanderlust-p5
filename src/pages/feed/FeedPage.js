@@ -39,7 +39,7 @@ function FeedPage({message, filter = ''}) {
             <Col>
             {hasLoaded ? (
                 <>
-                    { posts.results.length ? (
+                    {posts.results.length ? (
                         <InfiniteScroll
                             style={{ overflow: "unset" }}
                             dataLength={posts.results.length}

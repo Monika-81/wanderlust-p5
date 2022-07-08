@@ -3,15 +3,16 @@ import { Col, Container, Row, Image, Button } from 'react-bootstrap';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useProfileData, useSetProfileData } from '../../context/ProfileContext';
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
     const currentUser = useCurrentUser();
+    const { pageProfile } = useProfileData();
+    const setProfileData = useSetProfileData();
+    const [profile] = pageProfile.results;
     const is_owner = currentUser?.username === profile?.owner;
     const { id} = useParams();
-    // const { pageProfile } = useProfileData();
-    // const [profile] = pageProfile.results;
-    // const setProfileData = useSetProfileData();
     
 
     useEffect(() => {
@@ -31,15 +32,28 @@ function ProfilePage() {
         fetchData();
     }, [id, setProfileData]);
 
-    const profile = (
+    const userProfile = (
         <>
             <Row>
                 <Col>
-                    PICTURE column            
+                <Image
+                    roundedCircle
+                    src={profile?.image}
+                />          
                 </Col>
                 <Col>
-                    <h3>Profile username</h3>
-                    <p>Profile stats</p>
+                    <h3>{profile?.owner}</h3>
+                    <p>Profile description</p>
+                    <Row>
+                        <Col>
+                            <div>{profile?.followers_count}</div>
+                            <div>followers</div>
+                        </Col>
+                        <Col>
+                            <div>{profile?.following_count}</div>
+                            <div>following</div>
+                        </Col>
+                    </Row>
                     <p>Follow button</p>
                 </Col>
             </Row>
@@ -49,10 +63,13 @@ function ProfilePage() {
         </>
     );
 
-    const profilePosts = (
+    const userProfilePosts = (
         <>
             <hr />
                 Profile Posts
+                <Col>
+                    <div>{profile?.posts_count}</div>
+                </Col>
             <hr />
         </>
     );
@@ -61,8 +78,8 @@ function ProfilePage() {
     <Row>
         <Col>
             <Container>
-                {profile}
-                {profilePosts}
+                {userProfile}
+                {userProfilePosts}
             </Container>
         </Col>
     </Row>

@@ -4,9 +4,11 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useSetCurrentUser } from "../../context/CurrentUserContext";
 import { setTokenTimestamp } from "../../utils/utils";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const SignInForm = () => {
     const setCurrentUser = useSetCurrentUser();
+    useRedirect('loggedIn');
 
     const [signInData, setSignInData] = useState({
         username: '',
@@ -30,7 +32,7 @@ const SignInForm = () => {
             const {data} = await axios.post("/dj-rest-auth/login/", signInData);
             setCurrentUser(data.user)
             setTokenTimestamp(data)
-            history.push("/");
+            history.push('/');
         } catch (err) {
             setErrors(err.response?.data);
             console.log(err.response?.data)

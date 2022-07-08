@@ -2,27 +2,29 @@ import React, { useState} from "react";
 import { Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { useRedirect } from "../../hooks/useRedirect";
 
 const SignUpForm = () => {
+    useRedirect('loggedIn');
 
     const [signUpData, setSignUpData] = useState({
         username: '',
         password1: '',
         password2: '',
-    })
+    });
 
-    const { username, password1, password2 } = signUpData
+    const { username, password1, password2 } = signUpData;
 
-    const history = useHistory()
+    const history = useHistory();
 
-    const [errors, setErrors] = useState({})
+    const [errors, setErrors] = useState({});
 
     const handleChange = (event) => {
         setSignUpData({
             ...signUpData,
             [event.target.name]: event.target.value,
-        })
-    }
+        });
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -32,7 +34,7 @@ const SignUpForm = () => {
         } catch (err) {
           setErrors(err.response?.data);
         }
-    }
+    };
 
     return (
         <Row>

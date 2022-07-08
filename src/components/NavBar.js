@@ -22,11 +22,20 @@ function NavBar() {
         }
     }
 
-    const loggedInLinks = <>
-        {currentUser?.username}
-        <NavLink to="/" onClick={handleSignOut}>Sign Out</NavLink>
-        <NavLink to={`/profile/${currentUser?.profile_id}`} activeClassName=''>Profile</NavLink>
-    </>
+    const loggedInLinks = 
+        <>
+            <NavLink to={`/profile/${currentUser?.profile_id}`} activeClassName=''>{currentUser?.username}</NavLink>
+            <NavLink exact to="/posts" activeClassName=''>Feed</NavLink>
+            <NavLink to="/liked" activeClassName=''>Liked</NavLink>
+            <NavLink to="/posts/create" activeClassName=''>Add post</NavLink>
+            <NavLink to="/" onClick={handleSignOut}>Sign Out</NavLink>
+        </>
+
+    const loggedOutLinks = 
+        <>
+            <NavLink to="/signin" activeClassName=''>Sign In</NavLink>
+            <NavLink to="/signup" activeClassName=''>Sign Up</NavLink>
+        </>
 
     return (
         <div>
@@ -49,12 +58,7 @@ function NavBar() {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
                         <NavLink exact to="/" activeClassName=''>Home</NavLink>
-                            <NavLink exact to="/posts" activeClassName=''>Feed</NavLink>
-                            <NavLink to="/liked" activeClassName=''>Liked</NavLink>
-                            <NavLink to="/posts/create" activeClassName=''>Add post</NavLink>
-                            <NavLink to="/signin" activeClassName=''>Sign In</NavLink>
-                            <NavLink to="/signup" activeClassName=''>Sign Up</NavLink>
-                            {currentUser ? loggedInLinks : 'Not logged in'}
+                        {currentUser ? loggedInLinks : loggedOutLinks}
                         </Nav>
                         <Form inline>
                             <FormControl type="text" placeholder="Search" className="mr-sm-2" />

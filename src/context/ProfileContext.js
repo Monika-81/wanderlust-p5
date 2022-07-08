@@ -47,6 +47,34 @@ export const ProfileDataProvider = ({ children }) => {
       }
     };
 
+    const handleUnfollow = async (targetProfile) => {
+      try {
+        await axiosRes.delete(`/followers/${targetProfile.following_id}/`);
+
+        setProfileData((prevState) => ({
+          ...prevState,
+          pageProfile: {
+            results: prevState.pageProfile.results.map((profile) => {
+              return profile.id === targetProfile.id
+              ? {
+                ...profile,
+                followers_count: profile.followers_count - 1,
+                following_id: null,
+              }
+              : profile.is_owner
+              ? {
+                ...profile,
+                following_count: EditProfileDropdown.following_count - 1,
+              }
+              : profile;
+            }),
+          },
+        }));
+      } catch (err) {
+        console.log(err)
+      }
+    };
+
     useEffect(() => {
         const handleMount = async () => {
           try {
@@ -65,7 +93,7 @@ export const ProfileDataProvider = ({ children }) => {
 
     return (
         <ProfileDataContext.Provider value={profileData}>
-            <SetProfileDataContext.Provider value={{setProfileData, handleFollow}}>
+            <SetProfileDataContext.Provider value={{setProfileData, handleFollow, handleUnfollow}}>
                 {children}
             </SetProfileDataContext.Provider>
         </ProfileDataContext.Provider>

@@ -17,7 +17,7 @@ function ProfilePage() {
     const currentUser = useCurrentUser();
 
     const { pageProfile } = useProfileData();
-    const {setProfileData, handleFollow} = useSetProfileData();
+    const {setProfileData, handleFollow, handleUnfollow} = useSetProfileData();
     const [profile] = pageProfile.results;
     const is_owner = currentUser?.username === profile?.owner;
 
@@ -74,7 +74,7 @@ function ProfilePage() {
                     <Row className='justify-content-center'>
                         { currentUser && !is_owner && (
                             profile?.following_id ? (
-                                <Button onClick={() => {}}>
+                                <Button onClick={() => handleUnfollow(profile)}>
                                     Unfollow
                                 </Button>
                             ) : (

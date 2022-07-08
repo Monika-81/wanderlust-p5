@@ -78,7 +78,7 @@ function EditPost() {
             </figure>
             <div>
                 <Form.Label
-                htmlFor="image-upload"
+                    htmlFor="image-upload"
                 >
                 Change the image
                 </Form.Label>
@@ -86,16 +86,16 @@ function EditPost() {
         </Col>
         <Col>
             <Container>
-                <h1>Create post</h1>
+                <h1>Edit post</h1>
                 <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="title">
                     <Form.Label className="d-none">Title</Form.Label>
                     <Form.Control 
-                    type="text" 
-                    placeholder="Enter title" 
-                    name="title"
-                    value={title}
-                    onChange={handleChange}
+                        type="text" 
+                        placeholder="Enter title" 
+                        name="title"
+                        value={title}
+                        onChange={handleChange}
                     />
                 </Form.Group>
                 {errors?.title?.map((message, idx) => (
@@ -160,7 +160,6 @@ function EditPost() {
                 </Button>
                 <Button
                     variant="primary" 
-                    type="submit"
                     onClick={() => history.goBack()}
                     >
                     Cancel edit

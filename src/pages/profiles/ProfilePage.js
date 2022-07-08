@@ -50,14 +50,13 @@ function ProfilePage() {
             <Row>
                 <Col>
                 <Image
-                    roundedCircle
                     src={profile?.image}
                 />
                 </Col>
                 <Col>
                     <h3>{profile?.owner}</h3>
                     {profile?.is_owner && <EditProfileDropdown id={profile?.id} />}
-                    <p>Profile description</p>
+                    <p>{profile?.content}</p>
                     <Row>
                         <Col>
                             <div>{profile?.followers_count}</div>

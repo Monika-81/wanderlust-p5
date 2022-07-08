@@ -26,19 +26,38 @@ function App() {
         <Switch>
           <Route 
             exact path="/" 
-            render={() => <FeedPage 
-            message="No results found. Pleaase adjust search criteria."/>} 
+            render={() => (
+              <FeedPage 
+                message="No results found. Please adjust search criteria."
+              />
+            )} 
           />
-          <Route exact path="/posts" render={() => <h1>Feed</h1>} />
+          <Route 
+            exact path="/posts" 
+            render={() => (
+              <FeedPage 
+                message="You are not following any accounts yet."
+                filter={`owner__followed__owner__profile=${profile_id}&`}
+              />
+            )} 
+          />
+          <Route 
+            exact path="/liked" 
+            render={() => (
+              <FeedPage 
+                message="You haven't liked any posts yet."
+                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+              />
+            )} 
+          />
           <Route exact path="/posts/create" render={() => <CreatePost/>} />
           <Route exact path="/posts/:id" render={() => <PostPage/>} />
           <Route exact path="/posts/:id/edit" render={() => <EditPost/>} />
-          <Route exact path="/liked" render={() => <h1>Liked</h1>} />
           <Route exact path="/profile/:id" render={() => <ProfilePage />} />
-          <Route exact path="/signup" render={() => <SignUpForm/>} />
-          <Route exact path="/signin" render={() => <SignInForm/>} />
           <Route exact path="/profile/:id/edit" render={() => <EditProfile />} />
           <Route exact path="/profile/:id/edit/password"render={() => <EditPassword/>} />
+          <Route exact path="/signup" render={() => <SignUpForm/>} />
+          <Route exact path="/signin" render={() => <SignInForm/>} />
         </Switch>
       </Container>
       <h1>Link to top of page</h1>

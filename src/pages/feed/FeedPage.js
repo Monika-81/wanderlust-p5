@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {CardDeck, Col, Container, Form, Row} from "react-bootstrap";
+import {CardDeck, Col, Container, Row} from "react-bootstrap";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useLocation } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';

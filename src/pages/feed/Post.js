@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Card, Image, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import { DotDropdown } from "../../components/DotDropdown";
@@ -89,22 +89,22 @@ const Post = (props) => {
                             placement="top"
                             overlay={<Tooltip>You can't like your own post!</Tooltip>}
                         >
-                            <i class="fa fa-plane-departure"></i>
+                            <i className="fa fa-plane-departure"></i>
                         </OverlayTrigger>
                     ) : like_id ? (
                         <span onClick={handleUnlike}>
-                            <i class="fa fa-plane-departure" />
+                            <i className="fa fa-plane-departure" />
                         </span>
                     ) : currentUser ? (
                         <span onClick={handleLike}>
-                            <i class="fa fa-plane-departure" />
+                            <i className="fa fa-plane-departure" />
                         </span>
                     ) : (
                         <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>Log in to like posts!</Tooltip>}
                         >
-                            <i class="fa fa-plane-departure" />
+                            <i className="fa fa-plane-departure" />
                         </OverlayTrigger>
                     )}
                     {likes_count}
@@ -115,14 +115,19 @@ const Post = (props) => {
                 </div>
             </Card.Body>
             <Card.Footer>
-                <span>{owner}</span>
-                <span>{updated_at}</span>
-                {is_owner && postPage && (
-                    <DotDropdown
-                        handleEdit={handleEdit}
-                        handleDelete={handleDelete}
-                    />
-                )}
+                <Media>
+                    <Link to={`/profile/${profile_id}`}>
+                        <Image src={profile_image}/>
+                    </Link>
+                    <span>{owner}</span>
+                    <span>{updated_at}</span>
+                    {is_owner && postPage && (
+                        <DotDropdown
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                        />
+                    )}
+                </Media>
             </Card.Footer>
         </Card>
     )

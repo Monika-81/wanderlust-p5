@@ -9,9 +9,14 @@ import CreatePost from './pages/feed/CreatePost';
 import PostPage from './pages/feed/PostPage';
 import EditPost from './pages/feed/EditPost';
 import FeedPage from './pages/feed/FeedPage';
+import ProfilePage from './pages/profiles/ProfilePage';
+import { useCurrentUser } from './context/CurrentUserContext';
 
 
 function App() {
+  const currentUser = useCurrentUser();
+  const profile_id = currentUser?.profile_id || "";
+
   return (
     <div className="App">
       <NavBar />
@@ -27,9 +32,10 @@ function App() {
           <Route exact path="/posts/:id" render={() => <PostPage/>} />
           <Route exact path="/posts/:id/edit" render={() => <EditPost/>} />
           <Route exact path="/liked" render={() => <h1>Liked</h1>} />
-          <Route exact path="/profile" render={() => <h1>Profile</h1>} />
+          <Route exact path="/profile/:id" render={() => <ProfilePage />} />
           <Route exact path="/signup" render={() => <SignUpForm/>} />
           <Route exact path="/signin" render={() => <SignInForm/>} />
+
         </Switch>
         <h1>Link to top of page</h1>
       </Container>

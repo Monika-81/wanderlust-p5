@@ -40,6 +40,9 @@ const SignInForm = () => {
     return (
         <Row>
             <Col>
+            PICTURE column            
+            </Col>
+            <Col>
                 <Container>
                     <h1>Sign In</h1>
                     <Form onSubmit={handleSubmit}>

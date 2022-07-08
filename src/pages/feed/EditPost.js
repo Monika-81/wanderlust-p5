@@ -32,22 +32,22 @@ function EditPost() {
 
     const handleChange = (event) => {
         setPostData({
-          ...postData,
-          [event.target.name]: event.target.value,
+            ...postData,
+            [event.target.name]: event.target.value,
         });
       };
     
-      const handleImageChange = (event) => {
+    const handleImageChange = (event) => {
         if (event.target.files.length){
-          URL.revokeObjectURL(image);
-          setPostData({
-            ...postData,
-            image: URL.createObjectURL(event.target.files[0])
-          });
+            URL.revokeObjectURL(image);
+            setPostData({
+                ...postData,
+                image: URL.createObjectURL(event.target.files[0])
+            });
         }
       };
     
-      const handleSubmit = async (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData();
     
@@ -56,19 +56,19 @@ function EditPost() {
         formData.append('content', content);
     
         if (imageInput?.current?.files[0]){
-          formData.append('image', imageInput.current.files[0]);
+            formData.append('image', imageInput.current.files[0]);
         }
     
         try {
-          await axiosReq.put(`/posts/${id}/`, formData);
-          history.push(`/posts/${id}`);
-        } catch (err) {
-          console.log(err);
-          if (err.response?.status !== 401){
-            setErrors(err.response?.data);
-          } 
+            await axiosReq.put(`/posts/${id}/`, formData);
+            history.push(`/posts/${id}`);
+            } catch (err) {
+            console.log(err);
+            if (err.response?.status !== 401){
+                setErrors(err.response?.data);
+            } 
         }
-      };
+    };
 
   return (
     <Row>

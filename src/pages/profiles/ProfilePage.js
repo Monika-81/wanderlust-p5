@@ -47,16 +47,16 @@ function ProfilePage() {
 
     const userProfile = (
         <>
-        {profile?.is_owner && <EditProfileDropdown id={profile?.id} />}
             <Row>
                 <Col>
                 <Image
                     roundedCircle
                     src={profile?.image}
-                />          
+                />
                 </Col>
                 <Col>
                     <h3>{profile?.owner}</h3>
+                    {profile?.is_owner && <EditProfileDropdown id={profile?.id} />}
                     <p>Profile description</p>
                     <Row>
                         <Col>

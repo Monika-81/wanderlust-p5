@@ -26,7 +26,7 @@ function NavBar() {
         <>
             <NavLink to={`/profile/${currentUser?.profile_id}`} activeClassName=''>{currentUser?.username}</NavLink>
             <NavLink exact to="/posts" activeClassName=''>Feed</NavLink>
-            <NavLink to="/liked" activeClassName=''>Liked</NavLink>
+            <NavLink to="/likes" activeClassName=''>Liked</NavLink>
             <NavLink to="/posts/create" activeClassName=''>Add post</NavLink>
             <NavLink to="/" onClick={handleSignOut}>Sign Out</NavLink>
         </>
@@ -71,4 +71,4 @@ function NavBar() {
     )
 }
 
-export default NavBar
+export default NavBar;

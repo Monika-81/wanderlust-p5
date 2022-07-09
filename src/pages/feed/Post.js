@@ -117,7 +117,7 @@ const Post = (props) => {
             <Card.Footer>
                 <Media>
                     <Link to={`/profile/${profile_id}`}>
-                        <Image src={profile_image}/>
+                        <Image src={profile_image} height={60} width={60} rounded/>
                     </Link>
                     <span>{owner}</span>
                     <span>{updated_at}</span>

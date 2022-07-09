@@ -49,9 +49,7 @@ function ProfilePage() {
         <>
             <Row>
                 <Col>
-                <Image
-                    src={profile?.image}
-                />
+                    <Image src={profile?.image} height={300} width={300} rounded/>
                 </Col>
                 <Col>
                     <Row className='justify-content-center'>

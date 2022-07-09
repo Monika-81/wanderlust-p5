@@ -42,7 +42,7 @@ function App() {
             )} 
           />
           <Route 
-            exact path="/liked" 
+            exact path="/likes" 
             render={() => (
               <FeedPage 
                 message="You haven't liked any posts yet."

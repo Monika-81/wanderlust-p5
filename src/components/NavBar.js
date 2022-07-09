@@ -1,10 +1,10 @@
-import React from 'react'
-import axios from 'axios'
-import { Container, Navbar, Nav, Button, Form, FormControl } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
-import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext'
-import useClickOutsideToggle from '../hooks/useClickOutsideToggle'
-import { removeTokenTimestamp } from '../utils/utils'
+import React from 'react';
+import axios from 'axios';
+import { Container, Navbar, Nav, Button, Form, FormControl } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext';
+import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
+import { removeTokenTimestamp } from '../utils/utils';
 
 function NavBar() {
     const currentUser = useCurrentUser();
@@ -18,9 +18,9 @@ function NavBar() {
             setCurrentUser(null)
             removeTokenTimestamp();
         } catch (err) {
-            console.log(err)
+            console.log(err);
         }
-    }
+    };
 
     const loggedInLinks = 
         <>
@@ -57,11 +57,11 @@ function NavBar() {
                         aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
-                        <NavLink exact to="/" activeClassName=''>Home</NavLink>
+                            <NavLink exact to="/" activeClassName=''>Home</NavLink>
                         {currentUser ? loggedInLinks : loggedOutLinks}
                         </Nav>
-                        <Form inline>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                        <Form inline ref={ref} onClick={() => setExpanded(expanded)}>
+                            <FormControl  type="text" placeholder="Search posts" className="mx-auto" />
                             <Button variant="outline-primary">Search</Button>
                         </Form>
                     </Navbar.Collapse>

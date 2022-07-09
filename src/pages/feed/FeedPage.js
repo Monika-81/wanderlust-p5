@@ -27,7 +27,7 @@ function FeedPage({message, filter = ''}) {
         setHasLoaded(false)
         const timer = setTimeout(() => {
             fetchPosts()
-        }, 1000);  
+        }, 600);  
         return () => {
             clearTimeout(timer)
         }      

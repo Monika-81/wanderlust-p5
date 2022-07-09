@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import Post from './Post';

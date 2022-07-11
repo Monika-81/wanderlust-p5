@@ -1,4 +1,3 @@
-import './App.css';
 import NavBar from './components/NavBar';
 import { Container } from 'react-bootstrap';
 import {Route, Switch} from 'react-router-dom'
@@ -13,14 +12,14 @@ import ProfilePage from './pages/profiles/ProfilePage';
 import { useCurrentUser } from './context/CurrentUserContext';
 import EditProfile from './pages/profiles/EditProfile';
 import EditPassword from './pages/profiles/EditPassword';
-
+import styles from './App.module.css'
 
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <NavBar />
       <Container>
         <Switch>
@@ -60,7 +59,10 @@ function App() {
           <Route exact path="/signin" render={() => <SignInForm/>} />
         </Switch>
       </Container>
-      <h1>Link to top of page</h1>
+      <Container>
+        <h1>Link to top of page</h1>
+      </Container>
+      
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { useCurrentUser } from '../../context/CurrentUserContext';
 import Post from './Post';
 import CreateComment from '../comments/CreateComment';
 import Comment from '../comments/Comment';
+import appStyles from "../../App.module.css";
 
 
 const PostPage = () => {
@@ -34,7 +35,7 @@ const PostPage = () => {
 
 
   return (
-    <Row>
+    <Row className={appStyles.RowMargin}>
         <Col>
             <Post {...post.results[0]} setPosts={setPost} postPage />
             <Container>

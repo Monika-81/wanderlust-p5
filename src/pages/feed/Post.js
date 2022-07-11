@@ -4,6 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import { DotDropdown } from "../../components/DotDropdown";
 import { axiosRes } from '../../api/axiosDefaults';
+import appStyles from "../../App.module.css";
+
 
 const Post = (props) => {
     const {
@@ -76,7 +78,7 @@ const Post = (props) => {
     return (
         <Card>
             <Link to={`/posts/${id}/`} >
-                <Card.Img variant="top" src={image} alt={title} height={500} />
+                <Card.Img variant="top" src={image} alt={title} className={appStyles.CardImage} />
             </Link>
             <Card.Body>
                 {title && <Card.Title>{title}</Card.Title>}

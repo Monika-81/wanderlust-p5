@@ -3,6 +3,8 @@ import { Button, Col, Container, Form, Image, Row, Alert } from 'react-bootstrap
 import { useHistory, useParams } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useCurrentUser, useSetCurrentUser } from "../../context/CurrentUserContext";
+import appStyles from "../../App.module.css";
+
 
 const EditProfile = () => {
     const currentUser = useCurrentUser();
@@ -71,18 +73,16 @@ const EditProfile = () => {
 
 
   return (
-    <Row>
+    <Row className={appStyles.RowMargin}>
         <Col>
             {image && (
                 <figure>
-                    <Image src={image} rounded />
+                    <Image src={image} rounded className={appStyles.PreviewImage}/>
                 </figure>)
             }
             <div>
-                <Form.Label
-                    htmlFor="image-upload"
-                >
-                Change the image
+                <Form.Label htmlFor="image-upload" >
+                    Change the image
                 </Form.Label>
             </div>      
         </Col>
@@ -108,7 +108,7 @@ const EditProfile = () => {
                     <Form.Label 
                         htmlFor="image-upload"
                         src=''
-                        message="Click to upload image">Chenge profile image
+                        message="Click to upload image">Change profile image
                     </Form.Label>
                     <Form.File
                         id="image-upload"
@@ -132,7 +132,7 @@ const EditProfile = () => {
                     variant="primary" 
                     type="submit"
                     >
-                    Edit Profile
+                    Save changes
                 </Button>
                 <Button
                     variant="primary" 

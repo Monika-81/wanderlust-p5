@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import {  Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
+import {  Form, Button, Col, Row, Container, Alert, Image } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useSetCurrentUser } from "../../context/CurrentUserContext";
 import { setTokenTimestamp } from "../../utils/utils";
 import { useRedirect } from "../../hooks/useRedirect";
+import appStyles from "../../App.module.css";
+import Signup from '../../assets/signup.jpg'
+
 
 const SignInForm = () => {
     const setCurrentUser = useSetCurrentUser();
@@ -40,15 +43,15 @@ const SignInForm = () => {
     };
 
     return (
-        <Row>
-            <Col>
-            PICTURE column            
+        <Row className={appStyles.RowMargin}>
+            <Col className={appStyles.ColImage}>
+                <Image className={appStyles.FormImage} src={Signup}/>       
             </Col>
-            <Col>
+            <Col className={appStyles.ColForm}>
                 <Container>
-                    <h1>Sign In</h1>
+                    <h1 className={appStyles.FormHeader}>Sign In</h1>
                     <Form onSubmit={handleSubmit}>
-                        <Form.Group controlId="username">
+                        <Form.Group controlId="username" className={appStyles.FormGroup}>
                             <Form.Label className="d-none">Username</Form.Label>
                             <Form.Control 
                                 type="text" 
@@ -62,7 +65,7 @@ const SignInForm = () => {
                             <Alert variant='warning' key={idx}>{message}</Alert>
                             )
                         )}
-                        <Form.Group controlId="password">
+                        <Form.Group controlId="password" className={appStyles.FormGroup}>
                             <Form.Label className="d-none">Password</Form.Label>
                             <Form.Control 
                                 type="password" 
@@ -76,7 +79,7 @@ const SignInForm = () => {
                             <Alert variant='warning' key={idx}>{message}</Alert>
                             )
                         )}
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type="submit" className={appStyles.FormButton}>
                             Sign in
                         </Button>
                         <p>Or Register!</p>

@@ -1,0 +1,63 @@
+.App {
+    height: 100%;
+    text-align: center;
+    background-color:blanchedalmond;
+  }
+
+.RowMargin {
+    margin-top: 5vh;
+}
+
+.ColImage {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 0;
+    width: 100%;
+    box-shadow: 10px 5px 5px #aaaaaa;
+    background-color: white;
+}
+
+.FormImage {
+    width: 100%;   
+}
+
+.ColForm {
+    border: 0.5px  solid #aaaaaa ;
+    box-shadow: 10px 5px 5px #aaaaaa;
+    background-color: white;
+    padding: 0;
+    width: 100%;
+}
+
+.FormHeader {
+    margin: 6rem;
+}
+
+.FormGroup {
+    margin: 40px 30px;
+}
+
+.FormButton {
+    margin: 40px 30px;
+}
+
+.PreviewImage {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.CardImage {
+    max-width: 400px;
+
+}
+
+@media screen and (max-width: 575px) {
+    .ColImage, .PreviewImage {
+        min-width: 85vw;
+        max-width: 85vw;
+    }
+
+    .FormHeader {
+        margin: 3rem;
+    }
+}

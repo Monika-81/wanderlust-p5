@@ -3,6 +3,8 @@ import { Col, Row, Container, Form, Button, Image, Alert } from 'react-bootstrap
 import { useHistory } from 'react-router-dom'
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from '../../hooks/useRedirect';
+import appStyles from "../../App.module.css";
+
 
 const CreatePost = () => {
   useRedirect('loggedOut')
@@ -60,24 +62,23 @@ const CreatePost = () => {
   };
 
   return (
-    <Row>
-        <Col>
+    <Row className={appStyles.RowMargin}>
+        <Col className={appStyles.ColImage}>
           <figure>
-            <Image src={image} rounded />
+            <Image src={image} rounded className={appStyles.PreviewImage}/>
           </figure>
           <div>
             <Form.Label
               htmlFor="image-upload"
               >
-              Change the image
             </Form.Label>
           </div>      
         </Col>
-        <Col>
+        <Col className={appStyles.ColForm}>
           <Container>
-            <h1>Create post</h1>
+            <h1 className={appStyles.FormHeader}>Create post</h1>
               <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="title">
+                <Form.Group controlId="title" className={appStyles.FormGroup}>
                   <Form.Label className="d-none">Title</Form.Label>
                     <Form.Control 
                       type="text" 
@@ -91,7 +92,7 @@ const CreatePost = () => {
                       <Alert variant='warning' key={idx}>{message}</Alert>
                       )
                     )}
-                    <Form.Group controlId="subtitle">
+                    <Form.Group controlId="subtitle" className={appStyles.FormGroup}>
                       <Form.Label className="d-none">Subtitle</Form.Label>
                       <Form.Control 
                         type="text" 
@@ -107,7 +108,7 @@ const CreatePost = () => {
                       </Alert>
                       )
                     )}
-                    <Form.Group controlId="content">
+                    <Form.Group controlId="content" className={appStyles.FormGroup}>
                       <Form.Label className="d-none">Content</Form.Label>
                       <Form.Control 
                         as="textarea" 
@@ -124,11 +125,12 @@ const CreatePost = () => {
                       </Alert>
                       )
                     )}
-                    <Form.Group>
+                    <Form.Group className={appStyles.FormGroup}>
                       <Form.Label 
                         htmlFor="image-upload"
                         src=''
-                        message="Click to upload image">Upload Image
+                        message="Click to upload image">
+                          Upload Image
                       </Form.Label>
                       <Form.File
                         id="image-upload"
@@ -141,13 +143,15 @@ const CreatePost = () => {
                       <Alert variant='warning' key={idx}>{message}</Alert>
                       )
                     )}
-                    <Button 
+                    <Button
+                      className={appStyles.FormButton} 
                       variant="primary" 
                       type="submit"
                     >
                         Create Post
                     </Button>
                     <Button 
+                      className={appStyles.FormButton}
                       variant="primary" 
                       type="submit"
                       onClick={() => history.goBack()}

@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { fetchMoreData } from '../../utils/utils';
 import Post from './Post';
+import appStyles from "../../App.module.css";
 
 
 function FeedPage({message, filter = ''}) {
@@ -35,7 +36,7 @@ function FeedPage({message, filter = ''}) {
 
 
     return (
-        <Row>
+        <Row className={appStyles.RowMargin}>
             <Col>
             {hasLoaded ? (
                 <>

@@ -7,7 +7,9 @@ import { useProfileData, useSetProfileData } from '../../context/ProfileContext'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchMoreData } from '../../utils/utils';
 import Post from '../feed/Post';
-import { EditProfileDropdown } from '../../components/DotDropdown'
+import { EditProfileDropdown } from '../../components/DotDropdown';
+import appStyles from "../../App.module.css";
+import styles from '../../styles/ProfilePage.module.css'
 
 
 function ProfilePage() {
@@ -47,13 +49,13 @@ function ProfilePage() {
 
     const userProfile = (
         <>
-            <Row>
-                <Col>
-                    <Image src={profile?.image} height={300} width={300} rounded/>
+            <Row className={appStyles.RowMargin}>
+                <Col className={appStyles.ColImage}>
+                    <Image src={profile?.image} rounded className={appStyles.FormImage}/>
                 </Col>
-                <Col>
-                    <Row className='justify-content-center'>
-                        <h3>{profile?.owner}</h3>
+                <Col className={appStyles.ColForm}>
+                    <Row className={styles.ProfileHeader}>
+                        <h3 className='mr-4'>{profile?.owner}</h3>
                         {profile?.is_owner && <EditProfileDropdown id={profile?.id} />}
                     </Row>
                     <Row className='justify-content-center'>
@@ -89,12 +91,13 @@ function ProfilePage() {
 
     const userProfilePosts = (
         <>
-            <hr />
-                <p>{profile?.owner}'s posts</p>
+            <Row className={appStyles.RowMargin}>
                 <Col>
-                    <div>{profile?.posts_count}</div>
+                    <p>{profile?.owner}'s posts</p>
+                    <p>{profile?.posts_count}</p>
                 </Col>
-            <hr />
+            </Row>
+            <Row className={appStyles.RowMargin}>
             {profilePosts.results.length ? (
                 <InfiniteScroll
                     style={{ overflow: "unset" }}
@@ -114,11 +117,12 @@ function ProfilePage() {
                     No results found, {profile?.owner} hasn't posted yet
                </Container>
             )}
+            </Row>
         </>
     );
 
   return (
-    <Row>
+    <Row className={appStyles.RowMargin}>
         <Col>
             <Container>
                 {hasLoaded ? (

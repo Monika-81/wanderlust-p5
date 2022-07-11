@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Button, Col, Container, Form, Image, Row, Alert } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
+import appStyles from "../../App.module.css";
+
 
 function EditPost() {
     const [postData, setPostData] = useState({
@@ -71,24 +73,22 @@ function EditPost() {
     };
 
   return (
-    <Row>
+    <Row className={appStyles.RowMargin}>
         <Col>
             <figure>
-                <Image src={image} rounded />
+                <Image src={image} rounded className={appStyles.PreviewImage}/>
             </figure>
             <div>
-                <Form.Label
-                    htmlFor="image-upload"
-                >
-                Change the image
+                <Form.Label htmlFor="image-upload">
+                    Change the image
                 </Form.Label>
             </div>      
         </Col>
-        <Col>
+        <Col className={appStyles.ColForm}>
             <Container>
-                <h1>Edit post</h1>
+                <h1 className={appStyles.FormHeader}>Edit post</h1>
                 <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="title">
+                <Form.Group controlId="title" className={appStyles.FormGroup}>
                     <Form.Label className="d-none">Title</Form.Label>
                     <Form.Control 
                         type="text" 
@@ -102,7 +102,7 @@ function EditPost() {
                     <Alert variant='warning' key={idx}>{message}</Alert>
                     )
                 )}
-                <Form.Group controlId="subtitle">
+                <Form.Group controlId="subtitle" className={appStyles.FormGroup}>
                     <Form.Label className="d-none">Subtitle</Form.Label>
                     <Form.Control 
                         type="text" 
@@ -118,7 +118,7 @@ function EditPost() {
                     </Alert>
                     )
                 )}
-                <Form.Group controlId="content">
+                <Form.Group controlId="content" className={appStyles.FormGroup}>
                     <Form.Label className="d-none">Content</Form.Label>
                     <Form.Control 
                         as="textarea" 
@@ -135,11 +135,12 @@ function EditPost() {
                     </Alert>
                     )
                 )}
-                <Form.Group>
+                <Form.Group className={appStyles.FormGroup}>
                     <Form.Label 
                         htmlFor="image-upload"
                         src=''
-                        message="Click to upload image">Upload Image
+                        message="Click to upload image">
+                            Upload Image
                     </Form.Label>
                     <Form.File
                         id="image-upload"
@@ -152,16 +153,10 @@ function EditPost() {
                     <Alert variant='warning' key={idx}>{message}</Alert>
                     )
                 )}
-                <Button 
-                    variant="primary" 
-                    type="submit"
-                    >
-                    Edit Post
+                <Button variant="primary" type="submit" className={appStyles.FormButton}>
+                    Save changes
                 </Button>
-                <Button
-                    variant="primary" 
-                    onClick={() => history.goBack()}
-                    >
+                <Button variant="primary" onClick={() => history.goBack()} className={appStyles.FormButton}>
                     Cancel edit
                 </Button>
                 </Form>

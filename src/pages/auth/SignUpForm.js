@@ -1,8 +1,11 @@
 import React, { useState} from "react";
-import { Form, Button, Col, Row, Container, Alert } from "react-bootstrap";
+import { Form, Button, Col, Row, Container, Alert, Image } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useRedirect } from "../../hooks/useRedirect";
+import appStyles from "../../App.module.css";
+import Signup from '../../assets/signup.jpg'
+
 
 const SignUpForm = () => {
     useRedirect('loggedIn');
@@ -37,15 +40,15 @@ const SignUpForm = () => {
     };
 
     return (
-        <Row>
-            <Col>
-            PICTURE column            
+        <Row className={appStyles.RowMargin}>
+            <Col className={appStyles.ColImage}>
+                <Image className={appStyles.FormImage} src={Signup}/>       
             </Col>
-            <Col>
+            <Col className={appStyles.ColForm}>
                 <Container>
-                    <h1>Register</h1>
+                    <h1 className={appStyles.FormHeader}>Register</h1>
                     <Form onSubmit={handleSubmit}>
-                        <Form.Group controlId="username">
+                        <Form.Group controlId="username" className={appStyles.FormGroup}>
                             <Form.Label className="d-none">Username</Form.Label>
                             <Form.Control 
                                 type="text" 
@@ -60,7 +63,7 @@ const SignUpForm = () => {
                                 {message}
                             </Alert>
                         ))}
-                       <Form.Group controlId="password1">
+                       <Form.Group controlId="password1" className={appStyles.FormGroup}>
                             <Form.Label className="d-none">Password</Form.Label>
                             <Form.Control 
                                 type="password" 
@@ -75,7 +78,7 @@ const SignUpForm = () => {
                                 {message}
                             </Alert>
                         ))}
-                        <Form.Group controlId="password2">
+                        <Form.Group controlId="password2" className={appStyles.FormGroup}>
                             <Form.Label className="d-none">Password</Form.Label>
                             <Form.Control 
                                 type="password" 
@@ -90,7 +93,7 @@ const SignUpForm = () => {
                                 {message}
                             </Alert>
                         ))}
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type="submit" className={appStyles.FormButton}>
                             Register
                         </Button>
                         <p>Or Sign in!</p>

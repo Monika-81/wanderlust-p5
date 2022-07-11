@@ -4,7 +4,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { useLocation } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { fetchMoreData } from '../../utils/utils';
-import Post from './Post';
+import PostPreview from './PostPreview';
 import appStyles from "../../App.module.css";
 
 
@@ -49,7 +49,7 @@ function FeedPage({message, filter = ''}) {
                         >
                         <CardDeck className="col-10">
                             {posts.results.map((post) => (
-                                    <Post key={post.id} {...post} setPosts={setPosts}/>
+                                    <PostPreview key={post.id} {...post} setPosts={setPosts}/>
                                 ))
                             }
                         </CardDeck>

@@ -74,23 +74,17 @@ const EditProfile = () => {
 
   return (
     <Row className={appStyles.RowMargin}>
-        <Col>
+        <Col className={appStyles.ColImage}>
             {image && (
-                <figure>
-                    <Image src={image} rounded className={appStyles.PreviewImage}/>
-                </figure>)
-            }
-            <div>
-                <Form.Label htmlFor="image-upload" >
-                    Change the image
-                </Form.Label>
-            </div>      
+                <Image htmlFor="image-upload" src={image} rounded className={appStyles.FormImage}/>
+                )
+            }     
         </Col>
-        <Col>
+        <Col className={appStyles.ColForm}>
             <Container>
-                <h1>Edit profile</h1>
+                <h1 className={appStyles.FormHeader}>Edit profile</h1>
                 <Form onSubmit={handleSubmit}>
-                <Form.Group>
+                <Form.Group className={appStyles.FormGroup}>
                     <Form.Label>Profile description</Form.Label>
                     <Form.Control 
                         as="textarea" 
@@ -104,7 +98,7 @@ const EditProfile = () => {
                     <Alert variant='warning' key={idx}>{message}</Alert>
                     )
                 )}
-                <Form.Group>
+                <Form.Group className={appStyles.FormGroup}>
                     <Form.Label 
                         htmlFor="image-upload"
                         src=''
@@ -128,13 +122,15 @@ const EditProfile = () => {
                     <Alert variant='warning' key={idx}>{message}</Alert>
                     )
                 )}
-                <Button 
+                <Button
+                    className={appStyles.FormButton} 
                     variant="primary" 
                     type="submit"
                     >
                     Save changes
                 </Button>
                 <Button
+                    className={appStyles.FormButton} 
                     variant="primary" 
                     onClick={() => history.goBack()}
                     >

@@ -43,7 +43,7 @@ export function EditProfileDropdown({ id }) {
           <i className="fas fa-edit" />
         </Dropdown.Item>
         <Dropdown.Item
-          onClick={() => history.push(`/profiles/${id}/edit/password`)}
+          onClick={() => history.push(`/profile/${id}/edit/password`)}
           aria-label="edit-password"
         >
           <i className="fas fa-key" />

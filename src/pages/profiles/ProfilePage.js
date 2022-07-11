@@ -78,11 +78,15 @@ function ProfilePage() {
                     <Row className='justify-content-center'>
                         { currentUser && !is_owner && (
                             profile?.following_id ? (
-                                <Button onClick={() => handleUnfollow(profile)}>
+                                <Button 
+                                    className={appStyles.FormButton}
+                                    onClick={() => handleUnfollow(profile)}>
                                     Unfollow
                                 </Button>
                             ) : (
-                                <Button onClick={() => handleFollow(profile)}>
+                                <Button 
+                                    className={appStyles.FormButton}
+                                    onClick={() => handleFollow(profile)}>
                                     Follow
                                 </Button>
                             )

@@ -63,6 +63,10 @@ function ProfilePage() {
                     </Row>
                     <Row>
                         <Col>
+                            <div>{profile?.posts_count}</div>
+                            <div>posts</div>
+                        </Col>
+                        <Col>
                             <div>{profile?.followers_count}</div>
                             <div>followers</div>
                         </Col>
@@ -91,12 +95,6 @@ function ProfilePage() {
 
     const userProfilePosts = (
         <>
-            <Row className={appStyles.RowMargin}>
-                <Col>
-                    <p>{profile?.owner}'s posts</p>
-                    <p>{profile?.posts_count}</p>
-                </Col>
-            </Row>
             <Row className={appStyles.RowMargin}>
             {profilePosts.results.length ? (
                 <InfiniteScroll

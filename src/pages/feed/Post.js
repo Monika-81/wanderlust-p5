@@ -77,14 +77,13 @@ const Post = (props) => {
 
     return (
         <Card>
-            <Link to={`/posts/${id}/`} >
-                <Card.Img variant="top" src={image} alt={title} className={appStyles.CardImage} />
-            </Link>
             <Card.Body>
+                <Link to={`/posts/${id}/`} >
+                    <Card.Img variant="top" src={image} alt={title} className={appStyles.CardImage} />
+                </Link>
                 {title && <Card.Title>{title}</Card.Title>}
                 {subtitle && <Card.Subtitle>{subtitle}</Card.Subtitle>}
-                {content && <Card.Text>{content}</Card.Text>}
-                
+                {content && <Card.Text className={appStyles.ContentColumns}>{content}</Card.Text>}
                 <div>
                     {is_owner ? (
                         <OverlayTrigger

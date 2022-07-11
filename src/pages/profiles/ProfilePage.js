@@ -6,7 +6,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useProfileData, useSetProfileData } from '../../context/ProfileContext';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchMoreData } from '../../utils/utils';
-import Post from '../feed/Post';
+import PostPreview from '../feed/PostPreview';
 import { EditProfileDropdown } from '../../components/DotDropdown';
 import appStyles from "../../App.module.css";
 import styles from '../../styles/ProfilePage.module.css'
@@ -59,7 +59,7 @@ function ProfilePage() {
                         {profile?.is_owner && <EditProfileDropdown id={profile?.id} />}
                     </Row>
                     <Row className='justify-content-center'>
-                        {profile?.content && <Row>{profile.content}</Row>}
+                        {profile?.content && <Row className='px-4 mx-4'>{profile.content}</Row>}
                     </Row>
                     <Row>
                         <Col>
@@ -105,9 +105,9 @@ function ProfilePage() {
                     hasMore={!!profilePosts.next}
                     next={() => fetchMoreData(profilePosts, setProfilePosts)}
                 >
-                <CardDeck className="col-10">
+                <CardDeck className='justify-content-center'>
                     {profilePosts.results.map((post) => (
-                        <Post key={post.id} {...post} setPosts={setProfilePosts}/>
+                        <PostPreview key={post.id} {...post} setPosts={setProfilePosts}/>
                         ))
                     }
                 </CardDeck>

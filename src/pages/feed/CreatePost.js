@@ -82,7 +82,7 @@ const CreatePost = () => {
                   <Form.Label className="d-none">Title</Form.Label>
                     <Form.Control 
                       type="text" 
-                      placeholder="Enter title" 
+                      placeholder="Enter title (max 30 charaters)" 
                       name="title"
                       value={title}
                       onChange={handleChange}
@@ -96,7 +96,7 @@ const CreatePost = () => {
                       <Form.Label className="d-none">Subtitle</Form.Label>
                       <Form.Control 
                         type="text" 
-                        placeholder="Enter a subtitle" 
+                        placeholder="Enter a subtitle (max 60 charaters)" 
                         name="subtitle"
                         value={subtitle}
                         onChange={handleChange}

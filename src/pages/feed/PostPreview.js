@@ -57,9 +57,8 @@ const PostPreview = (props) => {
         }
       };
 
-
     return (
-        <Card>
+          <Card className={appStyles.CardStyle}>
             <Link to={`/posts/${id}/`} >
                 <Card.Img variant="top" src={image} alt={title} className={appStyles.CardImage} />
             </Link>

@@ -42,12 +42,12 @@ function FeedPage({message, filter = ''}) {
                 <>
                     {posts.results.length ? (
                         <InfiniteScroll
-                            style={{ overflow: "unset" }}
+                            style={{ overflow: "unset" }} 
                             dataLength={posts.results.length}
                             hasMore={!!posts.next}
                             next={() => fetchMoreData(posts, setPosts)}
                         >
-                        <CardDeck className="col-10">
+                        <CardDeck className='justify-content-center'>
                             {posts.results.map((post) => (
                                     <PostPreview key={post.id} {...post} setPosts={setPosts}/>
                                 ))

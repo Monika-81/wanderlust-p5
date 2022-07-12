@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {  Form, Button, Col, Row, Container, Alert, Image } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useSetCurrentUser } from "../../context/CurrentUserContext";
 import { setTokenTimestamp } from "../../utils/utils";
@@ -82,7 +82,9 @@ const SignInForm = () => {
                         <Button variant="primary" type="submit" className={appStyles.FormButton}>
                             Sign in
                         </Button>
-                        <p>Or Register!</p>
+                        <Link to="/signup">
+                            <p>Or Register!</p>
+                        </Link>
                         {errors.non_field_errors?.map((message, idx) => (
                             <Alert variant='warning' key={idx}>{message}</Alert>
                             )

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Container, Navbar, Nav, Button, Form, FormControl } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import { removeTokenTimestamp } from '../utils/utils';
@@ -42,13 +42,9 @@ function NavBar() {
             <Navbar expanded={expanded} expand='false' bg="light">
                 <Container className='justify-content-center'>
                     <Navbar.Brand>
-                        <img
-                            alt=""
-                            src=""
-                            width=""
-                            height=""
-                            className="d-inline-block align-top" />
-                        <h1>WANDERLUST</h1>
+                        <Link exact to="/">
+                            <h1>WANDERLUST</h1>
+                        </Link>
                         <p>Let's dream and get inspired together!</p>
                     </Navbar.Brand>
                     <Navbar.Toggle

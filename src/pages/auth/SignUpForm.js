@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { Form, Button, Col, Row, Container, Alert, Image } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useRedirect } from "../../hooks/useRedirect";
 import appStyles from "../../App.module.css";
@@ -96,7 +96,9 @@ const SignUpForm = () => {
                         <Button variant="primary" type="submit" className={appStyles.FormButton}>
                             Register
                         </Button>
-                        <p>Or Sign in!</p>
+                        <Link to="/signin">
+                            <p>Or Sign in!</p>
+                        </Link>
                         {errors.non_field_errors?.map((message, idx) => (
                             <Alert key={idx} variant="warning">
                                 {message}

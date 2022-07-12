@@ -19,11 +19,17 @@ export const DotDropdown = ({ handleEdit, handleDelete }) => {
     <Dropdown>
       <Dropdown.Toggle as={DotMenu} />
       <Dropdown.Menu popperConfig={{ strategy: "fixed" }}>
-        <Dropdown.Item onClick={handleEdit} aria-label="edit">
-          <i className="fas fa-edit" />
+        <Dropdown.Item 
+          onClick={handleEdit} 
+          aria-label="edit"
+        >
+          <i className="fas fa-edit" /> Edit
         </Dropdown.Item>
-        <Dropdown.Item onClick={handleDelete} aria-label="delete">
-          <i className="fas fa-trash-alt" />
+        <Dropdown.Item 
+          onClick={handleDelete} 
+          aria-label="delete"
+        >
+          <i className="fas fa-trash-alt" /> Delete
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
@@ -40,13 +46,13 @@ export function EditProfileDropdown({ id }) {
           onClick={() => history.push(`/profile/${id}/edit`)}
           aria-label="edit-profile"
         >
-          <i className="fas fa-edit" />
+          <i className="fas fa-edit" /> Edit profile
         </Dropdown.Item>
         <Dropdown.Item
           onClick={() => history.push(`/profile/${id}/edit/password`)}
           aria-label="edit-password"
         >
-          <i className="fas fa-key" />
+          <i className="fas fa-key" /> Change password
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>

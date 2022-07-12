@@ -96,6 +96,7 @@ const EditPassword = () => {
             >
               Cancel edit
             </Button>
+            
           </Form>
         </Container>
       </Col>

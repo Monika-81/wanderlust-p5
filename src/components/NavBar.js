@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import axios from 'axios';
-import { Container, Navbar, Nav, Button, Form, FormControl } from 'react-bootstrap';
+import { Container, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import { removeTokenTimestamp } from '../utils/utils';
+import NavbarContext from '../context/NavbarContect';
+
 
 function NavBar() {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
+    const { query, setQuery } = useContext(NavbarContext);
 
     const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
@@ -42,7 +45,7 @@ function NavBar() {
             <Navbar expanded={expanded} expand='false' bg="light">
                 <Container className='justify-content-center'>
                     <Navbar.Brand>
-                        <Link exact to="/">
+                        <Link exact to="/" >
                             <h1>WANDERLUST</h1>
                         </Link>
                         <p>Let's dream and get inspired together!</p>
@@ -56,9 +59,19 @@ function NavBar() {
                             <NavLink exact to="/" activeClassName=''>Home</NavLink>
                         {currentUser ? loggedInLinks : loggedOutLinks}
                         </Nav>
-                        <Form inline ref={ref} onClick={() => setExpanded(expanded)}>
-                            <FormControl  type="text" placeholder="Search posts" className="mx-auto" />
-                            <Button variant="outline-primary">Search</Button>
+                        <Form 
+                            inline ref={ref} 
+                            onClick={() => setExpanded(expanded)}
+                            onSubmit={(event) => event.preventDefault()}
+                        >
+                            <FormControl  
+                                type="search" 
+                                placeholder="Search posts" 
+                                className="mx-auto"
+                                id="search"
+                                value={query}
+                                onChange={(event) => setQuery(event.target.value)}
+                            />
                         </Form>
                     </Navbar.Collapse>
                 </Container>

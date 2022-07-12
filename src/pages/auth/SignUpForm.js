@@ -46,7 +46,7 @@ const SignUpForm = () => {
             </Col>
             <Col className={appStyles.ColForm}>
                 <Container>
-                    <h1 className={appStyles.FormHeader}>Register</h1>
+                    <h1 className={appStyles.FormHeader}>Sign up!</h1>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="username" className={appStyles.FormGroup}>
                             <Form.Label className="d-none">Username</Form.Label>

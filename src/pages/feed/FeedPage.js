@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {CardDeck, Col, Container, Row} from "react-bootstrap";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useLocation } from 'react-router-dom';
@@ -6,13 +6,14 @@ import { axiosReq } from '../../api/axiosDefaults';
 import { fetchMoreData } from '../../utils/utils';
 import PostPreview from './PostPreview';
 import appStyles from "../../App.module.css";
+import NavbarContext from '../../context/NavbarContect';
 
 
 function FeedPage({message, filter = ''}) {
     const [posts, setPosts] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
-    const [query, setQuery] = useState('');
+    const { query } = useContext(NavbarContext);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -26,11 +27,11 @@ function FeedPage({message, filter = ''}) {
         }
 
         setHasLoaded(false)
-        const timer = setTimeout(() => {
-            fetchPosts()
-        }, 600);  
-        return () => {
-            clearTimeout(timer)
+            const timer = setTimeout(() => {
+                fetchPosts()
+            }, 600);  
+            return () => {
+                clearTimeout(timer)
         }      
     }, [filter, query, pathname])
 

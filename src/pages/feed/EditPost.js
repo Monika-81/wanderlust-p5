@@ -64,7 +64,7 @@ function EditPost() {
         try {
             await axiosReq.put(`/posts/${id}/`, formData);
             history.push(`/posts/${id}`);
-            } catch (err) {
+        } catch (err) {
             console.log(err);
             if (err.response?.status !== 401){
                 setErrors(err.response?.data);

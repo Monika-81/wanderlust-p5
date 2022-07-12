@@ -34,11 +34,15 @@ const Post = (props) => {
     };
 
     const handleDelete = async () => {
-        try {
-            await axiosRes.delete(`/posts/${id}/`);
-            history.goBack();
-        } catch (err) {
-            console.log(err)
+        if (window.confirm("Do you really want to delete this post?")) {
+            try {
+                await axiosRes.delete(`/posts/${id}/`);
+                history.goBack();
+            } catch (err) {
+                console.log(err)
+            }
+        } else {
+            history.goBack()
         }
     }
 

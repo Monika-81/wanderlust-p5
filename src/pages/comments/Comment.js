@@ -22,26 +22,27 @@ const Comment = (props) => {
   const is_owner = currentUser?.username === owner;
   const [ showEditComment, setShowEditComment] = useState(false);
 
-
   const handleDelete = async () => {
-    try {
-        await axiosRes.delete(`/comments/${id}/`);
-        setPost((prevpost) => ({
-          results: [
-            {
-              ...prevpost.results[0],
-              comments_count: prevpost.results[0].comments_count -1
-            },
-          ],
-        }));
-        setComments((prevComments) => ({
-          ...prevComments,
-          results: prevComments.results.filter((comment) => comment.id !== id),
-        }));
-    } catch (err) {
-        console.log(err)
-    }
-}
+    if (window.confirm("Do you really want to delete this comment?")){
+      try {
+          await axiosRes.delete(`/comments/${id}/`);
+          setPost((prevpost) => ({
+            results: [
+              {
+                ...prevpost.results[0],
+                comments_count: prevpost.results[0].comments_count -1
+              },
+            ],
+          }));
+          setComments((prevComments) => ({
+            ...prevComments,
+            results: prevComments.results.filter((comment) => comment.id !== id),
+          }));
+      } catch (err) {
+          console.log(err)
+      }
+    } 
+  }
 
   return (
     <div>

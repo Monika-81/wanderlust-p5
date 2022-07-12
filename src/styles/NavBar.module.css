@@ -1,0 +1,15 @@
+.NavLink {
+    margin: 1rem;
+    color:black;
+}    
+
+.NavLink:hover {
+    color:red;
+    text-decoration: none;
+
+}
+
+.Active {
+    color: blue;
+}
+

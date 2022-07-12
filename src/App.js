@@ -13,8 +13,9 @@ import { useCurrentUser } from './context/CurrentUserContext';
 import EditProfile from './pages/profiles/EditProfile';
 import EditPassword from './pages/profiles/EditPassword';
 import styles from './App.module.css'
-import NavbarContext from './context/NavbarContect';
+import NavbarContext from './context/NavbarContext';
 import { useEffect, useState } from 'react';
+
 
 function App() {
   const currentUser = useCurrentUser();
@@ -26,8 +27,8 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-      setQuery('')
-  },[location.pathname]);
+    setQuery('')
+  }, [location.pathname]);
 
   return (
     <NavbarContext.Provider value={variables}>
@@ -73,7 +74,7 @@ function App() {
           </Switch>
         </Container>
         <Container>
-          <h1>Link to top of page</h1>
+          <a href="#root" aria-label="Go back to top" className={`${styles.BottomLink} fixed-bottom`}>Back to top</a>
         </Container>
       </div>
     </NavbarContext.Provider>

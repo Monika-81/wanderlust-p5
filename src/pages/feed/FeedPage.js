@@ -6,7 +6,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 import { fetchMoreData } from '../../utils/utils';
 import PostPreview from './PostPreview';
 import appStyles from "../../App.module.css";
-import NavbarContext from '../../context/NavbarContect';
+import NavbarContext from '../../context/NavbarContext';
 
 
 function FeedPage({message, filter = ''}) {

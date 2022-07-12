@@ -1,8 +1,8 @@
 .App {
-    height: 100%;
+    height: 100vh;
     text-align: center;
     background-color:blanchedalmond;
-  }
+}
 
 .RowMargin {
     margin-top: 5vh;
@@ -63,6 +63,12 @@
     column-count: 2;
     height: 100px;
     overflow:hidden;
+}
+
+.BottomLink {
+    color: black;
+    line-height: 4rem;
+    position: bottom;
 }
 
 @media screen and (max-width: 750px) {

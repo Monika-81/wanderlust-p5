@@ -51,7 +51,7 @@ function ProfilePage() {
         <>
             <Row className={appStyles.RowMargin}>
                 <Col className={appStyles.ColImage}>
-                    <Image src={profile?.image} rounded className={appStyles.FormImage}/>
+                    <Image src={profile?.image} fluid/>
                 </Col>
                 <Col className={appStyles.ColForm}>
                     <Row className={styles.ProfileHeader}>

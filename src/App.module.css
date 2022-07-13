@@ -74,13 +74,33 @@ footer {
 
 .CardImage {
     max-width: 400px;
+}
 
+.SmallAvatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 0.5rem;;
 }
 
 .CardStyle {
-    min-width: 30%;
-    max-width: 30%;
+    min-width: 33%;
+    max-width: 33%;
     margin: 2rem;
+}
+
+i {
+    font-size: 20px;
+}
+
+.CardFlex {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 1rem;
+}
+
+.CardTitle {
+    font-size: 20px;
 }
 
 .ContentColumns {
@@ -124,7 +144,6 @@ hr:after {
 @media screen and (max-width: 575px) {
     .ColImage, .PreviewImage {
         min-width: 85vw;
-        max-width: 85vw;
     }
 
     .FormHeader {

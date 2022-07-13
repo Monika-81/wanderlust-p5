@@ -58,53 +58,59 @@ const PostPreview = (props) => {
       };
 
     return (
-          <Card className={appStyles.CardStyle}>
-            <Link to={`/posts/${id}/`} >
-                <Card.Img variant="top" src={image} alt={title} className={appStyles.CardImage} />
-            </Link>
-            <Card.Body>
-                {title && <Card.Title>{title}</Card.Title>}
-                {subtitle && <Card.Subtitle>{subtitle}</Card.Subtitle>}                
-                <div>
+          <Card className={appStyles.CardStyle} fluid>
+            <div className={appStyles.CardFlex}>
+                {title && <span className={appStyles.CardTitle}>{title}</span>}
+                <span>{updated_at}</span> 
+            </div>
+            <Media>
+                <Link to={`/posts/${id}/`} >
+                    <Card.Img variant="top" src={image} alt={title} fluid />
+                </Link>
+            </Media>
+            <Card.Body className="p-1">
+                <div> 
+                    {subtitle && <p>{subtitle}</p>} 
+                </div>
+                <div className={appStyles.CardFlex}>     
+                    <div className='pt-3'>      
+                        {owner}
+                    </div>     
+                    <div>
+                    <Link to={`/profile/${profile_id}`}>
+                            <Image src={profile_image} className={appStyles.SmallAvatar} />
+                    </Link>
                     {is_owner ? (
                         <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>You can't like your own post!</Tooltip>}
                         >
-                            <i className="fa fa-plane-departure"></i>
+                            <i className="fa fa-plane-departure m-3"></i>
                         </OverlayTrigger>
                     ) : like_id ? (
                         <span onClick={handleUnlike}>
-                            <i className="fa fa-plane-departure" />
+                            <i className="fa fa-plane-departure m-3" />
                         </span>
                     ) : currentUser ? (
                         <span onClick={handleLike}>
-                            <i className="fa fa-plane-departure" />
+                            <i className="fa fa-plane-departure m-3" />
                         </span>
                     ) : (
                         <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>Log in to like posts!</Tooltip>}
                         >
-                            <i className="fa fa-plane-departure" />
+                            <i className="fa fa-plane-departure m-3" />
                         </OverlayTrigger>
                     )}
                     {likes_count}
                         <Link to={`/posts/${id}`}>
-                            <i className="far fa-comments" />
+                            <i className="far fa-comments m-3" />
                         </Link>
                     {comments_count}
+                    </div>
                 </div>
             </Card.Body>
-            <Card.Footer>
-                <Media>
-                    <Link to={`/profile/${profile_id}`}>
-                        <Image src={profile_image} height={60} width={60} rounded/>
-                    </Link>
-                    <span>{owner}</span>
-                    <span>{updated_at}</span>
-                </Media>
-            </Card.Footer>
         </Card>
     )
 }

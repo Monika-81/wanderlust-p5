@@ -61,7 +61,7 @@ const CreateComment = (props) => {
           />
         </InputGroup>
       </Form.Group>
-      <button
+      <button 
         disabled={!content.trim()}
         type="submit"
       >

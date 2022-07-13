@@ -5,6 +5,7 @@ import { axiosRes } from '../../api/axiosDefaults';
 import { DotDropdown } from '../../components/DotDropdown';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import EditComment from './EditComment';
+import styles from "../../styles/Comment.module.css";
 
 const Comment = (props) => {
   const {
@@ -45,11 +46,10 @@ const Comment = (props) => {
   }
 
   return (
-    <div>
-        <hr />
+    <div className={styles.Comment}>
         <Media>
             <Link to={`/profiles/${profile_id}`}>
-                <Image src={profile_image} height={60} width={60} rounded />
+                <Image src={profile_image} height={60} width={60} roundedCircle />
             </Link>
             <Media.Body>
                 <span>{owner} </span>

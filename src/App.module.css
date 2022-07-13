@@ -3,6 +3,12 @@
     min-height: 100vh;
     text-align: center;
     background-color:blanchedalmond;
+    font-family: 'Caveat', cursive;   
+    font-weight: bold; 
+}
+
+p {
+    font-size: 20px;
 }
 
 a {
@@ -76,9 +82,31 @@ footer {
     -webkit-column-count: 2; /* Chrome, Safari, Opera */
     -moz-column-count: 2; /* Firefox */
     column-count: 2;
-    height: 100px;
-    overflow:hidden;
+    height: fit-content;
+    font-size: 20px;
+    font-family: 'Kalam', cursive;
+    padding: 2rem;
 }   
+
+/* Code Credit: https://css-tricks.com/examples/hrs/ */
+hr {
+    overflow: visible; 
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+hr:after {
+    content: '¤ * ¤ * ¤ * ¤';
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+/* end code credit*/
 
 @media screen and (max-width: 750px) {
     .CardStyle {
@@ -102,7 +130,7 @@ footer {
         -webkit-column-count: 1; /* Chrome, Safari, Opera */
         -moz-column-count: 1; /* Firefox */
         column-count: 1;
-        overflow:hidden;
+        padding: 1rem;
     }
 
     .CardStyle {

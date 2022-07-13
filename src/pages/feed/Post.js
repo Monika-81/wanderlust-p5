@@ -1,10 +1,11 @@
 import React from 'react'
-import { Card, Image, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Col, Image, OverlayTrigger, Tooltip, Row, Container } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import { DotDropdown } from "../../components/DotDropdown";
 import { axiosRes } from '../../api/axiosDefaults';
 import appStyles from "../../App.module.css";
+import styles from '../../styles/Post.module.css'
 
 
 const Post = (props) => {
@@ -80,62 +81,90 @@ const Post = (props) => {
 
 
     return (
-        <Card>
-            <Card.Body>
-                <Link to={`/posts/${id}/`} >
-                    <Card.Img variant="top" src={image} alt={title} className={appStyles.CardImage} />
-                </Link>
-                {title && <Card.Title>{title}</Card.Title>}
-                {subtitle && <Card.Subtitle>{subtitle}</Card.Subtitle>}
-                {content && <Card.Text className={appStyles.ContentColumns}>{content}</Card.Text>}
-                <div>
-                    {is_owner ? (
-                        <OverlayTrigger
+        <Row>
+            <Col className={appStyles.ColForm}>
+                <Row className="flew-row flex-wrap">
+                    <Col className={styles.ColFlex}>
+                        <hr />
+                        {title && subtitle && (
+                            <h1 className={styles.Title}>{title}: {subtitle}</h1>
+                        )}
+                        <hr />
+                        <p className={styles.Date}>{updated_at}</p>
+                    </Col>
+                    <Col className={styles.ColFlex}>
+                        <Link to={`/posts/${id}/`}>
+                            <Image
+                            variant="top"
+                            src={image}
+                            alt={title}
+                            fluid
+                            />
+                        </Link>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Container>
+                            {content && (
+                            <p className={appStyles.ContentColumns}>{content}</p>
+                            )}
+                        </Container>
+                    </Col>
+                </Row>
+                <Row className={styles.PostFooter}>
+                    <Col className={styles.ColFlexFooter}>
+                        <span className={styles.Author}>/ {owner}</span>
+                    </Col>
+                    <Col className={styles.ColFlexFooter}>
+                        <Link to={`/profile/${profile_id}`}>
+                            <Image
+                            src={profile_image}
+                            height={30}
+                            width={30}
+                            roundedCircle
+                            className='m-3'
+                            />
+                        </Link>
+                        {is_owner ? (
+                            <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>You can't like your own post!</Tooltip>}
-                        >
-                            <i className="fa fa-plane-departure"></i>
-                        </OverlayTrigger>
-                    ) : like_id ? (
-                        <span onClick={handleUnlike}>
-                            <i className="fa fa-plane-departure" />
-                        </span>
-                    ) : currentUser ? (
-                        <span onClick={handleLike}>
-                            <i className="fa fa-plane-departure" />
-                        </span>
-                    ) : (
-                        <OverlayTrigger
+                            >
+                            <i className="fa fa-plane-departure m-4" />
+                            </OverlayTrigger>
+                        ) : like_id ? (
+                            <span onClick={handleUnlike}>
+                            <i className="fa fa-plane-departure m-4" />
+                            </span>
+                        ) : currentUser ? (
+                            <span onClick={handleLike}>
+                            <i className="fa fa-plane-departure m-4" />
+                            </span>
+                        ) : (
+                            <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>Log in to like posts!</Tooltip>}
-                        >
-                            <i className="fa fa-plane-departure" />
-                        </OverlayTrigger>
-                    )}
-                    {likes_count}
+                            >
+                            <i className="fa fa-plane-departure m-4" />
+                            </OverlayTrigger>
+                        )}
+                        {likes_count}
                         <Link to={`/posts/${id}`}>
-                            <i className="far fa-comments" />
+                            <i className="far fa-comments m-4" />
                         </Link>
-                    {comments_count}
-                </div>
-            </Card.Body>
-            <Card.Footer>
-                <Media>
-                    <Link to={`/profile/${profile_id}`}>
-                        <Image src={profile_image} height={60} width={60} rounded/>
-                    </Link>
-                    <span>{owner}</span>
-                    <span>{updated_at}</span>
-                    {is_owner && postPage && (
-                        <DotDropdown
-                            handleEdit={handleEdit}
-                            handleDelete={handleDelete}
-                        />
-                    )}
-                </Media>
-            </Card.Footer>
-        </Card>
-    )
+                        {comments_count}
+                        {is_owner && postPage && (
+                            <DotDropdown
+                                handleEdit={handleEdit}
+                                handleDelete={handleDelete}
+                            />
+                        )}
+                    </Col>
+                </Row>
+            </Col>
+        </Row>
+    );
 }
 
 export default Post;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Image, Media } from 'react-bootstrap'
+import { Image, Media, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { axiosRes } from '../../api/axiosDefaults';
 import { DotDropdown } from '../../components/DotDropdown';
@@ -47,35 +47,44 @@ const Comment = (props) => {
 
   return (
     <div className={styles.Comment}>
-        <Media>
-            <Link to={`/profiles/${profile_id}`}>
-                <Image src={profile_image} height={60} width={60} roundedCircle />
-            </Link>
-            <Media.Body>
-                <span>{owner} </span>
-                <span> {updated_at}</span>
-                {showEditComment ? (
-                  <EditComment 
-                    id={id}
-                    content={content}
-                    profile_id={profile_id}
-                    profile_image={profile_image}
-                    setComments={setComments}
-                    setShowEditComment={setShowEditComment}  
-                  />
-                ) : (
-                  <p>{content}</p>
-                )}
-            </Media.Body>
-            {is_owner && !showEditComment && (
-              <DotDropdown
-                handleEdit={() => setShowEditComment(true)}
-                handleDelete={handleDelete}
-              />
-            )}
-        </Media>
+      <Media>
+        <Link to={`/profile/${profile_id}`}>
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>{owner}</Tooltip>}
+          >
+            <Image src={profile_image} className={styles.CommentAvatar}/>
+          </OverlayTrigger>
+        </Link>
+        <Media.Body className={styles.Comments} rounded>
+          <p>
+            {owner} wrote:
+          </p>
+          {showEditComment ? (
+            <EditComment
+              id={id}
+              content={content}
+              profile_id={profile_id}
+              profile_image={profile_image}
+              setComments={setComments}
+              setShowEditComment={setShowEditComment}
+            />
+          ) : (
+            <>
+              <p>{content}</p>
+              <p>{updated_at}</p>
+              {is_owner && !showEditComment && (
+                <DotDropdown
+                  handleEdit={() => setShowEditComment(true)}
+                  handleDelete={handleDelete}
+                />
+              )}
+            </>
+          )}
+        </Media.Body>
+      </Media>
     </div>
-  )
+  );
 }
 
 export default Comment;

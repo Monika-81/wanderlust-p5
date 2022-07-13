@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Image, InputGroup } from 'react-bootstrap';
 import { axiosRes } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
+import styles from "../../styles/Comment.module.css";
 
 const CreateComment = (props) => {
   const {
@@ -44,7 +45,7 @@ const CreateComment = (props) => {
 
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} className={styles.Form}>
       <Form.Group>
         <InputGroup>
           <Link to={`/profiles/${profile_id}`}>
@@ -56,6 +57,7 @@ const CreateComment = (props) => {
             value={content}
             onChange={handleChange}
             rows={3}
+            size="lg"
           />
         </InputGroup>
       </Form.Group>
@@ -63,7 +65,7 @@ const CreateComment = (props) => {
         disabled={!content.trim()}
         type="submit"
       >
-        post
+        Submit comment
       </button>
     </Form>
   );

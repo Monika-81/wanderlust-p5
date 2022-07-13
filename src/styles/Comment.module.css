@@ -1,6 +1,28 @@
 .Comment {
-    border: 0.5px  solid #aaaaaa ;
+    width: 90%;
+    margin: 1rem;
+}
+
+.Comments {
     background-color: white;
-    width: 100%;
-    margin: 0.5rem;
+    padding: 1rem;
+    border: 0.5px  solid #aaaaaa ;
+    box-shadow: 10px 5px 5px #aaaaaa;
+}
+
+.CommentAvatar {
+    height: 60px;
+    width: 60px;
+    margin: 2rem;
+    border-radius: 50%;
+    box-shadow: 10px 5px 5px #aaaaaa;
+}
+
+.Form {
+    margin-top: 1rem;
+    font-size: 20px;
+}
+
+#input {
+    font-size: 20px;
 }

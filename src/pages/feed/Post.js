@@ -118,35 +118,45 @@ const Post = (props) => {
                     </Col>
                     <Col className={styles.ColFlexFooter}>
                         <Link to={`/profile/${profile_id}`}>
-                            <Image
-                            src={profile_image}
-                            height={30}
-                            width={30}
-                            roundedCircle
-                            className='m-3'
-                            />
+                            <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>{owner}</Tooltip>}
+                            >
+                                <Image
+                                    src={profile_image}
+                                    height={30}
+                                    width={30}
+                                    roundedCircle
+                                    className='m-3'
+                                />
+                            </OverlayTrigger>
                         </Link>
                         {is_owner ? (
                             <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>You can't like your own post!</Tooltip>}
+                                placement="top"
+                                overlay={<Tooltip>You can't like your own post!</Tooltip>}
                             >
-                            <i className="fa fa-plane-departure m-4" />
+                                <i className="fa fa-plane-departure m-4" />
                             </OverlayTrigger>
                         ) : like_id ? (
                             <span onClick={handleUnlike}>
-                            <i className="fa fa-plane-departure m-4" />
+                                <i className="fa fa-plane-departure m-4" />
                             </span>
                         ) : currentUser ? (
-                            <span onClick={handleLike}>
-                            <i className="fa fa-plane-departure m-4" />
-                            </span>
+                            <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>Click to like this post!</Tooltip>}
+                            >
+                                <span onClick={handleLike}>
+                                    <i className="fa fa-plane-departure m-4" />
+                                </span>
+                            </OverlayTrigger>
                         ) : (
                             <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>Log in to like posts!</Tooltip>}
+                                placement="top"
+                                overlay={<Tooltip>Log in to like posts!</Tooltip>}
                             >
-                            <i className="fa fa-plane-departure m-4" />
+                                <i className="fa fa-plane-departure m-4" />
                             </OverlayTrigger>
                         )}
                         {likes_count}

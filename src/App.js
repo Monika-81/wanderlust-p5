@@ -48,7 +48,7 @@ function App() {
               exact path="/posts" 
               render={() => (
                 <FeedPage 
-                  message="You are not following any accounts yet."
+                  message="No results found. Adjust search criteria or follow more accounts."
                   filter={`owner__followed__owner__profile=${profile_id}&`}
                 />
               )} 
@@ -57,7 +57,7 @@ function App() {
               exact path="/likes" 
               render={() => (
                 <FeedPage 
-                  message="You haven't liked any posts yet."
+                  message="No results found. Adjust search criteria or like more posts."
                   filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
                 />
               )} 
@@ -72,9 +72,6 @@ function App() {
             <Route exact path="/signin" render={() => <SignInForm/>} />
             <Route render={() => <p>Page not found!</p>} />
           </Switch>
-        </Container>
-        <Container>
-          <a href="#root" aria-label="Go back to top" className={`${styles.BottomLink} fixed-bottom`}>Back to top</a>
         </Container>
       </div>
     </NavbarContext.Provider>

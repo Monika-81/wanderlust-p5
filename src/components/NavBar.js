@@ -29,13 +29,6 @@ function NavBar() {
     const loggedInLinks = 
         <>
             <NavLink 
-                to={`/profile/${currentUser?.profile_id}`} 
-                activeClassName={styles.Active}
-                className={styles.NavLink}
-            >
-                {currentUser?.username}
-            </NavLink>
-            <NavLink 
                 exact to="/posts" 
                 activeClassName={styles.Active}
                 className={styles.NavLink}
@@ -48,6 +41,13 @@ function NavBar() {
                 className={styles.NavLink}
             >
                 Liked
+            </NavLink>
+            <NavLink 
+                to={`/profile/${currentUser?.profile_id}`} 
+                activeClassName={styles.Active}
+                className={styles.NavLink}
+            >
+                Profile
             </NavLink>
             <NavLink 
                 to="/posts/create" 

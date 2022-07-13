@@ -37,7 +37,7 @@ function FeedPage({message, filter = ''}) {
 
 
     return (
-        <Row className={appStyles.RowMargin}>
+        <Row className={`${appStyles.RowMargin} ${appStyles.App}`}>
             <Col>
             {hasLoaded ? (
                 <>

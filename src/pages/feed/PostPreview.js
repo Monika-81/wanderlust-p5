@@ -64,12 +64,12 @@ const PostPreview = (props) => {
                 {title && <span className={appStyles.CardTitle}>{title}</span>}
                 <span>{updated_at}</span>
             </div>
-            <Media>
-                <Link to={`/posts/${id}/`}>
-                    <Card.Img variant="top" src={image} alt={title} fluid />
-                </Link>
-            </Media>
             <Card.Body className="p-1">
+                <Media className='m-2'>
+                    <Link to={`/posts/${id}/`}>
+                        <Card.Img variant="top" src={image} alt={title} fluid />
+                    </Link>
+                </Media>
                 <div>{subtitle && <p>{subtitle}</p>}</div>
             </Card.Body>
             <Card.Footer className={styles.Footer}>

@@ -2,9 +2,9 @@
     height: 100%;
     min-height: 100vh;
     text-align: center;
-    background-color:blanchedalmond;
     font-family: 'Caveat', cursive;   
     font-weight: bold; 
+    background-color: rgba(230,230,230,1);
 }
 
 ::placeholder {
@@ -28,11 +28,19 @@ a:hover {
 footer {
     line-height: 4rem;
     text-align: center;
+    background-color: rgba(230,230,230,1);
+}
+
+i {
+    font-size: 20px;
 }
 
 .RowMargin {
-    margin-top: 5vh;
     padding: 0;
+    background-color: transparent;
+    max-width: 1500px;
+    margin: 0 auto;
+    
 }
 
 .ColImage {
@@ -49,11 +57,12 @@ footer {
 }
 
 .ColForm {
-    border: 0.5px  solid #aaaaaa ;
-    box-shadow: 10px 5px 5px #aaaaaa;
+    border: 0.5px solid rgb(230,230,230);
+    box-shadow: 5px 4px 4px #aaaaaa;
     background-color: white;
     padding: 0;
-    width: 100%;
+    margin: 0 auto;
+    max-width: 1000px;
 }
 
 .FormHeader {
@@ -73,6 +82,12 @@ footer {
     max-height: 500px;
 }
 
+.CardDeck {
+    padding: 5vw 10vw;
+    background: rgb(241,241,241);
+    background: linear-gradient(0deg, rgba(230,230,230,1) 0%, rgba(241,241,241,1) 60%, rgb(250,250,250) 100%);
+}
+
 .CardImage {
     max-width: 400px;
 }
@@ -82,18 +97,14 @@ footer {
     width: 30px;
     border-radius: 50%;
     margin: 0.5rem;;
-    box-shadow: 10px 5px 5px #aaaaaa;
+    box-shadow: 5px 4px 4px #aaaaaa;
 }
 
 .CardStyle {
-    min-width: 33%;
-    max-width: 33%;
-    margin: 2rem;
-    box-shadow: 10px 5px 5px #aaaaaa;
-}
-
-i {
-    font-size: 20px;
+    min-width: 30%;
+    max-width: 30%;
+    margin: 0 0 !important;
+    border: 0.5px solid rgb(230,230,230);
 }
 
 .CardFlex {
@@ -136,25 +147,16 @@ hr:after {
 }
 /* end code credit*/
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1120px) {
     .CardStyle {
         min-width: 40%;
         max-width: 40%;
     }
 }
 
-
-@media screen and (max-width: 700px) {
-    .CardStyle {
-        min-width: 50%;
-        max-width: 50%;
-    }
-}
-
-
 @media screen and (max-width: 575px) {
     .ColImage, .PreviewImage {
-        min-width: 85vw;
+        min-width: 80vw;
     }
 
     .FormHeader {
@@ -174,4 +176,9 @@ hr:after {
         margin: 0;
         padding: 0;
     }
+
+    .CardDeck {
+        padding: 5vw 5vw;
+    }
+
 }

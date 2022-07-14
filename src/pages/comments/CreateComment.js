@@ -47,7 +47,7 @@ const CreateComment = (props) => {
   return (
     <Form onSubmit={handleSubmit} className={styles.Form}>
       <Form.Group>
-        <InputGroup>
+        <InputGroup className={styles.InputGroup}>
           <Link to={`/profiles/${profile_id}`}>
             <Image src={profile_image}/>
           </Link>

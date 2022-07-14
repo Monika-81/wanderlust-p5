@@ -1,26 +1,35 @@
 .Comment {
     width: 90%;
     margin: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .Comments {
     background-color: white;
     padding: 1rem;
-    border: 0.5px  solid #aaaaaa ;
-    box-shadow: 10px 5px 5px #aaaaaa;
+    border: 0.5px solid rgb(230,230,230);
+    box-shadow: 5px 4px 4px #aaaaaa;
 }
 
 .CommentAvatar {
     height: 60px;
     width: 60px;
-    margin: 2rem;
+    margin: 2rem 2rem 2rem 0;
     border-radius: 50%;
-    box-shadow: 10px 5px 5px #aaaaaa;
+    box-shadow: 5px 4px 4px #aaaaaa;
 }
 
 .Form {
     margin-top: 1rem;
     font-size: 20px;
+    max-width: 1000px;
+    margin: auto;
+    width: 100%;
+}
+
+.InputGroup {
+    box-shadow: 5px 4px 4px #aaaaaa;
 }
 
 #input {
@@ -29,12 +38,12 @@
 
 @media screen and (max-width: 750px) {
     .Comment {
-        width: 100%;
-        margin: 0.5rem;
-        
+        width: 100%;      
     }
 
     .CommentAvatar {
-        margin: 0.5rem;
+        margin: 0.5rem 0.5rem 0.5rem 0;
+        height: 40px;
+        width: 40px;
     }
 }

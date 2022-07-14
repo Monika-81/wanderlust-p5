@@ -1,5 +1,4 @@
 import NavBar from './components/NavBar';
-import { Container } from 'react-bootstrap';
 import {Route, Switch, useLocation} from 'react-router-dom'
 import './api/axiosDefaults'
 import SignUpForm from './pages/auth/SignUpForm';
@@ -34,7 +33,7 @@ function App() {
     <NavbarContext.Provider value={variables}>
       <div className={styles.App}>
         <NavBar />
-        <Container>
+        <div className={styles.CardDeck}>
           <Switch>
             <Route 
               exact path="/" 
@@ -72,7 +71,7 @@ function App() {
             <Route exact path="/signin" render={() => <SignInForm/>} />
             <Route render={() => <p>Page not found!</p>} />
           </Switch>
-        </Container>
+        </div>
       </div>
     </NavbarContext.Provider>
   );

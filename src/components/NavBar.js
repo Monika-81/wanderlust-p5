@@ -85,8 +85,8 @@ function NavBar() {
 
     return (
         <div>
-            <Navbar expanded={expanded} expand='false' bg='white'>
-                <Container className='justify-content-center'>
+            <Navbar expanded={expanded} expand='false' className={styles.NavbarImage}>
+                <Container className='justify-content-center' >
                     <Navbar.Brand>
                         <NavLink exact to="/" className={styles.NavLink} >
                             <h1>WANDERLUST</h1>

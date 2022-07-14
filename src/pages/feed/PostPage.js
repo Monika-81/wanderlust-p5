@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import { useCurrentUser } from '../../context/CurrentUserContext';
@@ -38,7 +38,7 @@ const PostPage = () => {
     <Row className={appStyles.RowMargin}>
         <Col>
             <Post {...post.results[0]} setPosts={setPost} postPage />
-            <Container>
+            <Row className='flex-column justify-center'>
                 {currentUser ? (
                     <CreateComment
                         profile_id={currentUser.profile_id}
@@ -62,7 +62,7 @@ const PostPage = () => {
                 ) : (
                     <span>No comments... yet!</span>
                 )}
-            </Container>
+            </Row>
         </Col>
     </Row>
   )

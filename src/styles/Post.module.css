@@ -1,5 +1,6 @@
 .ColFlex {
-    padding: 3rem 3rem 1rem;
+    padding: 3rem 4rem 1rem;
+    position: relative;
 }
 
 .ColFlexFooter {
@@ -19,13 +20,24 @@
     font-size: 25px;
 }
 
-@media screen and (max-width: 575px) {
-    .ColFlex {
-        padding: 2rem;
-    }
+@media screen and (max-width: 990px) {
+
     .ColFlex, .ColFlexFooter {
         flex-basis: auto;
     }
 
+    .Fluid {
+        max-width: unset !important;
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 575px) {
+    
+    .ColFlex {
+        padding: 2rem;
+    }
+    
 }
 

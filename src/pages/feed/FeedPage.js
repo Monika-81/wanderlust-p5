@@ -38,7 +38,7 @@ function FeedPage({message, filter = ''}) {
 
     return (
         <Row className={`${appStyles.RowMargin} ${appStyles.App}`}>
-            <Col>
+            <Col className='mb-5'>
             {hasLoaded ? (
                 <>
                     {posts.results.length ? (

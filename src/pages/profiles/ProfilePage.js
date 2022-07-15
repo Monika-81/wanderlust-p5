@@ -48,53 +48,57 @@ function ProfilePage() {
     }, [id, setProfileData]);
 
     const userProfile = (
-        <>
-            <Row className={appStyles.RowMargin}>
-                <Col className={appStyles.ColImage}>
-                    <Image src={profile?.image} fluid/>
+      <>
+        <Row className={appStyles.RowMargin}>
+          <Col className={styles.ProfileColForm}>
+            <Row className={styles.ProfileInfo}>
+                <Image src={profile?.image} className={styles.ProfileAvatar} />
+            </Row>
+            <Row className={styles.ProfileInfo}>
+                <h3 className="mr-4">{profile?.owner}</h3>
+                {profile?.is_owner && <EditProfileDropdown id={profile?.id} />}
+            </Row>
+            <Row className="justify-content-center m-3">
+                {profile?.content && (
+                    <Row className="px-4 mx-4">{profile.content}</Row>
+                )}
+            </Row>
+            <Row className={styles.ProfileInfo}>
+                <Col>
+                    <div>{profile?.posts_count}</div>
+                    <div>Diary posts</div>
                 </Col>
-                <Col className={appStyles.ColForm}>
-                    <Row className={styles.ProfileHeader}>
-                        <h3 className='mr-4'>{profile?.owner}</h3>
-                        {profile?.is_owner && <EditProfileDropdown id={profile?.id} />}
-                    </Row>
-                    <Row className='justify-content-center'>
-                        {profile?.content && <Row className='px-4 mx-4'>{profile.content}</Row>}
-                    </Row>
-                    <Row>
-                        <Col>
-                            <div>{profile?.posts_count}</div>
-                            <div>posts</div>
-                        </Col>
-                        <Col>
-                            <div>{profile?.followers_count}</div>
-                            <div>followers</div>
-                        </Col>
-                        <Col>
-                            <div>{profile?.following_count}</div>
-                            <div>following</div>
-                        </Col>
-                    </Row>
-                    <Row className='justify-content-center'>
-                        { currentUser && !is_owner && (
-                            profile?.following_id ? (
-                                <Button 
-                                    className={appStyles.FormButton}
-                                    onClick={() => handleUnfollow(profile)}>
-                                    Unfollow
-                                </Button>
-                            ) : (
-                                <Button 
-                                    className={appStyles.FormButton}
-                                    onClick={() => handleFollow(profile)}>
-                                    Follow
-                                </Button>
-                            )
-                        )}
-                    </Row>
+                <Col>
+                    <div>{profile?.followers_count}</div>
+                    <div>Followers</div>
+                </Col>
+                <Col>
+                    <div>{profile?.following_count}</div>
+                    <div>Following</div>
                 </Col>
             </Row>
-        </>
+            <Row className="justify-content-center">
+                {currentUser &&
+                    !is_owner &&
+                    (profile?.following_id ? (
+                    <Button
+                        className={appStyles.FormButton}
+                        onClick={() => handleUnfollow(profile)}
+                    >
+                        Unfollow
+                    </Button>
+                    ) : (
+                    <Button
+                        className={appStyles.FormButton}
+                        onClick={() => handleFollow(profile)}
+                    >
+                        Follow
+                    </Button>
+                ))}
+            </Row>
+          </Col>
+        </Row>
+      </>
     );
 
     const userProfilePosts = (

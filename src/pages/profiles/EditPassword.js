@@ -52,7 +52,7 @@ const EditPassword = () => {
       </Col>
       <Col className={appStyles.ColForm}>
         <Container>
-          <h1 className={appStyles.FormHeader}>Edit profile</h1>
+          <h1 className={appStyles.FormHeader}>Edit password</h1>
           <Form onSubmit={handleSubmit}>
             <Form.Group className={appStyles.FormGroup}>
               <Form.Label>New password</Form.Label>

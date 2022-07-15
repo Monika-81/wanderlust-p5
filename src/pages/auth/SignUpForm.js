@@ -93,7 +93,7 @@ const SignUpForm = () => {
                                 {message}
                             </Alert>
                         ))}
-                        <Button variant="primary" type="submit" className={appStyles.FormButton}>
+                        <Button variant="info" type="submit" className={appStyles.FormButton}>
                             Register
                         </Button>
                         <Link to="/signin">

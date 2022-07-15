@@ -64,6 +64,7 @@ const CreateComment = (props) => {
       <button 
         disabled={!content.trim()}
         type="submit"
+        className='m-3'
       >
         Submit comment
       </button>

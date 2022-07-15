@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom'
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from '../../hooks/useRedirect';
 import appStyles from "../../App.module.css";
+import Default from '../../assets/default.jpg'
+import styles from '../../styles/CreateEditPost.module.css'
 
 
 const CreatePost = () => {
@@ -63,106 +65,118 @@ const CreatePost = () => {
 
   return (
     <Row className={appStyles.RowMargin}>
-        <Col className={appStyles.ColImage}>
-          <figure>
-            <Image src={image} rounded className={appStyles.PreviewImage}/>
-          </figure>
-          <div>
-            <Form.Label
-              htmlFor="image-upload"
+      <Col className={appStyles.ColImage}>
+        {image ? (
+          <>
+            <Image src={image} className={styles.PostFormImage} fluid/>
+            <div>
+              <Form.Label htmlFor="image-upload"></Form.Label>
+            </div>
+          </>
+        ) : (
+          <>
+            <Image
+              src={Default}
+              className={styles.PostFormImage}
+              message="Click or tap to upload an image"
+            />
+            <div>
+              <Form.Label htmlFor="image-upload"></Form.Label>
+            </div>
+          </>
+        )}
+      </Col>
+      <Col className={appStyles.ColForm}>
+        <Container>
+          <h1 className={appStyles.FormHeader}>Create post</h1>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="title" className={appStyles.FormGroup}>
+              <Form.Label className="d-none">Title</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter title (max 30 charaters)"
+                name="title"
+                value={title}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {errors?.title?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="subtitle" className={appStyles.FormGroup}>
+              <Form.Label className="d-none">Subtitle</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter a subtitle (max 60 charaters)"
+                name="subtitle"
+                value={subtitle}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {errors?.subtitle?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="content" className={appStyles.FormGroup}>
+              <Form.Label className="d-none">Content</Form.Label>
+              <Form.Control
+                as="textarea"
+                row={6}
+                placeholder="Enter content"
+                name="content"
+                value={content}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {errors?.content?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group className={appStyles.FormGroup}>
+              <Form.Label
+                htmlFor="image-upload"
+                src=""
+                message="Click to upload image"
               >
-            </Form.Label>
-          </div>      
-        </Col>
-        <Col className={appStyles.ColForm}>
-          <Container>
-            <h1 className={appStyles.FormHeader}>Create post</h1>
-              <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="title" className={appStyles.FormGroup}>
-                  <Form.Label className="d-none">Title</Form.Label>
-                    <Form.Control 
-                      type="text" 
-                      placeholder="Enter title (max 30 charaters)" 
-                      name="title"
-                      value={title}
-                      onChange={handleChange}
-                    />
-                    </Form.Group>
-                    {errors?.title?.map((message, idx) => (
-                      <Alert variant='warning' key={idx}>{message}</Alert>
-                      )
-                    )}
-                    <Form.Group controlId="subtitle" className={appStyles.FormGroup}>
-                      <Form.Label className="d-none">Subtitle</Form.Label>
-                      <Form.Control 
-                        type="text" 
-                        placeholder="Enter a subtitle (max 60 charaters)" 
-                        name="subtitle"
-                        value={subtitle}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
-                    {errors?.subtitle?.map((message, idx) => (
-                      <Alert variant="warning" key={idx}>
-                        {message}
-                      </Alert>
-                      )
-                    )}
-                    <Form.Group controlId="content" className={appStyles.FormGroup}>
-                      <Form.Label className="d-none">Content</Form.Label>
-                      <Form.Control 
-                        as="textarea" 
-                        row={6}
-                        placeholder="Enter content" 
-                        name="content"
-                        value={content}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
-                    {errors?.content?.map((message, idx) => (
-                      <Alert variant="warning" key={idx}>
-                        {message}
-                      </Alert>
-                      )
-                    )}
-                    <Form.Group className={appStyles.FormGroup}>
-                      <Form.Label 
-                        htmlFor="image-upload"
-                        src=''
-                        message="Click to upload image">
-                          Upload Image
-                      </Form.Label>
-                      <Form.File
-                        id="image-upload"
-                        accept="image/*"
-                        onChange={handleImageChange}
-                        ref={imageInput}
-                      />
-                    </Form.Group>
-                    {errors?.image?.map((message, idx) => (
-                      <Alert variant='warning' key={idx}>{message}</Alert>
-                      )
-                    )}
-                    <Button
-                      className={appStyles.FormButton} 
-                      variant="primary" 
-                      type="submit"
-                    >
-                        Create Post
-                    </Button>
-                    <Button 
-                      className={appStyles.FormButton}
-                      variant="primary" 
-                      type="submit"
-                      onClick={() => history.goBack()}
-                    >
-                        Cancel Post
-                    </Button>
-                </Form>
-            </Container>
-        </Col>
+                <p>Upload Image</p> 
+                (preferably in landscape mode, portrait mode will be cropt)
+              </Form.Label>
+              <Form.File
+                id="image-upload"
+                accept="image/*"
+                onChange={handleImageChange}
+                ref={imageInput}
+              />
+            </Form.Group>
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Button
+              className={appStyles.FormButton}
+              variant="info"
+              type="submit"
+            >
+              Create Post
+            </Button>
+            <Button
+              className={appStyles.FormButton}
+              variant="info"
+              type="submit"
+              onClick={() => history.goBack()}
+            >
+              Cancel Post
+            </Button>
+          </Form>
+        </Container>
+      </Col>
     </Row>
-  )
+  );
 }
 
 export default CreatePost

@@ -45,7 +45,7 @@ const SignInForm = () => {
     return (
         <Row className={appStyles.RowMargin}>
             <Col className={appStyles.ColImage}>
-                <Image className={appStyles.FormImage} src={Signup}/>       
+                <Image className={appStyles.FormImage} fluid src={Signup}/>       
             </Col>
             <Col className={appStyles.ColForm}>
                 <Container>
@@ -79,7 +79,7 @@ const SignInForm = () => {
                             <Alert variant='warning' key={idx}>{message}</Alert>
                             )
                         )}
-                        <Button variant="primary" type="submit" className={appStyles.FormButton}>
+                        <Button variant="info" type="submit" className={appStyles.FormButton}>
                             Sign in
                         </Button>
                         <Link to="/signup">

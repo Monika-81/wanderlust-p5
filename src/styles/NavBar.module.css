@@ -9,9 +9,11 @@
 .NavLink {
     margin: 1rem;
     color:white;
+    font-weight: bolder;
 }    
 
 .Active {
-    color: red;
+    color: black;
+    text-decoration: underline solid 1px black;
 }
 

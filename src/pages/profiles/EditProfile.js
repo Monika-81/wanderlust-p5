@@ -124,14 +124,14 @@ const EditProfile = () => {
                 )}
                 <Button
                     className={appStyles.FormButton} 
-                    variant="primary" 
+                    variant="info" 
                     type="submit"
                     >
                     Save changes
                 </Button>
                 <Button
                     className={appStyles.FormButton} 
-                    variant="primary" 
+                    variant="info" 
                     onClick={() => history.goBack()}
                     >
                     Cancel edit

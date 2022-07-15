@@ -3,6 +3,7 @@ import { Button, Col, Container, Form, Image, Row, Alert } from 'react-bootstrap
 import { useHistory, useParams } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import appStyles from "../../App.module.css";
+import styles from '../../styles/CreateEditPost.module.css'
 
 
 function EditPost() {
@@ -74,96 +75,101 @@ function EditPost() {
 
   return (
     <Row className={appStyles.RowMargin}>
-        <Col>
-            <figure>
-                <Image src={image} rounded className={appStyles.PreviewImage}/>
-            </figure>
-            <div>
-                <Form.Label htmlFor="image-upload">
-                    Change the image
-                </Form.Label>
-            </div>      
-        </Col>
-        <Col className={appStyles.ColForm}>
-            <Container>
-                <h1 className={appStyles.FormHeader}>Edit post</h1>
-                <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="title" className={appStyles.FormGroup}>
-                    <Form.Label className="d-none">Title</Form.Label>
-                    <Form.Control 
-                        type="text" 
-                        placeholder="Enter title (max 30 charaters)" 
-                        name="title"
-                        value={title}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                {errors?.title?.map((message, idx) => (
-                    <Alert variant='warning' key={idx}>{message}</Alert>
-                    )
-                )}
-                <Form.Group controlId="subtitle" className={appStyles.FormGroup}>
-                    <Form.Label className="d-none">Subtitle</Form.Label>
-                    <Form.Control 
-                        type="text" 
-                        placeholder="Enter a subtitle (max 60 charaters)" 
-                        name="subtitle"
-                        value={subtitle}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                {errors?.subtitle?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                        {message}
-                    </Alert>
-                    )
-                )}
-                <Form.Group controlId="content" className={appStyles.FormGroup}>
-                    <Form.Label className="d-none">Content</Form.Label>
-                    <Form.Control 
-                        as="textarea" 
-                        row={6}
-                        placeholder="Enter content" 
-                        name="content"
-                        value={content}
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                {errors?.content?.map((message, idx) => (
-                    <Alert variant="warning" key={idx}>
-                        {message}
-                    </Alert>
-                    )
-                )}
-                <Form.Group className={appStyles.FormGroup}>
-                    <Form.Label 
-                        htmlFor="image-upload"
-                        src=''
-                        message="Click to upload image">
-                            Upload Image
-                    </Form.Label>
-                    <Form.File
-                        id="image-upload"
-                        accept="image/*"
-                        onChange={handleImageChange}
-                        ref={imageInput}
-                    />
-                </Form.Group>
-                {errors?.image?.map((message, idx) => (
-                    <Alert variant='warning' key={idx}>{message}</Alert>
-                    )
-                )}
-                <Button variant="primary" type="submit" className={appStyles.FormButton}>
-                    Save changes
-                </Button>
-                <Button variant="primary" onClick={() => history.goBack()} className={appStyles.FormButton}>
-                    Cancel edit
-                </Button>
-                </Form>
-            </Container>
-        </Col>
+      <Col className={styles.PostColImage}>
+        <Image src={image} rounded className={styles.PostFormImage} />
+        <div>
+          <Form.Label htmlFor="image-upload"></Form.Label>
+        </div>
+      </Col>
+      <Col className={appStyles.ColForm}>
+        <Container>
+          <h1 className={appStyles.FormHeader}>Edit post</h1>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="title" className={appStyles.FormGroup}>
+              <Form.Label className="d-none">Title</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter title (max 30 charaters)"
+                name="title"
+                value={title}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {errors?.title?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="subtitle" className={appStyles.FormGroup}>
+              <Form.Label className="d-none">Subtitle</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter a subtitle (max 60 charaters)"
+                name="subtitle"
+                value={subtitle}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {errors?.subtitle?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group controlId="content" className={appStyles.FormGroup}>
+              <Form.Label className="d-none">Content</Form.Label>
+              <Form.Control
+                as="textarea"
+                row={6}
+                placeholder="Enter content"
+                name="content"
+                value={content}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {errors?.content?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Form.Group className={appStyles.FormGroup}>
+              <Form.Label
+                htmlFor="image-upload"
+                src=""
+                message="Click to upload image"
+              >
+                Upload Image
+              </Form.Label>
+              <Form.File
+                id="image-upload"
+                accept="image/*"
+                onChange={handleImageChange}
+                ref={imageInput}
+              />
+            </Form.Group>
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+            <Button
+              variant="info"
+              type="submit"
+              className={appStyles.FormButton}
+            >
+              Save changes
+            </Button>
+            <Button
+              variant="info"
+              onClick={() => history.goBack()}
+              className={appStyles.FormButton}
+            >
+              Cancel edit
+            </Button>
+          </Form>
+        </Container>
+      </Col>
     </Row>
-    )
+  );
 }
 
 export default EditPost;

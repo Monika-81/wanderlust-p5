@@ -1,12 +1,27 @@
 .Footer {
     padding: 0;
     background-color: white;
+    margin: 0 auto;
 }
 
-@media screen and (max-width: 1000px){
-
-    .Hidden {
-        display: none;
+@media screen and (min-width: 575px){
+    .Media {
+        line-height: 20vh;
+        overflow: hidden;
+        margin: auto;
+        border-radius: 10%; 
     }
+    
+    .Image {
+        margin:-100%;
+        size: contain;
+        border-radius: 10%; 
+     }
+}
 
+@media screen and (min-width: 750px){
+    .Media {
+        height: 20vh;
+        line-height: 20vh;
+    }
 }

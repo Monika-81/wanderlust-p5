@@ -65,20 +65,20 @@ const PostPreview = (props) => {
                 <span>{updated_at}</span>
             </div>
             <Card.Body className="p-1">
-                <Media className='m-2'>
+                <Media className={styles.Media}>
                     <Link to={`/posts/${id}/`}>
-                        <Card.Img variant="top" src={image} alt={title} fluid />
+                        <Card.Img variant="top" src={image} alt={title} className={styles.Image} fluid/>
                     </Link>
                 </Media>
-                <div>{subtitle && <p>{subtitle}</p>}</div>
+                <div>
+                    {subtitle && <p>{subtitle}</p>}
+                    <Link to={`/profile/${profile_id}`}>
+                       / {owner}
+                    </Link>
+                </div>
             </Card.Body>
             <Card.Footer className={styles.Footer}>
                 <div className={appStyles.CardFlex}>
-                    <div className={`${styles.Hidden} pt-3`} id="owner-hidden">
-                        <Link to={`/profile/${profile_id}`}>
-                            {owner}
-                        </Link>
-                    </div>
                     <div>
                         <Link to={`/profile/${profile_id}`}>
                             <OverlayTrigger

@@ -14,6 +14,7 @@ import EditPassword from './pages/profiles/EditPassword';
 import styles from './App.module.css'
 import NavbarContext from './context/NavbarContext';
 import { useEffect, useState } from 'react';
+import ScrollToTop from './components/ScrollToTop';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
   return (
     <NavbarContext.Provider value={variables}>
       <div className={styles.App}>
+        <ScrollToTop />
         <NavBar />
         <div className={styles.CardDeck}>
           <Switch>

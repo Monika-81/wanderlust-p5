@@ -92,13 +92,14 @@ function NavBar() {
                     <Navbar.Brand>
                         <NavLink exact to="/" className={styles.NavLink} >
                             <h1>WANDERLUST</h1>
+                            <p>Let's dream and get inspired together!</p>
                         </NavLink>
-                        <p>Let's dream and get inspired together!</p>
+                        <Navbar.Toggle
+                            ref={ref}
+                            onClick={() => setExpanded(!expanded)}
+                            aria-controls="responsive-navbar-nav" 
+                        />
                     </Navbar.Brand>
-                    <Navbar.Toggle
-                        ref={ref}
-                        onClick={() => setExpanded(!expanded)}
-                        aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto flex-row flex-wrap justify-content-center">
                             <NavLink 

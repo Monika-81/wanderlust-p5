@@ -5,7 +5,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from '../../hooks/useRedirect';
 import appStyles from "../../App.module.css";
 import Default from '../../assets/default.jpg'
-import styles from '../../styles/CreateEditPost.module.css'
+import styles from '../../styles/CreateEditPostProfile.module.css'
 
 
 const CreatePost = () => {
@@ -65,7 +65,7 @@ const CreatePost = () => {
 
   return (
     <Row className={appStyles.RowMargin}>
-      <Col className={appStyles.ColImage}>
+      <Col className={styles.PostColImage}>
         {image ? (
           <>
             <Image src={image} className={styles.PostFormImage} fluid/>
@@ -94,7 +94,7 @@ const CreatePost = () => {
               <Form.Label className="d-none">Title</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter title (max 30 charaters)"
+                placeholder="Enter title* (max 30 charaters)"
                 name="title"
                 value={title}
                 onChange={handleChange}
@@ -109,7 +109,7 @@ const CreatePost = () => {
               <Form.Label className="d-none">Subtitle</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter a subtitle (max 60 charaters)"
+                placeholder="Enter a subtitle* (max 60 charaters)"
                 name="subtitle"
                 value={subtitle}
                 onChange={handleChange}
@@ -125,7 +125,7 @@ const CreatePost = () => {
               <Form.Control
                 as="textarea"
                 row={6}
-                placeholder="Enter content"
+                placeholder="Enter content*"
                 name="content"
                 value={content}
                 onChange={handleChange}
@@ -142,8 +142,7 @@ const CreatePost = () => {
                 src=""
                 message="Click to upload image"
               >
-                <p>Upload Image</p> 
-                (preferably in landscape mode, portrait mode will be cropt)
+                <p>Upload Image* </p> 
               </Form.Label>
               <Form.File
                 id="image-upload"

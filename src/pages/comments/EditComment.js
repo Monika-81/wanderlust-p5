@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { axiosRes } from '../../api/axiosDefaults';
+import appStyles from '../../App.module.css'
 
 function EditComment(props) {
     const { 
@@ -50,18 +51,21 @@ function EditComment(props) {
             rows={3}
           />
       </Form.Group>
-      <button
-        onClick={() => setShowEditComment(false)}
-        type="button"
-      >
-        Cancel edit
-      </button>
-      <button
+      <Button
+        className={appStyles.FormButton}
+        variant="info"
         disabled={!content.trim()}
         type="submit"
       >
         Save changes
-      </button>
+      </Button>
+      <Button
+        onClick={() => setShowEditComment(false)}
+        className={appStyles.FormButton} 
+        variant="info" 
+      >
+        Cancel edit
+      </Button>
     </Form>
   )
 }

@@ -66,7 +66,7 @@ function ProfilePage() {
             <Row className={styles.ProfileInfo}>
                 <Col>
                     <div>{profile?.posts_count}</div>
-                    <div>Diary posts</div>
+                    <div>Posts</div>
                 </Col>
                 <Col>
                     <div>{profile?.followers_count}</div>

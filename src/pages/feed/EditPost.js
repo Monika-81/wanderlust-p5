@@ -3,7 +3,7 @@ import { Button, Col, Container, Form, Image, Row, Alert } from 'react-bootstrap
 import { useHistory, useParams } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefaults';
 import appStyles from "../../App.module.css";
-import styles from '../../styles/CreateEditPost.module.css'
+import styles from '../../styles/CreateEditPostProfile.module.css'
 
 
 function EditPost() {
@@ -76,7 +76,7 @@ function EditPost() {
   return (
     <Row className={appStyles.RowMargin}>
       <Col className={styles.PostColImage}>
-        <Image src={image} rounded className={styles.PostFormImage} />
+        <Image src={image} className={styles.PostFormImage} />
         <div>
           <Form.Label htmlFor="image-upload"></Form.Label>
         </div>

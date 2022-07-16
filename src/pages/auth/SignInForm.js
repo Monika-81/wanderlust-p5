@@ -55,7 +55,7 @@ const SignInForm = () => {
                             <Form.Label className="d-none">Username</Form.Label>
                             <Form.Control 
                                 type="text" 
-                                placeholder="Enter Username" 
+                                placeholder="Enter Username*" 
                                 name="username"
                                 value={username} 
                                 onChange={handleChange}
@@ -69,7 +69,7 @@ const SignInForm = () => {
                             <Form.Label className="d-none">Password</Form.Label>
                             <Form.Control 
                                 type="password" 
-                                placeholder="Enter Password" 
+                                placeholder="Enter Password*" 
                                 name="password"
                                 value={password} 
                                 onChange={handleChange}

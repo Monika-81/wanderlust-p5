@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Form, Image, InputGroup } from 'react-bootstrap';
+import { Button, Form, Image, InputGroup } from 'react-bootstrap';
 import { axiosRes } from "../../api/axiosDefaults";
 import { Link } from "react-router-dom";
 import styles from "../../styles/Comment.module.css";
+import appStyles from '../../App.module.css'
 
 const CreateComment = (props) => {
   const {
@@ -61,13 +62,14 @@ const CreateComment = (props) => {
           />
         </InputGroup>
       </Form.Group>
-      <button 
+      <Button
         disabled={!content.trim()}
+        className={appStyles.FormButton} 
+        variant="info" 
         type="submit"
-        className='m-3'
       >
         Submit comment
-      </button>
+      </Button>
     </Form>
   );
 }

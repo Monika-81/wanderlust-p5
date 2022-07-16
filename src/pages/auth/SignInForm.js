@@ -45,7 +45,7 @@ const SignInForm = () => {
     return (
         <Row className={appStyles.RowMargin}>
             <Col className={appStyles.ColImage}>
-                <Image className={appStyles.FormImage} src={Signin}/>       
+                <Image className={appStyles.FormImage} src={Signin} alt="Iamge of a book, a passport and a camera on a white cloth"/>       
             </Col>
             <Col className={appStyles.ColForm}>
                 <Container>

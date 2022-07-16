@@ -9,7 +9,7 @@ const PageNotFound = () => {
   return (
     <Row className={appStyles.RowMargin}>
             <Col className={styles.PostColImage}>
-                <Image className={styles.PostFormImage} src={NotFound}/>       
+                <Image className={styles.PostFormImage} src={NotFound} alt="A sign on a tree reading 'Dead end'."/>       
             </Col>
             <Col className={appStyles.ColForm}>
                 <Container>

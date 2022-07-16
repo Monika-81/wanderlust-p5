@@ -52,10 +52,10 @@ function ProfilePage() {
         <Row className={appStyles.RowMargin}>
           <Col className={styles.ProfileColForm}>
             <Row className={styles.ProfileInfo}>
-                <Image src={profile?.image} className={styles.ProfileAvatar} />
+                <Image src={profile?.image} className={styles.ProfileAvatar} alt="The users profile picture" />
             </Row>
             <Row className={styles.ProfileInfo}>
-                <h3>{profile?.owner}</h3>
+                <h2 className='mr-3'>{profile?.owner}</h2>
                 {profile?.is_owner && <EditProfileDropdown id={profile?.id} />}
             </Row>
             <Row className="justify-content-center m-3">

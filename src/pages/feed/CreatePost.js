@@ -72,6 +72,7 @@ const CreatePost = () => {
               htmlFor="image-upload" 
               src={image} 
               className={styles.PostFormImage}
+              alt="Image that the user uploaded"
             />
           </>
         ) : (
@@ -81,6 +82,7 @@ const CreatePost = () => {
               src={Default}
               className={styles.PostFormImage}
               message="Click or tap to upload an image"
+              alt="Default image of a pink globe standing on a desk"
             />
           </>
         )}

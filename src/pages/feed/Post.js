@@ -126,6 +126,7 @@ const Post = (props) => {
                                 <Image
                                     src={profile_image}
                                     className={appStyles.SmallAvatar}
+                                    alt="Users profile picture"
                                 />
                             </OverlayTrigger>
                         </Link>

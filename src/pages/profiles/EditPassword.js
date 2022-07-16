@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { axiosRes } from '../../api/axiosDefaults';
 import { useCurrentUser } from "../../context/CurrentUserContext";
 import appStyles from "../../App.module.css";
-import Signup from '../../assets/signup.jpg'
+import Editpassword from '../../assets/editpassword.jpg'
 
 
 const EditPassword = () => {
@@ -48,7 +48,7 @@ const EditPassword = () => {
   return (
     <Row className={appStyles.RowMargin}>
       <Col className={appStyles.ColImage}>
-        <Image className={appStyles.FormImage} src={Signup}/>       
+        <Image className={appStyles.FormImage} src={Editpassword} alt="Image of a pink ballben and a notebook with the eiffel tower on its cover, on a white cloth"/>       
       </Col>
       <Col className={appStyles.ColForm}>
         <Container>

@@ -50,7 +50,7 @@ const CreateComment = (props) => {
       <Form.Group>
         <InputGroup className={styles.InputGroup}>
           <Link to={`/profiles/${profile_id}`}>
-            <Image src={profile_image}/>
+            <Image src={profile_image} alt="The current users profile image"/>
           </Link>
           <Form.Control
             placeholder="Add comment..."

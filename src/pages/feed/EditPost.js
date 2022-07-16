@@ -76,7 +76,7 @@ function EditPost() {
   return (
     <Row className={appStyles.RowMargin}>
       <Col className={styles.PostColImage}>
-        <Image src={image} className={styles.PostFormImage} />
+        <Image src={image} className={styles.PostFormImage} alt="An image the user uploaded to the post"/>
         <div>
           <Form.Label htmlFor="image-upload"></Form.Label>
         </div>

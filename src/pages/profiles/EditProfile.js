@@ -81,6 +81,7 @@ const EditProfile = () => {
                     htmlFor="image-upload" 
                     src={image} 
                     className={styles.PostFormImage}
+                    alt="The users profile picture"
                 />
             )}     
         </Col>

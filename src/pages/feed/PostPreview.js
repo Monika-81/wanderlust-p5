@@ -88,6 +88,7 @@ const PostPreview = (props) => {
                             <Image
                                 src={profile_image}
                                 className={appStyles.SmallAvatar}
+                                alt="The users profile picture"
                             />
                             </OverlayTrigger>
                         </Link>

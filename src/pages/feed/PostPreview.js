@@ -59,7 +59,7 @@ const PostPreview = (props) => {
       };
 
     return (
-        <Card className={appStyles.CardStyle} fluid>
+        <Card className={appStyles.CardStyle} >
             <div className={appStyles.CardFlex}>
                 {title && <span className={appStyles.CardTitle}>{title}</span>}
                 <span>{updated_at}</span>
@@ -67,7 +67,7 @@ const PostPreview = (props) => {
             <Card.Body className="p-1">
                 <Media className={styles.Media}>
                     <Link to={`/posts/${id}/`}>
-                        <Card.Img variant="top" src={image} alt={title} className={styles.Image} fluid/>
+                        <Card.Img variant="top" src={image} alt={title} className={styles.Image} />
                     </Link>
                 </Media>
                 <div>

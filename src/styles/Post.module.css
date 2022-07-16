@@ -29,14 +29,7 @@
 
     .ColFlex, .ColFlexFooter {
         flex-basis: auto;
-    }
-
-    .Fluid {
-        max-width: unset !important;
-        width: 100%;
-        padding-top: 0;
-    }
-    
+    }    
 }
 
 @media screen and (max-width: 575px) {

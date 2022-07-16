@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Form, Image, InputGroup } from 'react-bootstrap';
+import { Button, Form, InputGroup } from 'react-bootstrap';
 import { axiosRes } from "../../api/axiosDefaults";
-import { Link } from "react-router-dom";
 import styles from "../../styles/Comment.module.css";
 import appStyles from '../../App.module.css'
 
@@ -10,8 +9,6 @@ const CreateComment = (props) => {
     post, 
     setPost, 
     setComments, 
-    profile_image, 
-    profile_id
   } = props;
 
   const [content, setContent] = useState('');
@@ -49,9 +46,6 @@ const CreateComment = (props) => {
     <Form onSubmit={handleSubmit} className={styles.Form}>
       <Form.Group>
         <InputGroup className={styles.InputGroup}>
-          <Link to={`/profiles/${profile_id}`} aria-label="Click to go to the users profile page">
-            <Image src={profile_image} thumbnail alt="The current users profile image"/>
-          </Link>
           <Form.Control
             placeholder="Add comment..."
             as="textarea"

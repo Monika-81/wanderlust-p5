@@ -56,7 +56,7 @@ const Comment = (props) => {
             <Image src={profile_image} className={styles.CommentAvatar} thumbnail alt="Profile image for the user"/>
           </OverlayTrigger>
         </Link>
-        <Media.Body className={styles.Comments} rounded>
+        <Media.Body className={styles.Comments}>
           <p>
             {owner} wrote:
           </p>

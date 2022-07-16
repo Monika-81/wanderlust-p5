@@ -50,7 +50,7 @@ const CreateComment = (props) => {
       <Form.Group>
         <InputGroup className={styles.InputGroup}>
           <Link to={`/profiles/${profile_id}`} aria-label="Click to go to the users profile page">
-            <Image src={profile_image} alt="The current users profile image"/>
+            <Image src={profile_image} thumbnail alt="The current users profile image"/>
           </Link>
           <Form.Control
             placeholder="Add comment..."

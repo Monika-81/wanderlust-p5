@@ -52,7 +52,7 @@ function ProfilePage() {
         <Row className={appStyles.RowMargin}>
           <Col className={styles.ProfileColForm}>
             <Row className={styles.ProfileInfo}>
-                <Image src={profile?.image} className={styles.ProfileAvatar} alt="The users profile picture" />
+                <Image src={profile?.image} className={styles.ProfileAvatar} thumbnail alt="The users profile picture" />
             </Row>
             <Row className={styles.ProfileInfo}>
                 <h2 className='mr-3'>{profile?.owner}</h2>

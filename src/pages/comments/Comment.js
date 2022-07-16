@@ -53,7 +53,7 @@ const Comment = (props) => {
             placement="top"
             overlay={<Tooltip>{owner}</Tooltip>}
           >
-            <Image src={profile_image} className={styles.CommentAvatar} alt="Profile image for the user"/>
+            <Image src={profile_image} className={styles.CommentAvatar} thumbnail alt="Profile image for the user"/>
           </OverlayTrigger>
         </Link>
         <Media.Body className={styles.Comments} rounded>

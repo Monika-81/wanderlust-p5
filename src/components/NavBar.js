@@ -1,18 +1,18 @@
-import React, { useContext} from 'react';
+import React from 'react';
 import axios from 'axios';
-import { Container, Navbar, Nav, Form, FormControl } from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import { removeTokenTimestamp } from '../utils/utils';
-import NavbarContext from '../context/NavbarContext';
 import styles from '../styles/NavBar.module.css'
+import SearchBar from './SearchBar';
 
 
 function NavBar() {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
-    const { query, setQuery } = useContext(NavbarContext);
+    const pathname = window.location.pathname;
 
     const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
@@ -25,6 +25,7 @@ function NavBar() {
             console.log(err);
         }
     };
+   
 
     const loggedInLinks = 
         <>
@@ -83,6 +84,7 @@ function NavBar() {
             </NavLink>
         </>
 
+
     return (
         <div>
             <Navbar expanded={expanded} expand='false' className={styles.NavbarImage}>
@@ -108,19 +110,17 @@ function NavBar() {
                             </NavLink>
                             {currentUser ? loggedInLinks : loggedOutLinks}
                         </Nav>
-                        <Form 
-                            inline ref={ref} 
-                            onSubmit={(event) => event.preventDefault()}
-                        >
-                            <FormControl  
-                                type="search" 
-                                placeholder="Search posts" 
-                                className="mx-auto"
-                                id="search"
-                                value={query}
-                                onChange={(event) => setQuery(event.target.value)}
-                            />
-                        </Form>
+                        <div onClick={() => setExpanded(expanded)} ref={ref}>
+                            {pathname === '/' ? (
+                                <SearchBar />
+                            ) : pathname === '/posts' ? (
+                                <SearchBar />
+                            ) : pathname === '/likes' ? (
+                                    <SearchBar />
+                            ) : ( 
+                                null
+                            )}
+                        </div>                        
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

@@ -95,11 +95,11 @@ const Post = (props) => {
                     <Col className={styles.ColFlex}>
                         <Link to={`/posts/${id}/`}>
                             <Image
-                            className={styles.Fluid}
-                            variant="top"
-                            src={image}
-                            alt={title}
-                            fluid
+                                className={styles.Image}
+                                variant="top"
+                                src={image}
+                                alt={title}
+                                fluid
                             />
                         </Link>
                     </Col>

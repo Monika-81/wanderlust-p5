@@ -82,7 +82,7 @@ const SignInForm = () => {
                         <Button variant="info" type="submit" className={appStyles.FormButton}>
                             Sign in
                         </Button>
-                        <Link to="/signup">
+                        <Link to="/signup" aria-label="Click to go to sign up page">
                             <p>Or Register!</p>
                         </Link>
                         {errors.non_field_errors?.map((message, idx) => (

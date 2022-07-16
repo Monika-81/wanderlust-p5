@@ -48,7 +48,7 @@ const Comment = (props) => {
   return (
     <div className={styles.Comment}>
       <Media>
-        <Link to={`/profile/${profile_id}`}>
+        <Link to={`/profile/${profile_id}`} aria-label="Click to go to the users profile page">
           <OverlayTrigger
             placement="top"
             overlay={<Tooltip>{owner}</Tooltip>}

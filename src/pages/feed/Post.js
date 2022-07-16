@@ -93,7 +93,7 @@ const Post = (props) => {
                         <p className={styles.Date}>{updated_at}</p>
                     </Col>
                     <Col className={styles.ColFlex}>
-                        <Link to={`/posts/${id}/`}>
+                        <Link to={`/posts/${id}/`} aria-label="Click to go to the post page">
                             <Image
                                 className={styles.Image}
                                 variant="top"
@@ -118,7 +118,7 @@ const Post = (props) => {
                         <span className={styles.Author}>/ {owner}</span>
                     </Col>
                     <Col className={styles.ColFlexFooter}>
-                        <Link to={`/profile/${profile_id}`}>
+                        <Link to={`/profile/${profile_id}`} aria-label="Click to go to the users profile page">
                             <OverlayTrigger
                                 placement="top"
                                 overlay={<Tooltip>{owner}</Tooltip>}
@@ -159,7 +159,7 @@ const Post = (props) => {
                             </OverlayTrigger>
                         )}
                         {likes_count}
-                        <Link to={`/posts/${id}`}>
+                        <Link to={`/posts/${id}`} aria-label="Click to go to the post page to read comments">
                             <i className="far fa-comments m-4" />
                         </Link>
                         {comments_count}

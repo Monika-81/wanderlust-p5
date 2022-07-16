@@ -72,7 +72,7 @@ const PostPreview = (props) => {
                 </Media>
                 <div>
                     {subtitle && <p>{subtitle}</p>}
-                    <Link to={`/profile/${profile_id}`}>
+                    <Link to={`/profile/${profile_id}`} aria-label="Click to go to the users profile page">
                        / {owner}
                     </Link>
                 </div>
@@ -80,16 +80,16 @@ const PostPreview = (props) => {
             <Card.Footer className={styles.Footer}>
                 <div className={appStyles.CardFlex}>
                     <div>
-                        <Link to={`/profile/${profile_id}`}>
+                        <Link to={`/profile/${profile_id}`} aria-label="Click to go to the users profile page">
                             <OverlayTrigger
                             placement="top"
                             overlay={<Tooltip>{owner}</Tooltip>}
                             >
-                            <Image
-                                src={profile_image}
-                                className={appStyles.SmallAvatar}
-                                alt="The users profile picture"
-                            />
+                                <Image
+                                    src={profile_image}
+                                    className={appStyles.SmallAvatar}
+                                    alt="The users profile picture"
+                                />
                             </OverlayTrigger>
                         </Link>
                         {is_owner ? (
@@ -121,7 +121,7 @@ const PostPreview = (props) => {
                             </OverlayTrigger>
                         )}
                         {likes_count}
-                        <Link to={`/posts/${id}`}>
+                        <Link to={`/posts/${id}`} aria-label="Click to go to the post page to read comments">
                             <i className="far fa-comments m-3" />
                         </Link>
                         {comments_count}

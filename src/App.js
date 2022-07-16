@@ -15,6 +15,7 @@ import styles from './App.module.css'
 import NavbarContext from './context/NavbarContext';
 import { useEffect, useState } from 'react';
 import ScrollToTop from './components/ScrollToTop';
+import PageNotFound from './pages/feed/PageNotFound';
 
 
 function App() {
@@ -71,7 +72,7 @@ function App() {
             <Route exact path="/profile/:id/edit/password"render={() => <EditPassword/>} />
             <Route exact path="/signup" render={() => <SignUpForm/>} />
             <Route exact path="/signin" render={() => <SignInForm/>} />
-            <Route render={() => <p>Page not found!</p>} />
+            <Route render={() => <PageNotFound />} />
           </Switch>
         </div>
       </div>

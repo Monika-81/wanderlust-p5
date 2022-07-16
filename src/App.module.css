@@ -182,6 +182,10 @@ hr:after {
         margin: 20px 15px;
     }
 
+    .ColForm {
+        border-radius: 10%;
+    }
+
 }
 
 @media screen and (max-width: 675px) {

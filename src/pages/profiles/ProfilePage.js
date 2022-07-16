@@ -55,7 +55,7 @@ function ProfilePage() {
                 <Image src={profile?.image} className={styles.ProfileAvatar} />
             </Row>
             <Row className={styles.ProfileInfo}>
-                <h3 className="mr-4">{profile?.owner}</h3>
+                <h3>{profile?.owner}</h3>
                 {profile?.is_owner && <EditProfileDropdown id={profile?.id} />}
             </Row>
             <Row className="justify-content-center m-3">
@@ -82,6 +82,7 @@ function ProfilePage() {
                     !is_owner &&
                     (profile?.following_id ? (
                     <Button
+                        variant="info"
                         className={appStyles.FormButton}
                         onClick={() => handleUnfollow(profile)}
                     >
@@ -89,6 +90,7 @@ function ProfilePage() {
                     </Button>
                     ) : (
                     <Button
+                        variant="info"
                         className={appStyles.FormButton}
                         onClick={() => handleFollow(profile)}
                     >
@@ -120,7 +122,7 @@ function ProfilePage() {
                 </InfiniteScroll>
             ) : (
                <Container>
-                    No results found, {profile?.owner} hasn't posted yet
+                    No results found, {profile?.owner} hasn't posted anything... yet!
                </Container>
             )}
             </Row>

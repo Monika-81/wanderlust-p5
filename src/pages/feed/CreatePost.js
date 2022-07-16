@@ -68,21 +68,20 @@ const CreatePost = () => {
       <Col className={styles.PostColImage}>
         {image ? (
           <>
-            <Image src={image} className={styles.PostFormImage} fluid/>
-            <div>
-              <Form.Label htmlFor="image-upload"></Form.Label>
-            </div>
+            <Image 
+              htmlFor="image-upload" 
+              src={image} 
+              className={styles.PostFormImage}
+            />
           </>
         ) : (
           <>
             <Image
+              htmlFor="image-upload"
               src={Default}
               className={styles.PostFormImage}
               message="Click or tap to upload an image"
             />
-            <div>
-              <Form.Label htmlFor="image-upload"></Form.Label>
-            </div>
           </>
         )}
       </Col>

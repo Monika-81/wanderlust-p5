@@ -96,11 +96,11 @@ const PostPreview = (props) => {
                                 placement="top"
                                 overlay={<Tooltip>You can't like your own post!</Tooltip>}
                             >
-                                <i className="fa fa-plane-departure m-3"></i>
+                                <i className="fa fa-plane-departure m-3"  />
                             </OverlayTrigger>
                         ) : like_id ? (
                             <span onClick={handleUnlike}>
-                                <i className="fa fa-plane-departure m-3" />
+                                <i className="fa fa-plane-departure m-3"/>
                             </span>
                         ) : currentUser ? (
                             <OverlayTrigger

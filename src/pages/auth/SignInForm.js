@@ -6,7 +6,7 @@ import { useSetCurrentUser } from "../../context/CurrentUserContext";
 import { setTokenTimestamp } from "../../utils/utils";
 import { useRedirect } from "../../hooks/useRedirect";
 import appStyles from "../../App.module.css";
-import Signup from '../../assets/signup.jpg'
+import Signin from '../../assets/signin.jpg'
 
 
 const SignInForm = () => {
@@ -45,7 +45,7 @@ const SignInForm = () => {
     return (
         <Row className={appStyles.RowMargin}>
             <Col className={appStyles.ColImage}>
-                <Image className={appStyles.FormImage} fluid src={Signup}/>       
+                <Image className={appStyles.FormImage} src={Signin}/>       
             </Col>
             <Col className={appStyles.ColForm}>
                 <Container>

@@ -77,7 +77,11 @@ const EditProfile = () => {
     <Row className={appStyles.RowMargin}>
         <Col className={styles.PostColImage}>
             {image && (
-                <Image htmlFor="image-upload" src={image} className={styles.PostFormImage}/>
+                <Image 
+                    htmlFor="image-upload" 
+                    src={image} 
+                    className={styles.PostFormImage}
+                />
             )}     
         </Col>
         <Col className={appStyles.ColForm}>

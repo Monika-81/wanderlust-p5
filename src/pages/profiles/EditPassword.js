@@ -44,7 +44,6 @@ const EditPassword = () => {
   };
 
 
-
   return (
     <Row className={appStyles.RowMargin}>
       <Col className={appStyles.ColImage}>

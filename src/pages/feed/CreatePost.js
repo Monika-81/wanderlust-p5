@@ -21,9 +21,7 @@ const CreatePost = () => {
   const {title, subtitle, content, image} = postData
 
   const imageInput = useRef(null)
-
   const history = useHistory()
-
   const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {

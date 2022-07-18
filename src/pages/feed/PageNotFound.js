@@ -5,6 +5,7 @@ import appStyles from '../../App.module.css'
 import NotFound from '../../assets/notfound.jpg'
 import styles from '../../styles/CreateEditPostProfile.module.css'
 
+
 const PageNotFound = () => {
   return (
     <Row className={appStyles.RowMargin}>

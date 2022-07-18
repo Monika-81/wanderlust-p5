@@ -10,8 +10,10 @@ import styles from '../../styles/CreateEditPostProfile.module.css'
 const EditProfile = () => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
+
     const { id } = useParams();
     const history = useHistory();
+    
     const imageInput = useRef();
     const [errors, setErrors] = useState({});    
 

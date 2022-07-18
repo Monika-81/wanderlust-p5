@@ -8,6 +8,8 @@ import appStyles from "../../App.module.css";
 import styles from '../../styles/Post.module.css'
 
 
+//displays a specific post, let's the owner edit or
+//delete the post
 const Post = (props) => {
     const {
         id,
@@ -82,7 +84,7 @@ const Post = (props) => {
 
     return (
         <Row>
-            <Col className={appStyles.ColForm}>
+            <Col className={styles.PostColForm}>
                 <Row className="flew-row flex-wrap">
                     <Col className={styles.ColFlex}>
                         <hr />

@@ -7,6 +7,7 @@ import appStyles from "../../App.module.css";
 import styles from '../../styles/PostPreview.module.css'
 
 
+//Post setup as displayed in preview aka feed pages: 'home', 'feed' and 'liked'
 const PostPreview = (props) => {
     const {
         id,
@@ -118,7 +119,7 @@ const PostPreview = (props) => {
                             placement="top"
                             overlay={<Tooltip>Log in to like posts!</Tooltip>}
                             >
-                            <i className="fa fa-plane-departure m-3" />
+                                <i className="fa fa-plane-departure m-3" />
                             </OverlayTrigger>
                         )}
                         {likes_count}

@@ -12,6 +12,7 @@ import appStyles from "../../App.module.css";
 import styles from '../../styles/ProfilePage.module.css'
 
 
+//Returns the profile page of a user and the users post 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
     const [profilePosts, setProfilePosts] = useState({ results: [] });

@@ -104,15 +104,6 @@ button, .btn {
     max-width: 400px;
 }
 
-.SmallAvatar {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    margin: 0.5rem;
-    box-shadow: 5px 4px 4px #aaaaaa;
-    object-fit: cover;
-}
-
 .CardStyle {
     min-width: 30%;
     max-width: 30%;
@@ -138,6 +129,15 @@ button, .btn {
     font-size: 20px;
     padding: 2rem;
 }   
+
+.SmallAvatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 0.5rem;
+    box-shadow: 5px 4px 4px #aaaaaa;
+    object-fit: cover;
+}
 
 /* Code Credit: https://css-tricks.com/examples/hrs/ */
 hr {

@@ -9,6 +9,8 @@ import appStyles from "../../App.module.css";
 import NavbarContext from '../../context/NavbarContext';
 
 
+//Displays posts to user, posts looped over and rendered with
+//InfiniteScroll inside a Bootstrap Carddeck
 function FeedPage({message, filter = ''}) {
     const [posts, setPosts] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -48,12 +50,12 @@ function FeedPage({message, filter = ''}) {
                             hasMore={!!posts.next}
                             next={() => fetchMoreData(posts, setPosts)}
                         >
-                        <CardDeck className='justify-content-center'>
-                            {posts.results.map((post) => (
-                                    <PostPreview key={post.id} {...post} setPosts={setPosts}/>
-                                ))
-                            }
-                        </CardDeck>
+                            <CardDeck className='justify-content-center'>
+                                {posts.results.map((post) => (
+                                        <PostPreview key={post.id} {...post} setPosts={setPosts}/>
+                                    ))
+                                }
+                            </CardDeck>
                         </InfiniteScroll>
                     ) : (
                         <Container>

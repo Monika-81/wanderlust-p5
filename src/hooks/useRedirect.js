@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
+
+//redirects the user from non autherized or non valid content
 export const useRedirect = (userAuthStatus) => {
     const history = useHistory();
 

@@ -25,6 +25,15 @@
     font-size: 25px;
 }
 
+.PostColForm {
+    border: 0.5px solid rgb(230,230,230);
+    box-shadow: 5px 4px 4px #aaaaaa;
+    background-color: white;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
 @media screen and (max-width: 990px) {
 
     .ColFlex, .ColFlexFooter {

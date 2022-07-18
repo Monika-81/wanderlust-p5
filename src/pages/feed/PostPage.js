@@ -9,6 +9,7 @@ import Comment from '../comments/Comment';
 import appStyles from "../../App.module.css";
 
 
+//Renders a post and it's comments
 const PostPage = () => {
     const { id } = useParams();
     const [post, setPost] = useState({results: [] })

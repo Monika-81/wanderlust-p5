@@ -75,6 +75,7 @@ const SignInForm = () => {
                                 onChange={handleChange}
                             />
                         </Form.Group>
+                        <p>*required</p>
                         {errors.password?.map((message, idx) => (
                             <Alert variant='warning' key={idx}>{message}</Alert>
                             )

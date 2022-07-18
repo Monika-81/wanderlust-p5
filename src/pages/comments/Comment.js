@@ -7,6 +7,7 @@ import { useCurrentUser } from '../../context/CurrentUserContext';
 import EditComment from './EditComment';
 import styles from "../../styles/Comment.module.css";
 
+
 const Comment = (props) => {
   const {
     id,

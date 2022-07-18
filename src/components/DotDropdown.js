@@ -3,9 +3,10 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { useHistory } from "react-router-dom";
 
 
+// Dropdown menu that allows the user to edit content
 const DotMenu = React.forwardRef(({ onClick }, ref) => (
   <i
-    className="fas fa-ellipsis-v"
+    className="fas fa-ellipsis"
     ref={ref}
     onClick={(event) => {
       event.preventDefault();

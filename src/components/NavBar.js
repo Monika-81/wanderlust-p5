@@ -9,11 +9,13 @@ import styles from '../styles/NavBar.module.css'
 import SearchBar from './SearchBar';
 
 
+//Returns navbar with conditional links for logged in users 
+//and searchbar component on feed pages
 function NavBar() {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
-    const pathname = window.location.pathname;
 
+    const pathname = window.location.pathname;
     const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
     const handleSignOut = async () => {
@@ -25,7 +27,6 @@ function NavBar() {
             console.log(err);
         }
     };
-   
 
     const loggedInLinks = 
         <>
@@ -84,14 +85,13 @@ function NavBar() {
             </NavLink>
         </>
 
-
     return (
         <div>
             <Navbar expanded={expanded} expand='false' className={styles.NavbarImage}>
                 <Container className='justify-content-center' >
                     <Navbar.Brand>
-                        <NavLink exact to="/" className={styles.NavLink} >
-                            <h1>WANDERLUST</h1>
+                        <NavLink exact to="/" className={`${styles.NavLink} ${styles.Hover}`} >
+                            <h1 className={styles.Logo}>WANDERLUST</h1>
                             <p>Let's dream and get inspired together!</p>
                         </NavLink>
                         <Navbar.Toggle
@@ -117,7 +117,7 @@ function NavBar() {
                             ) : pathname === '/posts' ? (
                                 <SearchBar />
                             ) : pathname === '/likes' ? (
-                                    <SearchBar />
+                                <SearchBar />
                             ) : ( 
                                 null
                             )}

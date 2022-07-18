@@ -1,27 +1,23 @@
 import React, { useContext } from 'react'
 import { Form, FormControl } from 'react-bootstrap';
 import NavbarContext from '../context/NavbarContext';
-import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
+import styles from '../styles/SearchBar.module.css'
 
 //Separate searchbar component, used for conditional display 
 const SearchBar = () => {
-  const { expanded, setExpanded, ref } = useClickOutsideToggle();
   const { query, setQuery } = useContext(NavbarContext);
 
   return (
         <Form 
-            inline ref={ref} 
-            onSubmit={(event) => event.preventDefault()}
-            onClick={() => setExpanded(expanded)} 
+          onSubmit={(event) => event.preventDefault()}
         >
           <FormControl  
-              type="search" 
-              placeholder="Search posts" 
-              className="mx-auto"
-              id="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              onClick={() => setExpanded(expanded)} 
+            className={styles.SearchBar}
+            type="search" 
+            placeholder="Search posts" 
+            id="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
           />
         </Form>
   )

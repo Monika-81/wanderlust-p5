@@ -3,7 +3,6 @@ import axios from 'axios';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext';
-import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import { removeTokenTimestamp } from '../utils/utils';
 import styles from '../styles/NavBar.module.css'
 import SearchBar from './SearchBar';
@@ -16,7 +15,6 @@ function NavBar() {
     const setCurrentUser = useSetCurrentUser();
 
     const pathname = window.location.pathname;
-    const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
     const handleSignOut = async () => {
         try {
@@ -87,7 +85,7 @@ function NavBar() {
 
     return (
         <div>
-            <Navbar expanded={expanded} expand='false' className={styles.NavbarImage}>
+            <Navbar expand='true' className={styles.NavbarImage}>
                 <Container className='justify-content-center' >
                     <Navbar.Brand>
                         <NavLink exact to="/" className={`${styles.NavLink} ${styles.Hover}`} >
@@ -95,8 +93,6 @@ function NavBar() {
                             <p>Let's dream and get inspired together!</p>
                         </NavLink>
                         <Navbar.Toggle
-                            ref={ref}
-                            onClick={() => setExpanded(!expanded)}
                             aria-controls="responsive-navbar-nav" 
                         />
                     </Navbar.Brand>
@@ -111,7 +107,7 @@ function NavBar() {
                             </NavLink>
                             {currentUser ? loggedInLinks : loggedOutLinks}
                         </Nav>
-                        <div onClick={() => setExpanded(expanded)} ref={ref}>
+                        <div>
                             {pathname === '/' ? (
                                 <SearchBar />
                             ) : pathname === '/posts' ? (

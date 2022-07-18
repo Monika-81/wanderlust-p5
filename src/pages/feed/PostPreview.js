@@ -62,7 +62,9 @@ const PostPreview = (props) => {
     return (
         <Card className={appStyles.CardStyle} >
             <div className={appStyles.CardFlex}>
-                {title && <span className={appStyles.CardTitle}>{title}</span>}
+                <Link to={`/posts/${id}/`}>
+                    {title && <span className={appStyles.CardTitle}>{title}</span>}
+                </Link>
                 <span>{updated_at}</span>
             </div>
             <Card.Body className="p-1">

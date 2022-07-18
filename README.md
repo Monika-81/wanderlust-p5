@@ -411,13 +411,16 @@ A contrast grid was used to see how well the colors worked together and to maxim
 #### **Languages**
 
 - **React JS**
-<br> The main language for building the User interface for the front end of this full stack application is the JavaScript Library React. React allows for creating reusable UI components that can be updated separately making the site interactive and user friendly. For more information of usage in this prodject, see details.
+<br> The main language for building the User interface for the front end of this full stack application is the JavaScript Library React. React allows for creating reusable UI components that can be updated separately making the site interactive and user friendly. 
+To make the apps design responsive I used React Bootstrap 4 in combination with the rest of the application.
 
-        - Reusable components in the project includes:
-            - the NavBar, rendered on every page of the site.
-            - the SearchBar, that only renders on the "Home"-, "Feed"- and "Liked"-page where the user can search for posts.
-            - the ScrollToTopp function, that scrolls the page top the top of the page when the user changes location on the site.
-            - the DotDropdown, used to give the user the option to edit or delete the content in both posts, comments and the users own profile page.
+    Reusable components in the project includes:
+    - the NavBar, rendered on every page of the site.
+    - the SearchBar, that only renders on the "Home", "Feed" and "Liked" pages, where the user can search for posts under each category (eg. all posts, posts by followed profiles or liked posts).
+    - the ScrollToTop function, that automatically scrolls the page to the top of the page when the user changes location on the site.
+    - the DotDropdown, used to give the user the option to edit or delete the content in both posts, comments and the users own profile page.
+
+<br>
 
 - **HTML5**
 <br> I used HTML to create the base structure of the project. I started with a basic boilerplate set up and created the first crude structure of the page out of the original design. 

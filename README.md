@@ -54,9 +54,9 @@ Let me introduce you further to [**Wanderlust**](https://wanderlust-p5.herokuapp
 
 <br>
 
-## Strategy
-
 ---
+
+## Strategy
 
 ### **Project goal**
 
@@ -70,8 +70,6 @@ The goals are summarised here:
 - Make a easily navigated app, with intuitive features.
 
 ### **UX** 
-
-<br>
 
 With the UX principles and project goal in mind I started with the Strategy phace, thinking about the target audience and what features would benefit them. 
 
@@ -94,12 +92,9 @@ What the user will be looking for:
 
 [Back to top](#wanderlust)
 
-<br>
-
-## Scope 
-
 ---
 
+## Scope
 
 ### **User Stories**
 
@@ -298,6 +293,7 @@ If the user instead chooses to delete their post, the first get a confirmation m
 
 <br>
 
+
 #### **Comments**
 As a site user you can read all the comments even if you are not logged in. The comments section are located below the post. A none logged in user can not see the box to add a comment. The user that has left a comment on a post has the choice to edit or delete their comment. The function to edit and the delete are almost identical to editing and deleting a post. 
 
@@ -315,6 +311,8 @@ As a site user you can read all the comments even if you are not logged in. The 
 
 <br>
 </details>
+
+<br>
 
 #### **Like Post**
 To add more interactivity and a more social aspect to the site, the user has the oppertunity to like or unlike post that the user finds interesting as well as a post the user would like to save so they can easily find it again. A user that is not logged in can see the amount of likes but can not interact with the function. 
@@ -404,7 +402,7 @@ A search bar function is displayed in the navbar when the user visits the "Home"
 
 [Back to top](#wanderlust)
 
-<br>
+---
 
 ## **Surface**
 
@@ -430,11 +428,11 @@ A contrast grid was used to see how well the colors worked together and to maxim
 
 [Back to top](#wanderlust)
 
+---
 
 ## Skeleton
 
 ### Technologies
----
 
 #### **Languages**
 
@@ -447,8 +445,6 @@ To make the apps design responsive I used React Bootstrap 4 in combination with 
     - the SearchBar, that only renders on the "Home", "Feed" and "Liked" pages, where the user can search for posts under each category (eg. all posts, posts by followed profiles or liked posts).
     - the ScrollToTop function, that automatically scrolls the page to the top of the page when the user changes location on the site.
     - the DotDropdown, used to give the user the option to edit or delete the content in both posts, comments and the users own profile page.
-
-<br>
 
 - **HTML5**
 <br> I used HTML to create the base structure of the project. I started with a basic boilerplate set up and created the first crude structure of the page out of the original design. 

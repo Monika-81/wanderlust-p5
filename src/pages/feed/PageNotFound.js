@@ -1,9 +1,12 @@
-import React from 'react'
-import { Col, Container, Row, Image } from 'react-bootstrap';
+import React from 'react';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
 import { Link } from 'react-router-dom';
-import appStyles from '../../App.module.css'
-import NotFound from '../../assets/notfound.jpg'
-import styles from '../../styles/CreateEditPostProfile.module.css'
+import appStyles from '../../App.module.css';
+import NotFound from '../../assets/notfound.jpg';
+import styles from '../../styles/CreateEditPostProfile.module.css';
 
 
 const PageNotFound = () => {

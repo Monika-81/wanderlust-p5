@@ -1,11 +1,17 @@
-import React, { useRef, useState } from 'react'
-import { Col, Row, Container, Form, Button, Image, Alert } from 'react-bootstrap'
-import { useHistory } from 'react-router-dom'
+import React, { useRef, useState } from 'react';
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
+import { useHistory } from 'react-router-dom';
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from '../../hooks/useRedirect';
 import appStyles from "../../App.module.css";
-import Default from '../../assets/default.jpg'
-import styles from '../../styles/CreateEditPostProfile.module.css'
+import Default from '../../assets/default.jpg';
+import styles from '../../styles/CreateEditPostProfile.module.css';
 
 
 const CreatePost = () => {

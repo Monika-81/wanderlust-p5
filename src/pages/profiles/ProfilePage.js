@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Container, Row, Image, Button, CardDeck } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import CardDeck from 'react-bootstrap/CardDeck';
+import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";

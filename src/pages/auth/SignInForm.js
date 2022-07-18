@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import {  Form, Button, Col, Row, Container, Alert, Image } from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Image from "react-bootstrap/Image";
+import Row from "react-bootstrap/Row";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useSetCurrentUser } from "../../context/CurrentUserContext";

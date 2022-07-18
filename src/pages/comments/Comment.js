@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import { Image, Media, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import Image from 'react-bootstrap/Image';
+import Media from 'react-bootstrap/Media';
+import Tooltip from 'react-bootstrap/Tooltip';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import { Link } from 'react-router-dom'
 import { axiosRes } from '../../api/axiosDefaults';
 import { DotDropdown } from '../../components/DotDropdown';

@@ -1,5 +1,10 @@
 import React from 'react'
-import { Col, Image, OverlayTrigger, Tooltip, Row, Container } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Image from 'react-bootstrap/Image';
+import Tooltip from 'react-bootstrap/Tooltip';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Row from 'react-bootstrap/Row';
 import { Link, useHistory } from 'react-router-dom';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import { DotDropdown } from "../../components/DotDropdown";

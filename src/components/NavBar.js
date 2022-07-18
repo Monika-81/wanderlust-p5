@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../context/CurrentUserContext';
 import { removeTokenTimestamp } from '../utils/utils';

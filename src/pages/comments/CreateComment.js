@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Form, InputGroup } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 import { axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/Comment.module.css";
 import appStyles from '../../App.module.css'

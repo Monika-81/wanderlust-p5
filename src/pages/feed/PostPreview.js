@@ -1,5 +1,9 @@
 import React from 'react'
-import { Card, Image, Media, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
+import Tooltip from 'react-bootstrap/Tooltip';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Media from 'react-bootstrap/Media';
 import { Link } from 'react-router-dom';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import { axiosRes } from '../../api/axiosDefaults';

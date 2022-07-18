@@ -56,7 +56,6 @@ button, .btn {
     background-color: transparent;
     max-width: 1500px;
     margin: 0 auto;
-    
 }
 
 .ColImage {
@@ -93,8 +92,6 @@ button, .btn {
 }
 
 .ContentColumns {
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
     column-count: 2;
     height: fit-content;
     font-size: 20px;
@@ -168,7 +165,7 @@ hr:after {
 @media screen and (max-width: 1120px) {
     
     .FormImage {
-        max-height: auto;
+        max-height: none;
         max-width: 100%;
     }
 
@@ -191,7 +188,6 @@ hr:after {
     .ColForm {
         border-radius: 10%;
     }
-
 }
 
 @media screen and (max-width: 675px) {
@@ -203,8 +199,7 @@ hr:after {
 
     .FormImage {
         display: none;
-    }
-    
+    } 
 }
 
 @media screen and (max-width: 575px) {
@@ -235,5 +230,4 @@ hr:after {
     .CardDeck {
         padding: 5vw 5vw;
     }
-
 }

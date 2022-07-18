@@ -17,13 +17,14 @@ Let me introduce you further to [**Wanderlust**]()!
 
 2. [**Scope**](#scope)
     - [User Stories](#user-stories)
-    - [Entity Relationship Diagram](#entity-relationship-diagram)
     - [Flowchart](#flowchart)
     - [Wireframes](#wireframes)    
 
 3. [**Structure**](#structure)
     - [Home page](#home-page)
+    - [Authentication](#authentication)
     - [Navigation](#navigation)
+    - [Posts](#posts)
     - [Add post](#add-post)
     - [Edit & delete post](#edit-&-delete-post)
     - [Like post](#like-post)
@@ -65,16 +66,15 @@ The goal with this project is to create a content sharing online travel diary th
 The goals are summarised here:
 
 - Make the apps **React** front end content connect smoothly with the **Django REST** back end to store, fetch and delete content.
-- Allow the users to comment, like and follow other users.
+- Allow an autherized users to comment, like and follow other users.
 - Make a responsive app that are easily accessible on every viewport, and with screen readers.
-- Make a easily navigated app, with intuitive features 
-- Make the user curious to come back for more
+- Make a easily navigated app, with intuitive features.
 
 ### **UX** 
 
 <br>
 
-With the UX principles in mind I started with the Strategy phace, thinking about the target audience and what features would benefit them. 
+With the UX principles and project goal in mind I started with the Strategy phace, thinking about the target audience and what features would benefit them. 
 
 The target audience are:
 - people in various age groups, mostly adults, who likes to travel
@@ -107,52 +107,33 @@ What the user will be looking for:
 <br>
 
 **Epic: Account Management**
-- As a Site User I can sign up for an account so that I can use all the features reserved for members
-- As a Site User I can log in to the site so that I can use all the features of the site
-- As a Site User I can easily log out from the site so that my account and its content remains secure
-- As a Site User I can create a personal profile so that I can control my content
-- As a Site User I can edit my personal profile so that I can keep it up to date and safe
+1. As a Site User I can sign up for an account so that I can use all the features reserved for members
+2. As a Site User I can log in to the site so that I can use all the features of the site
+3. As a Site User I can easily log out from the site so that my account and its content remains secure
+4. As a Site User I can create a personal profile so that I can control my content
+5. As a Site User I can edit my personal profile so that I can keep it up to date and safe
 
 **Epic: Site View**
-- As a Site User I can read posts and comments in detail so that I can get information and inspiration
-- As a Site User I can see a specific users post at their profile page so that I can see if I want to follow their profile
-- As a Site User I can use a search function so that I can find the right post or user that interests me
-- As a Site User I can easily and intuitively navigate the site so that I can find what I am looking for
-- As a Site User I can see the date a post was created and updated so that I know how accurate it is
+6. As a Site User I can read posts and comments in detail so that I can get information and inspiration
+7. As a Site User I can see a specific users post at their profile page so that I can see more post from the same user
+8. As a Site User I can use a search function so that I can find the right post or user that interests me
+9. As a Site User I can easily and intuitively navigate the site so that I can find what I am looking for
+10. As a Site User I can see the date a post was created and updated so that I know how accurate it is
 
 **Epic: Site Interactions**
-- As a logged in Site User I can create new post so that I can update my travel diary
-- As a logged in Site User I can comment on posts so that I can interact with the other users
-- As a logged in Site User I can edit or delete my posts and comment so that I display controll my input on the site
-- As a logged in Site User I can like posts so that others can see if a post is popular and so I can find it easily again
-- As a logged in Site User I can follow profiles so that I can find it easily again
-- As a Site User I get notifications when something is wrong or changed so that I understand how to use the app
+11. As a logged in Site User I can create new post so that I can update my travel diary
+12. As a logged in Site User I can comment on posts so that I can interact with the other users
+13. As a logged in Site User I can edit or delete my posts and comment so that I display controll my input on the site
+14. As a logged in Site User I can like posts so that others can see if a post is popular and so I can find it easily again
+15. As a logged in Site User I can follow profiles so that I can find it easily again
+16. As a Site User I get notifications when something is wrong or changed so that I understand how to use the app
 
 <br>
 
 To follow an agile approch, a project board (kanban-board) was set up using GitHub Projects: 
 - Front End [Kanban](https://github.com/Monika-81/wanderlust-p5/projects/1)
-- Back End [Kanban](https://github.com/Monika-81/wanderlust-api/projects/1)
 
 <br>
-
-### Entity Relationship Diagram
-
-<br>
-
-The planing of the database models, aka the Entity Relationship Diagram, is illustrated below:
-
-<br>
-
-![ERD]()
-
-<br>
-
-And the finished models:
-
-<br>
-
-![ERD]()
 
 ### Flowchart
 
@@ -166,7 +147,7 @@ The structure of the site is based on this basic flowchart:
 
 ### Wireframes
 
-The wireframes for the project is very basic to get the feeling where I wanted the project to go, but over all the choices of the design grew with the development.
+The wireframes for the project is very basic to get the feeling where I wanted the project to go, but over all the choices of the visual design grew with the development.
 
 <br>
 
@@ -183,10 +164,26 @@ The wireframes for the project is very basic to get the feeling where I wanted t
 
 ### **Features**
 
+Below are the excisting features and how they tie in to the user stories and with that the projects goals.
+
 <br>
 
 #### **Home page**
-When the site user enters the site they are greated with a feed of the latest posts to the site. The post gives a breef introduction each in the title and subtitles. As well as features the image for the post, admin avatar, icon to like the post and an icon that shows the number of comments. A none logged in user can use the site as "Read only", without any interactions.
+When the site user enters the site they are greated with a feed of the latest posts to the site. The post gives a brief introduction to the diary post in the title and subtitle. As well as features the image for the post, admin avatar, icon to like the post and an icon that shows the number of comments. A none logged in user can use the site as "Read only", without any interactions. 
+<details>
+
+
+<br>
+<br>
+
+![Home page desktop]()
+![Home page mobile]()
+
+<br>
+</details>
+
+#### **Authentication**
+To connect with the site content the non logged in user can find the option to sign in or sign up/register in the navbar menu. After the user has created a profile they are asked to log in and are there after moved back to the home page, now the links to sign in and sign up are changed to give the user access to the interactive content of the site. The user also get's the choice to actively sign out of the page. (**User Story 1, 2 & 3**)
 <details>
 
 
@@ -200,7 +197,7 @@ When the site user enters the site they are greated with a feed of the latest po
 </details>
 
 #### **Navigation**
-At the top of the website there is a hero image, logo and an internal navigation bar. The navigation bar is shown whnen the user clicks the burger menu to toggle the menu to expand. The current page the user is visiting is marked for easier navigation on the site. As a none logged in user, the navbar contains the choice to go to the "Home" page, "Sign in" or "Sign out". For a logged in user the sign in/sign up links are exchanged to link to the "Feed" page (posts from profiles the user is following), "Liked" page (posts the user have liked), "Add post", "Profile" (the users own profile page) and "Sign out".  On desktop and landscape oriented screens the navigation bar is located to the top right side of the page, and on portrait oriented devices the navigation bar is fixed at the top of the screen. When a user visits the Home, Feed or Liked page, a search function appairs.
+At the top of the website there is a hero image, logo and an internal navigation bar. The navigation bar is shown whnen the user clicks the burger menu to toggle the menu to expand. The current page the user is visiting is marked for easier navigation on the site. As a none logged in user, the navbar contains the choice to go to the "Home" page, "Sign in" or "Sign out". For a logged in user the sign in/sign up links are exchanged to link to the "Feed" page (posts from profiles the user is following), "Liked" page (posts the user have liked), "Add post", "Profile" (the users own profile page) and "Sign out".  On desktop and landscape oriented screens the navigation bar is located to the top right side of the page, and on portrait oriented devices the navigation bar is fixed at the top of the screen. When a user visits the Home, Feed or Liked page, a search function appairs. (**User story 9**)
 <details>
 
 
@@ -220,8 +217,30 @@ At the top of the website there is a hero image, logo and an internal navigation
 <br>
 </details>
 
+#### **Posts**
+The view of the post contains the post, a comments list section and an input box to leave a new comment. At the top of the post the user read the title, subtitle and date the post was created or last edited. Depending on the screen with, the image connected to the post are either displayed underneeth the title or to the right of the title and subtitle. Below the picture the textcontent of the post is rendered in two columns on larger screen size and in one column on smaller screen size. Lastly the user finds the authors name and/or avatar as well as the to social interaction counters, displaying how many comments the post has as well as how many likes. The amount of interaction the site user have access to depends on if the user is just browsing the page, is logged in and created the post as well as if the user have created any comments. A none registered user can see and read the comments but no more, neither comment or like a post. A user that is reading the post can like or unlike the post (airplane icon), leave a comment and edit or delete their comment. The post creator can, except from all of the above, also edit and delete their post. (**User Story 6 & 10**)
+<details>
+
+
+<br>
+<br>
+
+![Add post button]()
+![Add post dropdown]()
+
+<br>
+<br> 
+
+![Add form]()
+![Add choices]()
+![Add error]()
+![Add success]()
+
+<br>
+</details>
+
 #### **Add Post**
-To add a post the user has to be logged in and click "Add post" button in the navigation bar. The form asks the user to upload an image and to give the post a title, subtitle and text content. The user can only upload one picture with a max size off 1 MB as well as a max height/width of 2048px. All three text fields as well as an image are required before the user can create a post. If the user submits a form with incorrect input, they get an error message that displays what went wrong. If the post was created successfully, the user is redirected to the created post's page to get confirmation that the post has been submitted as well as an overview of the result and the oppertunity to edit the post directly.
+To add a post the user has to be logged in and click "Add post" button in the navigation bar. The form asks the user to upload an image and to give the post a title, subtitle and text content. The user can only upload one picture with a max size off 1 MB as well as a max height/width of 2048px. All three text fields as well as an image are required before the user can create a post. If the user submits a form with incorrect input, they get an error message that displays what went wrong. If the post was created successfully, the user is redirected to the created post's page to get confirmation that the post has been submitted as well as an overview of the result and the oppertunity to edit the post directly. (**User Story & 11**)
 <details>
 
 
@@ -248,7 +267,7 @@ To edit the post, the user can either find their post through the search bar, th
 
 If the user choses to edit the post, the are taken back to the form create page but the forms fields are prepopulated with the content of the post the user wishes to edit. The user can edit all or none of the fields or cancel the edit.
 
-If the user instead chooses to delete their post, the first get a confirmation message so no post are deleted by misstake.
+If the user instead chooses to delete their post, the first get a confirmation message so no post are deleted by misstake. (**User Story 13**)
 <details>
 
 
@@ -265,7 +284,7 @@ If the user instead chooses to delete their post, the first get a confirmation m
 </details>
 
 #### **Comments**
-As a site user you can read all the comments even if you are not logged in. The comments section are located below the post. A none logged in user can not see the box to add a comment. The user that has left a comment on a post has the choice to edit or delete their comment. The function to edit and the delete are almost identical to editing and deleting a post.
+As a site user you can read all the comments even if you are not logged in. The comments section are located below the post. A none logged in user can not see the box to add a comment. The user that has left a comment on a post has the choice to edit or delete their comment. The function to edit and the delete are almost identical to editing and deleting a post. (**User Story 12 & 13**)
 <details>
 
 
@@ -281,7 +300,7 @@ As a site user you can read all the comments even if you are not logged in. The 
 </details>
 
 #### **Like Post**
-To add more interactivity and a more social aspect to the site, the user has the oppertunity to like or unlike post that the user finds interesting as well as a post the user would like to save so they can easily find it again. A user that is not logged in can see the amount of likes but can not interact with the function. 
+To add more interactivity and a more social aspect to the site, the user has the oppertunity to like or unlike post that the user finds interesting as well as a post the user would like to save so they can easily find it again. A user that is not logged in can see the amount of likes but can not interact with the function. (**User Story 14**)
 <details>
 
 
@@ -300,7 +319,7 @@ From the navigation menu, the user can reach their personal page. The personal p
 
 Underneath the description area is three counters showing the amounts of post the user have posted, how many profiles they are following and how many other users are following their profile. If the user is visiting the profile off another user, their is also a button displating the choice to follow or unfollow the user.
 
-Lastly, the profile owners posts are displayed below the profile information. So the user can access all of their own or a specific user's posts (not comments) from the profile page as well. If the user clicks on a post, they will be transported to the page of the post.
+Lastly, the profile owners posts are displayed below the profile information. So the user can access all of their own or a specific user's posts (not comments) from the profile page as well. If the user clicks on a post, they will be transported to the page of the post. (**User Story 4, 5 & 7**)
 <details>
 
 <br>
@@ -313,7 +332,7 @@ Lastly, the profile owners posts are displayed below the profile information. So
 </details>
 
 #### **Follow Profile**
-The site user has the oppertunity to follow a specific profile they find ineristing, wants to come back to, interact with and so on. The followed profiles posts are displayed in a separate page called "Feed". To follow or unfollow a user, the site user visits the descired profile page and clicks on the button "follow" or "Unfollow" in the profile description. The number of followers that follos a specific profile are displayed both to others and the profile owner them self, on the profile page.
+The site user has the oppertunity to follow a specific profile they find ineristing, wants to come back to, interact with and so on. The followed profiles posts are displayed in a separate page called "Feed". To follow or unfollow a user, the site user visits the descired profile page and clicks on the button "follow" or "Unfollow" in the profile description. The number of followers that follos a specific profile are displayed both to others and the profile owner them self, on the profile page. (**User Story 15**)
 <details>
 
 
@@ -328,7 +347,7 @@ The site user has the oppertunity to follow a specific profile they find inerist
 </details>
 
 #### **Search Function**
-A search bar function is displayed in the navbar when the user visits the "Home", "Feed" or "Liked page", giving the site user the option to search the posts of current site page. The user does not need to be verified to search through the posts. The search renders posts with the searched value in the post title, subtitle, content or username. If the input dosent render a finding, the user gets feedback directly.
+A search bar function is displayed in the navbar when the user visits the "Home", "Feed" or "Liked page", giving the site user the option to search the posts of current site page. The user does not need to be verified to search through the posts. The search renders posts with the searched value in the post title, subtitle, content or username. If the input dosent render a finding, the user gets feedback directly. (**User Story 8**)
 <details>
 
 
@@ -400,22 +419,11 @@ A contrast grid was used to see how well the colors worked together and to maxim
             - the ScrollToTopp function, that scrolls the page top the top of the page when the user changes location on the site.
             - the DotDropdown, used to give the user the option to edit or delete the content in both posts, comments and the users own profile page.
 
-- **Django REST Framework**
-<br> For this full stack project the Python based framework Django is the development language for the back end API. I used PostgreSQL database, psycopg2 as the adapter and a gunicorn server implementation using WSGI standard. I installed a battery of extra libraries to help run everything smoothly:
-
-    * Pillow (Python Imaging Library)
-    * Cloudinary (to host static files)
-    * Bootstrap 4 (to style the content and make it resposive)
-    * Multiple Django rest libraries (authentication, filters, jwt-tokens, django database url)
-
 - **HTML5**
 <br> I used HTML to create the base structure of the project. I started with a basic boilerplate set up and created the first crude structure of the page out of the original design. 
 
 - **CSS3**
 <br> The CSS was used to apply the custom styles where I didn't use bootstrap. 
-
-- **Javascript**
-<br> A small amount of javascript was used in this application, no separate script was needed and the code is located in the base template.
 
 <br>
 
@@ -430,9 +438,6 @@ A contrast grid was used to see how well the colors worked together and to maxim
 - [Colormind](http://www.colormind.io)
     - I used Colormind to create a color palette for my color scheme.
 
-- [Cloudinary](https://cloudinary.com/)
-    - I used to create the API's that connects the application to the spreadsheet at Google Sheet. 
-
 - [DevTools](https://developer.chrome.com/docs/devtools/)
     -  I used DevTools to test both changes in my code and the responsivity of the site.  
 
@@ -440,7 +445,7 @@ A contrast grid was used to see how well the colors worked together and to maxim
     - I used Eight Shapes color grid to check the color schemes visibility in diffrent combinations.
 
 - [Lucid Chart](https://www.lucidchart.com/pages/)
-    - I used Lucid Chart to design the data model and list mock up for the project.
+    - I used Lucid Chart to design the flowchart for the project.
 
 - [GitPod](https://www.gitpod.io/)
     - I used GitPod as the code editor as well as to display to test out changes in my code.
@@ -479,15 +484,10 @@ For more information about the testing performed during the development, go to t
 
 ### **Deployment**
 
-The project was deployed to **Heroku** from **GitPod** using two heroku apps for each GitPod repository:
+The project was deployed to **Heroku** from **GitPod**:
 - After creating an account or logging in to an existing one on Heroku, click the "New" button on the right hand side of the 'Personal' menu.
 - Choose the option 'Create new app' and then choose a unique name for your application and the right region. Then click 'Create New App'.
-- Next you need to add buildpacks and create config vars, this is utterly **important** to have done before you deploy your app!
-
-    - Then add config vars by clicking 'Reveal Config Vars' for both the API and Front-end app.
-    - If you need additional config vars, for example 'secret key', 'database urls' etc they need to be set here as well.
-
-- Now it's time to deploy the app. Go back to the top of the page and click "Deploy".
+- Now it's time to deploy the app. Go to the top of the page and click "Deploy".
 - Choose a deployment method, I used GitHub since my repository is located on GitHub.
 - Scroll down to 'Connect to GitHub' and search for your project. Make sure you are connected to the right GitHub account. Click 'Connect'.
 - Keep scrolling downwards, now you can choose between Automatic Deployment or Manual Deployment. I choose Manual first, until the app was properly deployed and a link to the app was visual. Then I choose to enable automatic deployment for smoother testing. 
@@ -507,7 +507,7 @@ A copy of this GitHub Repository can be made by either making a copy on your loc
 - The first option in the drop-down menu is clone, where you get three choices of how to clone the repository.
 - To clone a copy of the python project, click the 'copy' icon on the right-hand side of **Clone with HTTPS**.
 - Choose your code editor, open GitBash and change the working directory to where you want the cloned directory to be made saved.
-- In the terminal you write git clone and then paste the copied URL. Like this: '$ git clone https://github.com/Monika-81/padel-pals.git' 
+- In the terminal you write git clone and then paste the copied URL. Like this: '$ git clone https://github.com/Monika-81/wanderlust-p5.git' 
 - Press enter and then install the dependencies you like to use for the project.
 <br>
 

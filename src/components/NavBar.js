@@ -87,7 +87,7 @@ function NavBar() {
 
     return (
         <div>
-            <Navbar expand='true' className={styles.NavbarImage}>
+            <Navbar expand='true' className={styles.NavbarImage} fetchpriority="high">
                 <Container className='justify-content-center' >
                     <Navbar>
                         <NavLink exact to="/" className={`${styles.NavLink} ${styles.Hover} ${styles.TextWhite}`} >

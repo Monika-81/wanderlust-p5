@@ -10,6 +10,7 @@ import { fetchMoreData } from '../../utils/utils';
 import PostPreview from './PostPreview';
 import appStyles from "../../App.module.css";
 import NavbarContext from '../../context/NavbarContext';
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 
 //Displays posts to user, posts looped over and rendered with
@@ -19,6 +20,7 @@ function FeedPage({message, filter = ''}) {
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
     const { query } = useContext(NavbarContext);
+    const currentUser = useCurrentUser();
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -38,7 +40,7 @@ function FeedPage({message, filter = ''}) {
             return () => {
                 clearTimeout(timer)
         }      
-    }, [filter, query, pathname])
+    }, [filter, query, pathname, currentUser])
 
 
     return (

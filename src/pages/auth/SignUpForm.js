@@ -47,6 +47,7 @@ const SignUpForm = () => {
             <Col className={appStyles.ColForm}>
                 <Container>
                     <h1 className={appStyles.FormHeader}>Sign up!</h1>
+                    <p>Wanderlust is your online travel diary! Always ready for you to share, inspire and dream about your next trip!</p>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="username" className={appStyles.FormGroup}>
                             <Form.Label className="d-none">Username</Form.Label>

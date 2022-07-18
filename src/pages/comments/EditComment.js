@@ -38,7 +38,7 @@ function EditComment(props) {
         }));
         setShowEditComment(false);
         } catch (err) {
-            console.log(err)
+            // console.log(err)
         }
     }
 

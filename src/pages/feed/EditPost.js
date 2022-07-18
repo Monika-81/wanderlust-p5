@@ -33,7 +33,7 @@ function EditPost() {
                 const {title, subtitle, content, image, is_owner} = data;
                 is_owner ? setPostData({title, subtitle, content, image}) : history.push('/');
             } catch (err) {
-                console.log(err)
+                // console.log(err)
             }
         }
         handleMount();
@@ -72,7 +72,7 @@ function EditPost() {
             await axiosReq.put(`/posts/${id}/`, formData);
             history.push(`/posts/${id}`);
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             if (err.response?.status !== 401){
                 setErrors(err.response?.data);
             } 

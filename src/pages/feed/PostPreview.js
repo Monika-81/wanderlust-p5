@@ -43,7 +43,7 @@ const PostPreview = (props) => {
                 }),
             }));
         } catch (err) {
-          console.log(err);
+        //   console.log(err);
         }
       };
     
@@ -59,7 +59,7 @@ const PostPreview = (props) => {
                 }),
             }));
         } catch (err) {
-          console.log(err);
+        //   console.log(err);
         }
       };
 

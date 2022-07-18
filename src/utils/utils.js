@@ -28,6 +28,6 @@ export const setTokenTimestamp = (data) => {
             }, prevResource.results),
         }));
     } catch (err) {
-      console.log(err)
+      // console.log(err)
     }
  };

@@ -1,3 +1,4 @@
+/*------------------------------------------------General style*/
 .App {
     height: 100%;
     min-height: 100vh;
@@ -48,6 +49,8 @@ button, .btn {
     font-size: 20px !important;
 }
 
+/*------------------------------------------------Content style Forms/Columns*/
+
 .RowMargin {
     padding: 0;
     background-color: transparent;
@@ -89,6 +92,17 @@ button, .btn {
     justify-content: center;
 }
 
+.ContentColumns {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    height: fit-content;
+    font-size: 20px;
+    padding: 2rem;
+} 
+
+/*------------------------------------------------General style Cards*/
+
 .PreviewImage {
     max-width: 500px;
     max-height: 500px;
@@ -120,15 +134,7 @@ button, .btn {
 .CardTitle {
     font-size: 23px;
 }
-
-.ContentColumns {
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
-    height: fit-content;
-    font-size: 20px;
-    padding: 2rem;
-}   
+  
 
 .SmallAvatar {
     height: 30px;

@@ -1,3 +1,7 @@
+.Author {
+    font-size: 25px;
+}
+
 .ColFlex {
     padding: 3rem 3rem 1rem;
     position: relative;
@@ -7,6 +11,11 @@
     padding: 0 1rem 2rem;
 }
 
+.Date {
+    margin-top: 3rem;
+    font-size: 25px;
+}
+
 .Image {
     padding-top: 1rem;
     border-radius: 10%;
@@ -14,15 +23,6 @@
 
 .Title {
     margin: 4rem 0;
-}
-
-.Date {
-    margin-top: 3rem;
-    font-size: 25px;
-}
-
-.Author {
-    font-size: 25px;
 }
 
 .PostColForm {
@@ -48,4 +48,3 @@
     }
     
 }
-

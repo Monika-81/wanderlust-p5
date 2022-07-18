@@ -10,7 +10,7 @@ import { fetchMoreData } from '../../utils/utils';
 import PostPreview from './PostPreview';
 import appStyles from "../../App.module.css";
 import NavbarContext from '../../context/NavbarContext';
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../context/CurrentUserContext";
 
 
 //Displays posts to user, posts looped over and rendered with

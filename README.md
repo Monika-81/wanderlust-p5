@@ -164,9 +164,12 @@ The wireframes for the project is very basic to get the feeling where I wanted t
 When the site user enters the site they are greated with a feed of the latest posts to the site. The post previews gives a brief introduction to the diary post in the title and subtitle. As well as features the image for the post, admin avatar, icon to like the post and an icon that shows the number of comments. A none logged in user can use the site as "Read only", without any interactions. 
 Below are the excisting features and how they tie in to the user stories and with that the projects goals.
 
-![Home page desktop]()
-![Home page mobile]()
 
+<details>
+
+![Home page desktop](/src/assets/readme-docs/home1.png)
+![Home page mobile](/src/assets/readme-docs/mobile1.png)
+</details>
 
 <br>
 
@@ -181,8 +184,10 @@ If the user forgets to submit input to any of the required fields, they get an e
 <br>
 <br>
 
-![Home page desktop]()
-![Home page mobile]()
+![Sign up](/src/assets/readme-docs/signup.png)
+![Sign in](/src/assets/readme-docs/signin.png)
+![Sign up mobile](/src/assets/readme-docs/signup-m.png)
+![Sign in mobile](/src/assets/readme-docs/signin-m.png)
 
 <br>
 </details>
@@ -199,15 +204,15 @@ At the top of the website there is a hero image, logo and an internal navigation
 <br>
 <br>
 
-![Navbar desktop]()
-![Navbar desktop dropdown]()
-
+![Navbar desktop](/src/assets/readme-docs/navbar.png)
+![Navbar desktop unauth](/src/assets/readme-docs//non-auth-navbar.png)
 <br>
-<br> 
 
-![Navbar mobile expanded dropdown]()
-![Navbar mobile expanded]()
-![Navbar mobile collapsed]()
+![Navbar mobile auth feed](/src/assets/readme-docs/auth-navbar.png)
+<br>
+
+![Navbar mobile auth](/src/assets/readme-docs/auth-navbar2.png)
+
 
 <br>
 </details>
@@ -224,16 +229,11 @@ The view of the post contains the post, a comments list section and an input box
 <br>
 <br>
 
-![Add post button]()
-![Add post dropdown]()
-
+![Post mobile 1](/src/assets/readme-docs/post.png)
+![Post mobile 2](/src/assets/readme-docs/post2.png)
 <br>
-<br> 
 
-![Add form]()
-![Add choices]()
-![Add error]()
-![Add success]()
+![Post](/src/assets/readme-docs/post3.png)
 
 <br>
 </details>
@@ -248,18 +248,16 @@ To add a post the user has to be logged in and click "Add post" button in the na
 
 
 <br>
-<br>
-
-![Add post button]()
-![Add post dropdown]()
-
-<br>
 <br> 
 
-![Add form]()
-![Add choices]()
-![Add error]()
-![Add success]()
+![Add post](/src/assets/readme-docs/create-post.png)
+<br>
+
+![Add post mobile](/src/assets/readme-docs/create-post-m.png)
+![Add post mobile 2](/src/assets/readme-docs/create-post-m2.png)
+<br>
+
+![Add post validation](/src/assets/readme-docs/create-post-validation.png)
 
 <br>
 </details>
@@ -281,11 +279,12 @@ If the user instead chooses to delete their post, the first get a confirmation m
 <br>
 <br> 
 
-![Edit button]()
-![Edit post]()
-![Edit play]()
-![Delete button]()
-![Delete modal]()
+![Edit post tablet](/src/assets/readme-docs/edit-post-p.png)
+<br>
+
+![Edit post mobile](/src/assets/readme-docs/edit-post-m.png)
+![Delete post](/src/assets/readme-docs/delete-post.png)
+
 
 <br>
 </details>
@@ -303,10 +302,16 @@ As a site user you can read all the comments even if you are not logged in. The 
 <br>
 <br> 
 
-![Comment not logged in]()
-![Comment]()
-![Edit comment]()
-![Delete comment]()
+![Comments](/src/assets/readme-docs/comments.png)
+<br>
+
+![Comment](/src/assets/readme-docs/comment.png)
+<br>
+
+![Edit comment](/src/assets/readme-docs/comment-auth.png)
+<br>
+
+![Delete comment](/src/assets/readme-docs/comment-edit.png)
 
 <br>
 </details>
@@ -323,9 +328,9 @@ To add more interactivity and a more social aspect to the site, the user has the
 <br>
 <br> 
 
-![Likes list]()
-![Likes post]()
-![Toggled like]()
+![Likes 1](/src/assets/readme-docs/likes.png)
+![Likes 2](/src/assets/readme-docs/tooltip2.png)
+![Likes 3](/src/assets/readme-docs/tooltip3.png)
 
 <br>
 </details>
@@ -345,8 +350,11 @@ Lastly, the profile owners posts are displayed below the profile information. So
 <br>
 <br> 
 
-![Profile page]()
-![Update email]()
+![Profile ](/src/assets/readme-docs/profile-auth.png)
+![Profile dropdown](/src/assets/readme-docs/profile-auth2.png)
+![Profile edit](/src/assets/readme-docs/edit-profile.png)
+![Profile password](/src/assets/readme-docs/edit-password.png)
+
 
 <br>
 </details>
@@ -363,9 +371,8 @@ The site user has the oppertunity to follow a specific profile they find inerist
 <br>
 <br> 
 
-![Search bar]()
-![Search fail]()
-![Search success]()
+![Profile follow](/src/assets/readme-docs/profile.png)
+![Profile unfollow](/src/assets/readme-docs/profile1.png)
 
 <br>
 </details>
@@ -382,9 +389,9 @@ A search bar function is displayed in the navbar when the user visits the "Home"
 <br>
 <br> 
 
-![Search bar]()
-![Search fail]()
-![Search success]()
+![Search all](/src/assets/readme-docs/search.png)
+![Search feed](/src/assets/readme-docs/search3.png)
+![Search fail](/src/assets/readme-docs/search2.png)
 
 <br>
 </details>

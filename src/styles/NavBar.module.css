@@ -3,6 +3,16 @@
     font-weight: bolder;
 }
 
+.NavbarText {
+    font-family: 'Edu SA Beginner', sans-serif;
+    letter-spacing: 2px;
+}
+
+.TextWhite {
+    color: white !important;
+    padding: 1rem 0 1rem 1rem;
+}
+
 .Hover:hover { 
     color: white !important;
 } 
@@ -17,11 +27,23 @@
 
 .NavLink {
     margin: 1rem;
-    color:white;
+    color:black;
     font-weight: bolder;
 }   
 
 .Active {
     color: black;
     text-decoration: underline solid 1px black;
+}
+
+@media screen and (max-width: 500px) {
+    .TextWhite {
+        padding: 1rem 1rem;
+    }
+    
+    .NavLink {
+        margin: 0.5rem;
+    }   
+    
+
 }

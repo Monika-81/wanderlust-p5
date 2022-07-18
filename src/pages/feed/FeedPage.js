@@ -64,7 +64,7 @@ function FeedPage({message, filter = ''}) {
                     )}
                 </>
             ) : (
-                console.log('loading...')
+                null
             )}
             </Col>
         </Row>

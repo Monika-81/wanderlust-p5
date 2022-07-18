@@ -31,35 +31,35 @@ function NavBar() {
             <NavLink 
                 exact to="/posts" 
                 activeClassName={styles.Active}
-                className={styles.NavLink}
+                className={`${styles.NavLink} ${styles.NavbarText}`}
             >
                 Feed
             </NavLink>
             <NavLink 
                 to="/likes" 
                 activeClassName={styles.Active}
-                className={styles.NavLink}
+                className={`${styles.NavLink} ${styles.NavbarText}`}
             >
                 Liked
             </NavLink>
             <NavLink 
                 to={`/profile/${currentUser?.profile_id}`} 
                 activeClassName={styles.Active}
-                className={styles.NavLink}
+                className={`${styles.NavLink} ${styles.NavbarText}`}
             >
                 Profile
             </NavLink>
             <NavLink 
                 to="/posts/create" 
                 activeClassName={styles.Active}
-                className={styles.NavLink}
+                className={`${styles.NavLink} ${styles.NavbarText}`}
             >
                 Add post
             </NavLink>
             <NavLink 
                 to="/" 
                 onClick={handleSignOut}
-                className={styles.NavLink}
+                className={`${styles.NavLink} ${styles.NavbarText}`}
             >
                 Sign Out
             </NavLink>
@@ -70,14 +70,14 @@ function NavBar() {
             <NavLink 
                 to="/signin" 
                 activeClassName={styles.Active}
-                className={styles.NavLink}
+                className={`${styles.NavLink} ${styles.NavbarText}`}
             >
                 Sign In
             </NavLink>
             <NavLink 
                 to="/signup" 
                 activeClassName={styles.Active}
-                className={styles.NavLink}
+                className={`${styles.NavLink} ${styles.NavbarText}`}
             >
                 Sign Up
             </NavLink>
@@ -87,21 +87,21 @@ function NavBar() {
         <div>
             <Navbar expand='true' className={styles.NavbarImage}>
                 <Container className='justify-content-center' >
-                    <Navbar.Brand>
-                        <NavLink exact to="/" className={`${styles.NavLink} ${styles.Hover}`} >
+                    <Navbar>
+                        <NavLink exact to="/" className={`${styles.NavLink} ${styles.Hover} ${styles.TextWhite}`} >
                             <h1 className={styles.Logo}>WANDERLUST</h1>
-                            <p>Let's dream and get inspired together!</p>
+                            <p className={styles.NavbarText}>Let's dream and get inspired together!</p>
                         </NavLink>
-                        <Navbar.Toggle
-                            aria-controls="responsive-navbar-nav" 
-                        />
-                    </Navbar.Brand>
+                    </Navbar>
+                    <Navbar.Toggle
+                        aria-controls="responsive-navbar-nav" 
+                    />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto flex-row flex-wrap justify-content-center">
                             <NavLink 
                                 exact to="/" 
                                 activeClassName={styles.Active}
-                                className={styles.NavLink}
+                                className={`${styles.NavLink} ${styles.NavbarText}`}
                             >  
                                 Home
                             </NavLink>

@@ -9,6 +9,7 @@ import { DotDropdown } from '../../components/DotDropdown';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import EditComment from './EditComment';
 import styles from "../../styles/Comment.module.css";
+import PropTypes from "prop-types";
 
 
 const Comment = (props) => {
@@ -90,5 +91,17 @@ const Comment = (props) => {
     </div>
   );
 }
+
+//Added proptypes after ESlint testing
+Comment.propTypes = {
+  id: PropTypes.object.isRequired,
+  owner: PropTypes.object.isRequired,
+  content: PropTypes.object.isRequired,
+  profile_id: PropTypes.object.isRequired,
+  profile_image: PropTypes.object.isRequired,
+  updated_at: PropTypes.object.isRequired,
+  setPost: PropTypes.func.isRequired,
+  setComments: PropTypes.func.isRequired,
+};
 
 export default Comment;

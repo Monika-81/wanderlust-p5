@@ -1,8 +1,9 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useHistory } from "react-router";
 import { removeTokenTimestamp, shouldRefreshToken } from "../utils/utils";
+import PropTypes from "prop-types";
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
@@ -81,3 +82,8 @@ export const CurrentUserProvider = ({ children }) => {
         </CurrentUserContext.Provider>
     );
 };
+
+//Added proptypes after ESlint testing
+CurrentUserProvider.propTypes = {
+    children: PropTypes.object.isRequired
+  };

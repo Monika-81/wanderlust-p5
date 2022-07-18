@@ -1,7 +1,8 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { EditProfileDropdown } from "../components/DotDropdown";
 import { useCurrentUser } from "./CurrentUserContext";
+import PropTypes from "prop-types";
 
 
 const ProfileDataContext = createContext();
@@ -98,4 +99,9 @@ export const ProfileDataProvider = ({ children }) => {
             </SetProfileDataContext.Provider>
         </ProfileDataContext.Provider>
     );
+};
+
+//Added proptypes after ESlint testing
+ProfileDataProvider.propTypes = {
+  children: PropTypes.object.isRequired
 };

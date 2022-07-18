@@ -4,7 +4,8 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/Comment.module.css";
-import appStyles from '../../App.module.css'
+import appStyles from '../../App.module.css';
+import PropTypes from "prop-types";
 
 const CreateComment = (props) => {
   const {
@@ -69,5 +70,12 @@ const CreateComment = (props) => {
     </Form>
   );
 }
+
+//Added proptypes after ESlint testing
+CreateComment.propTypes = {
+  post: PropTypes.object.isRequired,
+  setPost: PropTypes.func.isRequired,
+  setComments: PropTypes.func.isRequired,
+};
 
 export default CreateComment;

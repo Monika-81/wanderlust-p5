@@ -13,7 +13,7 @@ import EditProfile from './pages/profiles/EditProfile';
 import EditPassword from './pages/profiles/EditPassword';
 import styles from './App.module.css'
 import NavbarContext from './context/NavbarContext';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ScrollToTop from './components/ScrollToTop';
 import PageNotFound from './pages/feed/PageNotFound';
 

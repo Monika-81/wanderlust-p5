@@ -10,7 +10,8 @@ import { useCurrentUser } from '../../context/CurrentUserContext';
 import { DotDropdown } from "../../components/DotDropdown";
 import { axiosRes } from '../../api/axiosDefaults';
 import appStyles from "../../App.module.css";
-import styles from '../../styles/Post.module.css'
+import styles from '../../styles/Post.module.css';
+import PropTypes from "prop-types";
 
 
 //displays a specific post, let's the owner edit or
@@ -141,7 +142,7 @@ const Post = (props) => {
                         {is_owner ? (
                             <OverlayTrigger
                                 placement="top"
-                                overlay={<Tooltip>You can't like your own post!</Tooltip>}
+                                overlay={<Tooltip>You can not like your own post!</Tooltip>}
                             >
                                 <i className="fa fa-plane-departure m-4" />
                             </OverlayTrigger>
@@ -183,5 +184,23 @@ const Post = (props) => {
         </Row>
     );
 }
+
+//Added proptypes after ESlint testing
+Post.propTypes = {
+    id: PropTypes.object.isRequired,
+    owner: PropTypes.object.isRequired,
+    title: PropTypes.object.isRequired,
+    subtitle: PropTypes.object.isRequired,
+    image: PropTypes.object.isRequired,
+    comments_count: PropTypes.object.isRequired,
+    likes_count: PropTypes.object.isRequired,
+    like_id: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
+    profile_id: PropTypes.object.isRequired,
+    profile_image: PropTypes.object.isRequired,
+    updated_at: PropTypes.object.isRequired,
+    postPage: PropTypes.func.isRequired,
+    setPosts: PropTypes.func.isRequired,
+  };
 
 export default Post;

@@ -1,6 +1,7 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useHistory } from "react-router-dom";
+import PropTypes from "prop-types";
 
 
 // Dropdown menu that allows the user to edit content
@@ -58,4 +59,21 @@ export function EditProfileDropdown({ id }) {
       </Dropdown.Menu>
     </Dropdown>
   );
+}
+
+
+//Added proptypes and display name after ESlint testing
+DotMenu.displayName= 'DotMenu';
+
+DotMenu.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
+
+DotDropdown.propTypes = {
+  handleEdit: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired
+}
+
+EditProfileDropdown.protoTypes = {
+  id: PropTypes.object.isRequired
 }

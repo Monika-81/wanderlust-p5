@@ -1,8 +1,6 @@
 # **Wanderlust**
 Waderlust is your online travel diary app, where you can post anecdotes about your travel adventures! Both for yourself to remember, to share with family and friends as well as to inspire other fellow wanderlusters around the globe. The travel diary aims to be a platform for inspiration, discussions and sharing about all things travel related. The user can search for other users posts to get information and inspiration for coming trips, as well as to share and communicate with there friends and family about the trip they are undertaken orprieviously been came home from. The travel diary site targets various kinds of people whom are interested in knowing more about a specific travel location, travel in general or to just socialize with like-minded Wanderlusters!
 
-**Wanderlust** 
-
 Let me introduce you further to [**Wanderlust**](https://wanderlust-p5.herokuapp.com/)!
 <br>
 <br>
@@ -13,6 +11,7 @@ Let me introduce you further to [**Wanderlust**](https://wanderlust-p5.herokuapp
 
 ## **Content**
 1. [**Strategy**](#strategy)
+    - [Project goal](#project-goal)
     - [UX](#ux)
 
 2. [**Scope**](#scope)
@@ -131,7 +130,7 @@ To follow an agile approch, a project board (kanban-board) was set up using GitH
 
 <br>
 
-### Flowchart
+### **Flowchart**
 
 The structure of the site is based on this basic flowchart:
 
@@ -142,7 +141,7 @@ The structure of the site is based on this basic flowchart:
 
 <br>
 
-### Wireframes
+### **Wireframes**
 
 The wireframes for the project is very basic to get the feeling where I wanted the project to go, but over all the choices of the visual design grew with the development.
 
@@ -404,26 +403,26 @@ A search bar function is displayed in the navbar when the user visits the "Home"
 
 ---
 
-## **Surface**
+## Surface
 
-### The Design
+### **Design**
 
-The design choice for the Wanderlust site aims to get the user to think about a travel diary. With a decorative image at the top.... the image is instead set at the top to welcome the user.
-
-#### Hero image
+#### **Hero image**
 As part of the main design there is a "hero image" at the top of the page. The image main purpose is to set the mode, color scheme and in itself get the user to associate the site with traveling. The logo "Wanderlust" that rest on top off the hero image acts both as an title to the entire page but also works as a internal link to the home page of the site. Giving the user the option to interact with the image text to take them back to the home page.
 
-#### Color scheme
+![Hero image](/src/assets/navbar-small.jpg)
+
+#### **Color scheme**
 
 The goal of the design is to keep a clean and consistent user experience throughout the pages. With manily a light background/dark text set up and accent colors that connects back to the hero image at the top. The colors for the background was picked from the hero image using Chrome DevTools color dropper tool and using the bootstrap 4 color "info" that connects to the hero image color scheme as well. A color palette was created with the help of Colormind to work as a design foundation during the project...........
 
-![Color Scheme]()
+![Color Scheme](/src/assets/readme-docs/colorscheme.png)
 
 <br>
 
 A contrast grid was used to see how well the colors worked together and to maximaze the visibility on the site.
 
-![Color grid]()
+![Color grid](/src/assets/readme-docs/colorgrid.png)
 
 
 [Back to top](#wanderlust)
@@ -432,7 +431,7 @@ A contrast grid was used to see how well the colors worked together and to maxim
 
 ## Skeleton
 
-### Technologies
+### **Technologies**
 
 #### **Languages**
 
@@ -468,7 +467,7 @@ To make the apps design responsive I used React Bootstrap 4 in combination with 
 - [DevTools](https://developer.chrome.com/docs/devtools/)
     -  I used DevTools to test both changes in my code and the responsivity of the site.  
 
-- [EightShapes](http://eightshapes.com/)
+- [EightShapes](https://contrast-grid.eightshapes.com) 
     - I used Eight Shapes color grid to check the color schemes visibility in diffrent combinations.
 
 - [Lucid Chart](https://www.lucidchart.com/pages/)
@@ -592,8 +591,6 @@ function MyApp() {
 ```
 
 
-<br>
-
 ### **Media**
 
 - The Hero image picture comes from the user Quang Nguyen Vinh on [Pexels](https://www.pexels.com/sv-se/foto/landskap-natur-silhuett-berg-2649403/)
@@ -613,7 +610,6 @@ function MyApp() {
   - [Minh Pham](https://unsplash.com/@minhphamdesign)
   - [Vicky Hladynets](https://unsplash.com/@vhladynets)
 
-<br>
 
 ### **Acknowledgement**
 

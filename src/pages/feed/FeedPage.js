@@ -11,6 +11,7 @@ import PostPreview from './PostPreview';
 import appStyles from "../../App.module.css";
 import NavbarContext from '../../context/NavbarContext';
 import { useCurrentUser } from "../../context/CurrentUserContext";
+import PropTypes from "prop-types";
 
 
 //Displays posts to user, posts looped over and rendered with
@@ -75,5 +76,11 @@ function FeedPage({message, filter = ''}) {
         </Row>
     )
 }
+
+//Added proptypes after ESlint testing
+FeedPage.propTypes = {
+    message: PropTypes.object.isRequired,
+    filter: PropTypes.object.isRequired,
+  };
 
 export default FeedPage

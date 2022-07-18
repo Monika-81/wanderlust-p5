@@ -128,7 +128,7 @@ function ProfilePage() {
                 </InfiniteScroll>
             ) : (
                <Container>
-                    No results found, {profile?.owner} hasn't posted anything... yet!
+                    No results found, {profile?.owner} has not posted anything... yet!
                </Container>
             )}
             </Row>

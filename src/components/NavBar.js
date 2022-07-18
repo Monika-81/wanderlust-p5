@@ -92,7 +92,7 @@ function NavBar() {
                     <Navbar>
                         <NavLink exact to="/" className={`${styles.NavLink} ${styles.Hover} ${styles.TextWhite}`} >
                             <h1 className={styles.Logo}>WANDERLUST</h1>
-                            <p className={styles.NavbarText}>Let's dream and get inspired together!</p>
+                            <p className={styles.NavbarText}>Let us dream and get inspired together!</p>
                         </NavLink>
                     </Navbar>
                     <Navbar.Toggle

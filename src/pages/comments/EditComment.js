@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { axiosRes } from '../../api/axiosDefaults';
-import appStyles from '../../App.module.css'
+import appStyles from '../../App.module.css';
+import PropTypes from "prop-types";
 
 function EditComment(props) {
     const { 
@@ -70,5 +71,13 @@ function EditComment(props) {
     </Form>
   )
 }
+
+//Added proptypes after ESlint testing
+EditComment.propTypes = {
+  id: PropTypes.object.isRequired,
+  content: PropTypes.object.isRequired,
+  setShowEditComment: PropTypes.object.isRequired,
+  setComments: PropTypes.func.isRequired,
+};
 
 export default EditComment;

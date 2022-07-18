@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 import Tooltip from 'react-bootstrap/Tooltip';
@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom';
 import { useCurrentUser } from '../../context/CurrentUserContext';
 import { axiosRes } from '../../api/axiosDefaults';
 import appStyles from "../../App.module.css";
-import styles from '../../styles/PostPreview.module.css'
+import styles from '../../styles/PostPreview.module.css';
+import PropTypes from "prop-types";
 
 
 //Post setup as displayed in preview aka feed pages: 'home', 'feed' and 'liked'
@@ -103,7 +104,7 @@ const PostPreview = (props) => {
                         {is_owner ? (
                             <OverlayTrigger
                                 placement="top"
-                                overlay={<Tooltip>You can't like your own post!</Tooltip>}
+                                overlay={<Tooltip>You can not like your own post!</Tooltip>}
                             >
                                 <i className="fa fa-plane-departure m-3"  />
                             </OverlayTrigger>
@@ -139,5 +140,23 @@ const PostPreview = (props) => {
         </Card>
     );
 }
+
+//Added proptypes after ESlint testing
+PostPreview.propTypes = {
+    id: PropTypes.object.isRequired,
+    owner: PropTypes.object.isRequired,
+    title: PropTypes.object.isRequired,
+    subtitle: PropTypes.object.isRequired,
+    image: PropTypes.object.isRequired,
+    comments_count: PropTypes.object.isRequired,
+    likes_count: PropTypes.object.isRequired,
+    like_id: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
+    profile_id: PropTypes.object.isRequired,
+    profile_image: PropTypes.object.isRequired,
+    updated_at: PropTypes.object.isRequired,
+    postPage: PropTypes.func.isRequired,
+    setPosts: PropTypes.func.isRequired,
+  };
 
 export default PostPreview;

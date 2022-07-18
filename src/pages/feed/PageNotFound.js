@@ -20,7 +20,7 @@ const PageNotFound = () => {
                     <h1 className={appStyles.FormHeader}>*** 404 ***</h1>
                     <h2>Oh no, this path is a dead end! Please try finding your way back again...</h2>
                     <Link to="/" aria-label='Click to go back to the home page'>
-                    <i class="fa-solid fa-house"></i>
+                        <i className="fa-solid fa-house"></i>
                     </Link>
                 </Container>
             </Col>

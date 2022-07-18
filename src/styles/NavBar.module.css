@@ -43,5 +43,9 @@
     
     .NavLink {
         margin: 0.5rem;
-    }   
+    } 
+    
+    .NavbarImage {
+        background-image: url("/src/assets/navbar-small.jpg");
+    }
 }

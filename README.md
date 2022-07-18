@@ -329,6 +329,8 @@ To add more interactivity and a more social aspect to the site, the user has the
 <br> 
 
 ![Likes 1](/src/assets/readme-docs/likes.png)
+<br>
+
 ![Likes 2](/src/assets/readme-docs/tooltip2.png)
 ![Likes 3](/src/assets/readme-docs/tooltip3.png)
 
@@ -421,13 +423,13 @@ As part of the main design there is a "hero image" at the top of the page. The i
 
 #### **Color scheme**
 
-The goal of the design is to keep a clean and consistent user experience throughout the pages. With manily a light background/dark text set up and accent colors that connects back to the hero image at the top. The colors for the background was picked from the hero image using Chrome DevTools color dropper tool and using the bootstrap 4 color "info" that connects to the hero image color scheme as well. A color palette was created with the help of Colormind to work as a design foundation during the project...........
+The goal of the design is to keep a clean and consistent user experience throughout the pages. With manily a light background/dark text set up and accent colors that connects back to the hero image at the top. The colors for the background was picked from the hero image using Chrome DevTools color dropper tool and using the bootstrap 4 color "info" that connects to the hero image color scheme as well. A color palette was created with the help of Colormind to work as a design foundation during the project.
 
 ![Color Scheme](/src/assets/readme-docs/colorscheme.png)
 
 <br>
 
-A contrast grid was used to see how well the colors worked together and to maximaze the visibility on the site.
+A contrast grid was used to see how well the colors worked together and to maximaze the visibility on the site. Note that the dark text works well on all light color backgrounds, as intended.
 
 ![Color grid](/src/assets/readme-docs/colorgrid.png)
 

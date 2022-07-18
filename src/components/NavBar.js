@@ -90,7 +90,7 @@ function NavBar() {
             <Navbar expand='true' className={styles.NavbarImage} fetchpriority="high">
                 <Container className='justify-content-center' >
                     <Navbar>
-                        <NavLink exact to="/" className={`${styles.NavLink} ${styles.Hover} ${styles.TextWhite}`} >
+                        <NavLink exact to="/" className={`${styles.NavLink} ${styles.Hover} ${styles.PaddingLeft}`} >
                             <h1 className={styles.Logo}>WANDERLUST</h1>
                             <p className={styles.NavbarText}>Let us dream and get inspired together!</p>
                         </NavLink>

@@ -50,7 +50,7 @@ const PostPage = () => {
                         setComments={setComments}
                     />
                 ) : comments.results.length ? (
-                    <p>Comments</p>
+                    <p className='m-2'>Comments</p>
                 ) : null}
                 {comments.results.length ? (
                     comments.results.map((comment) => (
@@ -60,9 +60,9 @@ const PostPage = () => {
                     />
                     ))
                 ) : currentUser ? (
-                    <span>No comments yet, be the first to comment on this post!</span>
+                    <p className='m-2'>No comments yet, be the first to comment on this post!</p>
                 ) : (
-                    <span>No comments... yet!</span>
+                    <p className='m-2'>No comments... yet!</p>
                 )}
             </Row>
         </Col>

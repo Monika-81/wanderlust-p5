@@ -3,11 +3,11 @@ Waderlust is your online travel diary app, where you can post anecdotes about yo
 
 **Wanderlust** 
 
-Let me introduce you further to [**Wanderlust**]()!
+Let me introduce you further to [**Wanderlust**](https://wanderlust-p5.herokuapp.com/)!
 <br>
 <br>
 
-![Home]
+![Home](/src/assets/readme-docs/responsive-image.png)
 <br>
 
 
@@ -21,7 +21,6 @@ Let me introduce you further to [**Wanderlust**]()!
     - [Wireframes](#wireframes)    
 
 3. [**Structure**](#structure)
-    - [Home page](#home-page)
     - [Authentication](#authentication)
     - [Navigation](#navigation)
     - [Posts](#posts)
@@ -107,6 +106,7 @@ What the user will be looking for:
 <br>
 
 **Epic: Account Management**
+
 1. As a Site User I can sign up for an account so that I can use all the features reserved for members
 2. As a Site User I can log in to the site so that I can use all the features of the site
 3. As a Site User I can easily log out from the site so that my account and its content remains secure
@@ -114,6 +114,7 @@ What the user will be looking for:
 5. As a Site User I can edit my personal profile so that I can keep it up to date and safe
 
 **Epic: Site View**
+
 6. As a Site User I can read posts and comments in detail so that I can get information and inspiration
 7. As a Site User I can see a specific users post at their profile page so that I can see more post from the same user
 8. As a Site User I can use a search function so that I can find the right post or user that interests me
@@ -121,6 +122,7 @@ What the user will be looking for:
 10. As a Site User I can see the date a post was created and updated so that I know how accurate it is
 
 **Epic: Site Interactions**
+
 11. As a logged in Site User I can create new post so that I can update my travel diary
 12. As a logged in Site User I can comment on posts so that I can interact with the other users
 13. As a logged in Site User I can edit or delete my posts and comment so that I display controll my input on the site
@@ -130,31 +132,32 @@ What the user will be looking for:
 
 <br>
 
-To follow an agile approch, a project board (kanban-board) was set up using GitHub Projects: 
-- Front End [Kanban](https://github.com/Monika-81/wanderlust-p5/projects/1)
+To follow an agile approch, a project board (kanban-board) was set up using GitHub Projects [Kanban](https://github.com/Monika-81/wanderlust-p5/projects/1)
 
 <br>
 
 ### Flowchart
 
-<br>
-
 The structure of the site is based on this basic flowchart:
 
-<br>
+<details>
 
-![Flowchart]()
+![Flowchart](/src/assets/readme-docs/Flowchart.png)
+</details>
+
+<br>
 
 ### Wireframes
 
 The wireframes for the project is very basic to get the feeling where I wanted the project to go, but over all the choices of the visual design grew with the development.
 
-<br>
+<details>
 
-![Mobile]()
-![Desktop]()
+![Mobile](/src/assets/readme-docs/wireframes-mobile.png)
+![Desktop](/src/assets/readme-docs/wireframe-desktop.png)
+![Desktop](/src/assets/readme-docs/wireframe-desktop2.png)
 
-<br>
+</details>
 
 <br>
 
@@ -164,26 +167,20 @@ The wireframes for the project is very basic to get the feeling where I wanted t
 
 ### **Features**
 
+When the site user enters the site they are greated with a feed of the latest posts to the site. The post previews gives a brief introduction to the diary post in the title and subtitle. As well as features the image for the post, admin avatar, icon to like the post and an icon that shows the number of comments. A none logged in user can use the site as "Read only", without any interactions. 
 Below are the excisting features and how they tie in to the user stories and with that the projects goals.
 
-<br>
-
-#### **Home page**
-When the site user enters the site they are greated with a feed of the latest posts to the site. The post gives a brief introduction to the diary post in the title and subtitle. As well as features the image for the post, admin avatar, icon to like the post and an icon that shows the number of comments. A none logged in user can use the site as "Read only", without any interactions. 
-<details>
-
-
-<br>
-<br>
-
 ![Home page desktop]()
 ![Home page mobile]()
 
+
 <br>
-</details>
 
 #### **Authentication**
-To connect with the site content the non logged in user can find the option to sign in or sign up/register in the navbar menu. After the user has created a profile they are asked to log in and are there after moved back to the home page, now the links to sign in and sign up are changed to give the user access to the interactive content of the site. The user also get's the choice to actively sign out of the page. (**User Story 1, 2 & 3**)
+To connect with the site content the non logged in user can find the option to sign in or sign up/register in the navbar menu. After the user has created a profile they are asked to log in and are there after moved back to the home page, now the links to sign in and sign up are changed to give the user access to the interactive content of the site. The user also get's the choice to actively sign out of the page. 
+If the user forgets to submit input to any of the required fields, they get an error message.
+
+(**User Story 1, 2 , 3 & 16**)
 <details>
 
 
@@ -196,8 +193,12 @@ To connect with the site content the non logged in user can find the option to s
 <br>
 </details>
 
+<br>
+
 #### **Navigation**
-At the top of the website there is a hero image, logo and an internal navigation bar. The navigation bar is shown whnen the user clicks the burger menu to toggle the menu to expand. The current page the user is visiting is marked for easier navigation on the site. As a none logged in user, the navbar contains the choice to go to the "Home" page, "Sign in" or "Sign out". For a logged in user the sign in/sign up links are exchanged to link to the "Feed" page (posts from profiles the user is following), "Liked" page (posts the user have liked), "Add post", "Profile" (the users own profile page) and "Sign out".  On desktop and landscape oriented screens the navigation bar is located to the top right side of the page, and on portrait oriented devices the navigation bar is fixed at the top of the screen. When a user visits the Home, Feed or Liked page, a search function appairs. (**User story 9**)
+At the top of the website there is a hero image, logo and an internal navigation bar. The navigation bar is shown whnen the user clicks the burger menu to toggle the menu to expand. The current page the user is visiting is marked for easier navigation on the site. As a none logged in user, the navbar contains the choice to go to the "Home" page, "Sign in" or "Sign out". For a logged in user the sign in/sign up links are exchanged to link to the "Feed" page (posts from profiles the user is following), "Liked" page (posts the user have liked), "Add post", "Profile" (the users own profile page) and "Sign out".  On desktop and landscape oriented screens the navigation bar is located to the top right side of the page, and on portrait oriented devices the navigation bar is fixed at the top of the screen. When a user visits the Home, Feed or Liked page, a search function appairs. 
+
+(**User story 9**)
 <details>
 
 
@@ -217,8 +218,12 @@ At the top of the website there is a hero image, logo and an internal navigation
 <br>
 </details>
 
+<br>
+
 #### **Posts**
-The view of the post contains the post, a comments list section and an input box to leave a new comment. At the top of the post the user read the title, subtitle and date the post was created or last edited. Depending on the screen with, the image connected to the post are either displayed underneeth the title or to the right of the title and subtitle. Below the picture the textcontent of the post is rendered in two columns on larger screen size and in one column on smaller screen size. Lastly the user finds the authors name and/or avatar as well as the to social interaction counters, displaying how many comments the post has as well as how many likes. The amount of interaction the site user have access to depends on if the user is just browsing the page, is logged in and created the post as well as if the user have created any comments. A none registered user can see and read the comments but no more, neither comment or like a post. A user that is reading the post can like or unlike the post (airplane icon), leave a comment and edit or delete their comment. The post creator can, except from all of the above, also edit and delete their post. (**User Story 6 & 10**)
+The view of the post contains the post, a comments list section and an input box to leave a new comment. At the top of the post the user read the title, subtitle and date the post was created or last edited. Depending on the screen with, the image connected to the post are either displayed underneeth the title or to the right of the title and subtitle. Below the picture the textcontent of the post is rendered in two columns on larger screen size and in one column on smaller screen size. Lastly the user finds the authors name and/or avatar as well as the to social interaction counters, displaying how many comments the post has as well as how many likes. The amount of interaction the site user have access to depends on if the user is just browsing the page, is logged in and created the post as well as if the user have created any comments. A none registered user can see and read the comments but no more, neither comment or like a post. A user that is reading the post can like or unlike the post (airplane icon), leave a comment and edit or delete their comment. The post creator can, except from all of the above, also edit and delete their post. 
+
+(**User Story 6 & 10**)
 <details>
 
 
@@ -238,9 +243,13 @@ The view of the post contains the post, a comments list section and an input box
 
 <br>
 </details>
+
+<br>
 
 #### **Add Post**
-To add a post the user has to be logged in and click "Add post" button in the navigation bar. The form asks the user to upload an image and to give the post a title, subtitle and text content. The user can only upload one picture with a max size off 1 MB as well as a max height/width of 2048px. All three text fields as well as an image are required before the user can create a post. If the user submits a form with incorrect input, they get an error message that displays what went wrong. If the post was created successfully, the user is redirected to the created post's page to get confirmation that the post has been submitted as well as an overview of the result and the oppertunity to edit the post directly. (**User Story & 11**)
+To add a post the user has to be logged in and click "Add post" button in the navigation bar. The form asks the user to upload an image and to give the post a title, subtitle and text content. The user can only upload one picture with a max size off 1 MB as well as a max height/width of 2048px. All three text fields as well as an image are required before the user can create a post. If the user submits a form with incorrect input, they get an error message that displays what went wrong. If the post was created successfully, the user is redirected to the created post's page to get confirmation that the post has been submitted as well as an overview of the result and the opportunity to edit the post directly. If the user forgets to submit input to any of the required fields, they get an error message.
+
+(**User Story 11 & 16**)
 <details>
 
 
@@ -260,6 +269,8 @@ To add a post the user has to be logged in and click "Add post" button in the na
 
 <br>
 </details>
+
+<br>
 
 
 #### **Edit & Delete Post**
@@ -267,7 +278,9 @@ To edit the post, the user can either find their post through the search bar, th
 
 If the user choses to edit the post, the are taken back to the form create page but the forms fields are prepopulated with the content of the post the user wishes to edit. The user can edit all or none of the fields or cancel the edit.
 
-If the user instead chooses to delete their post, the first get a confirmation message so no post are deleted by misstake. (**User Story 13**)
+If the user instead chooses to delete their post, the first get a confirmation message so no post are deleted by misstake. 
+
+(**User Story 13 & 16**)
 <details>
 
 
@@ -283,8 +296,12 @@ If the user instead chooses to delete their post, the first get a confirmation m
 <br>
 </details>
 
+<br>
+
 #### **Comments**
-As a site user you can read all the comments even if you are not logged in. The comments section are located below the post. A none logged in user can not see the box to add a comment. The user that has left a comment on a post has the choice to edit or delete their comment. The function to edit and the delete are almost identical to editing and deleting a post. (**User Story 12 & 13**)
+As a site user you can read all the comments even if you are not logged in. The comments section are located below the post. A none logged in user can not see the box to add a comment. The user that has left a comment on a post has the choice to edit or delete their comment. The function to edit and the delete are almost identical to editing and deleting a post. 
+
+(**User Story 12 & 13**)
 <details>
 
 
@@ -300,7 +317,9 @@ As a site user you can read all the comments even if you are not logged in. The 
 </details>
 
 #### **Like Post**
-To add more interactivity and a more social aspect to the site, the user has the oppertunity to like or unlike post that the user finds interesting as well as a post the user would like to save so they can easily find it again. A user that is not logged in can see the amount of likes but can not interact with the function. (**User Story 14**)
+To add more interactivity and a more social aspect to the site, the user has the oppertunity to like or unlike post that the user finds interesting as well as a post the user would like to save so they can easily find it again. A user that is not logged in can see the amount of likes but can not interact with the function. 
+
+(**User Story 14**)
 <details>
 
 
@@ -314,12 +333,16 @@ To add more interactivity and a more social aspect to the site, the user has the
 <br>
 </details>
 
+<br>
+
 #### **Profile Page**
 From the navigation menu, the user can reach their personal page. The personal page displays a profile picture, the username and an option to write an description about the user. On default their is an anonymous picture and an empty description field. If the profile belong to the user, their is a three dot menu icon next to the profile name, where the user can edit their profile or change their password.
 
 Underneath the description area is three counters showing the amounts of post the user have posted, how many profiles they are following and how many other users are following their profile. If the user is visiting the profile off another user, their is also a button displating the choice to follow or unfollow the user.
 
-Lastly, the profile owners posts are displayed below the profile information. So the user can access all of their own or a specific user's posts (not comments) from the profile page as well. If the user clicks on a post, they will be transported to the page of the post. (**User Story 4, 5 & 7**)
+Lastly, the profile owners posts are displayed below the profile information. So the user can access all of their own or a specific user's posts (not comments) from the profile page as well. If the user clicks on a post, they will be transported to the page of the post. 
+
+(**User Story 4, 5 & 7**)
 <details>
 
 <br>
@@ -331,8 +354,12 @@ Lastly, the profile owners posts are displayed below the profile information. So
 <br>
 </details>
 
+<br>
+
 #### **Follow Profile**
-The site user has the oppertunity to follow a specific profile they find ineristing, wants to come back to, interact with and so on. The followed profiles posts are displayed in a separate page called "Feed". To follow or unfollow a user, the site user visits the descired profile page and clicks on the button "follow" or "Unfollow" in the profile description. The number of followers that follos a specific profile are displayed both to others and the profile owner them self, on the profile page. (**User Story 15**)
+The site user has the oppertunity to follow a specific profile they find ineristing, wants to come back to, interact with and so on. The followed profiles posts are displayed in a separate page called "Feed". To follow or unfollow a user, the site user visits the descired profile page and clicks on the button "follow" or "Unfollow" in the profile description. The number of followers that follos a specific profile are displayed both to others and the profile owner them self, on the profile page. 
+
+(**User Story 15**)
 <details>
 
 
@@ -345,9 +372,13 @@ The site user has the oppertunity to follow a specific profile they find inerist
 
 <br>
 </details>
+
+<br>
 
 #### **Search Function**
-A search bar function is displayed in the navbar when the user visits the "Home", "Feed" or "Liked page", giving the site user the option to search the posts of current site page. The user does not need to be verified to search through the posts. The search renders posts with the searched value in the post title, subtitle, content or username. If the input dosent render a finding, the user gets feedback directly. (**User Story 8**)
+A search bar function is displayed in the navbar when the user visits the "Home", "Feed" or "Liked page", giving the site user the option to search the posts of current site page. The user does not need to be verified to search through the posts. The search renders posts with the searched value in the post title, subtitle, content or username. If the input dosent render a finding, the user gets feedback directly. 
+
+(**User Story 8**)
 <details>
 
 
@@ -361,6 +392,7 @@ A search bar function is displayed in the navbar when the user visits the "Home"
 <br>
 </details>
 
+<br>
 
 #### **Future Feature**
 - Email registration
@@ -368,11 +400,7 @@ A search bar function is displayed in the navbar when the user visits the "Home"
 - Change username and delete account
 - Option to add more than one image in a post
 - Adding tags to the post that are searchable
-<details>
 
-
-<br>
-</details>
 
 [Back to top](#wanderlust)
 

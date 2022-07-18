@@ -124,7 +124,7 @@ const CreatePost = () => {
               <Form.Control
                 as="textarea"
                 row={6}
-                placeholder="Enter content*"
+                placeholder="Enter content"
                 name="content"
                 value={content}
                 onChange={handleChange}

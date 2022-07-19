@@ -159,10 +159,12 @@ The wireframes for the project is very basic to get the feeling where I wanted t
 
 <br>
 
+## Structure
+
 ### **Features**
 
-When the site user enters the site they are greeted with a feed of the latest posts to the site. The post previews gives a brief introduction to the diary post in the title and subtitle. As well as features the image for the post, admin avatar, icon to like the post and an icon that shows the number of comments. A none logged in user can use the site as "Read only", without any interactions. 
-Below are the existing features and how they tie in to the user stories and with that the projects goals.
+When the site user enters the site they are greeted with a feed of the latest posts to the site. The post previews gives a brief introduction to each post with a title and subtitle. As well as features the image for the post, admin avatar, icon to like the post and an icon that shows the number of comments. A non logged in user can use the site as "Read only", without any interactions. 
+Below are the existing features and how they tie in to the user stories and with that the project goals.
 
 
 <details>
@@ -174,7 +176,7 @@ Below are the existing features and how they tie in to the user stories and with
 <br>
 
 #### **Authentication**
-To connect with the site content the non logged in user can find the option to sign in or sign up/register in the navbar menu. After the user has created a profile they are asked to log in and are there after moved back to the home page, now the links to sign in and sign up are changed to give the user access to the interactive content of the site. The user also get's the choice to actively sign out of the page. 
+To connect with the site content the non logged in user finds the option to sign in or sign up/register in the navbar menu. After the user has created a profile they are asked to log in and are there after moved back to the home page, now the links to sign in and sign up are changed to give the user access to the interactive content of the site (see [navigation](#navigation) below). The user also get's the choice to actively sign out of the page. 
 If the user forgets to submit input to any of the required fields, they get an error message.
 
 (**User Story 1, 2 , 3 & 16**)
@@ -195,7 +197,7 @@ If the user forgets to submit input to any of the required fields, they get an e
 <br>
 
 #### **Navigation**
-At the top of the website there is a hero image, logo and an internal navigation bar. The navigation bar is shown whnen the user clicks the burger menu to toggle the menu to expand. The current page the user is visiting is marked for easier navigation on the site. As a none logged in user, the navbar contains the choice to go to the "Home" page, "Sign in" or "Sign out". For a logged in user the sign in/sign up links are exchanged to link to the "Feed" page (posts from profiles the user is following), "Liked" page (posts the user have liked), "Add post", "Profile" (the users own profile page) and "Sign out".  On desktop and landscape oriented screens the navigation bar is located to the top right side of the page, and on portrait oriented devices the navigation bar is fixed at the top of the screen. When a user visits the Home, Feed or Liked page, a search function appears. 
+At the top of the website there is a hero image, logo and an internal navigation bar. The navigation bar is shown when the user clicks the burger menu to toggle the menu to expand. The current page the user is visiting is marked for easier navigation on the site. As a non logged in user, the navbar contains the choice to go to the "Home" page, "Sign in" or "Sign out". For a logged in user the sign in/sign up links are exchanged to link to the "Feed" page (posts from profiles the user is following), "Liked" page (posts the user have liked), "Add post", "Profile" (the users own profile page) and "Sign out".  On desktop and landscape oriented screens the navigation bar is located to the top right side of the page, and on portrait oriented devices the navigation bar is fixed at the top of the screen. When a user visits the Home, Feed or Liked page, a search function appears. 
 
 (**User story 9**)
 <details>
@@ -241,7 +243,7 @@ The view of the post contains the post, a comments list section and an input box
 <br>
 
 #### **Add Post**
-To add a post the user has to be logged in and click "Add post" button in the navigation bar. The form asks the user to upload an image and to give the post a title, subtitle and text content. The user can only upload one picture with a max size off 1 MB as well as a max height/width of 2048px. All three text fields as well as an image are required before the user can create a post. If the user submits a form with incorrect input, they get an error message that displays what went wrong. If the post was created successfully, the user is redirected to the created post's page to get confirmation that the post has been submitted as well as an overview of the result and the opportunity to edit the post directly. If the user forgets to submit input to any of the required fields, they get an error message.
+To add a post the user has to be logged in and click the "Add post" button in the navigation bar. The form asks the user to upload an image and to give the post a title, subtitle and text content. The user can only upload one picture with a max size off 1 MB as well as a max height/width of 2048px. All three text fields as well as an image are required before the user can create a post. If the user submits a form with incorrect input, they get an error message that displays what went wrong. If the post was created successfully, the user is redirected to the created post's page to get confirmation that the post has been submitted as well as an overview of the result and the opportunity to edit the post directly. If the user forgets to submit input to any of the required fields, they get an error message.
 
 (**User Story 11 & 16**)
 <details>
@@ -268,7 +270,7 @@ To add a post the user has to be logged in and click "Add post" button in the na
 #### **Edit & Delete Post**
 To edit the post, the user can either find their post through the search bar, their profile page or directly after they have created a new post. From the desired post the user would like to edit or delete, there is a three dot drop down menu icon at the end of the post. The user gets the choice to either edit or delete the post. 
 
-If the user cho0ses to edit the post, they are taken back to the form create page but the forms fields are prepopulated with the content of the post the user wishes to edit. The user can edit all or none of the fields or cancel the edit. If the user instead chooses to delete their post, the first get a confirmation message so no post are deleted by mistake. 
+If the user chooses to edit the post, they are taken back to the form create page but the forms fields are prepopulated with the content of the post the user wishes to edit. The user can edit all or none of the fields or cancel the edit. If the user instead chooses to delete their post, the first get a confirmation message so no post are deleted by mistake. 
 
 (**User Story 13 & 16**)
 <details>
@@ -417,7 +419,7 @@ A search bar function is displayed in the navbar when the user visits the "Home"
 
 ### **Design**
 
-The design idea behind the project is to give the user a feel of a travel diary. With a playful, almost handwritten font and a display of the posts looking like polaroids, post cards/diary entries.
+The design idea behind the project is to give the user a feel of a travel diary. With a playful, almost handwritten font and a display of the posts looking like polaroids and post cards/diary entries.
 
 #### **Hero image**
 As part of the main design there is a "hero image" at the top of the page. The image main purpose is to set the mode, color scheme and in itself get the user to associate the site with traveling. The logo "Wanderlust" that rest on top off the hero image acts both as an title to the entire page but also works as a internal link to the home page of the site. Giving the user the option to interact with the image text to take them back to the home page.

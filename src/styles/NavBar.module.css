@@ -40,6 +40,10 @@
 }
 
 @media screen and (max-width: 500px) {
+    .Logo {
+        font-size: 40px;
+    }
+
     .TextWhite {
         padding: 1rem 1rem;
     }

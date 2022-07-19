@@ -5,6 +5,7 @@ import FormControl from 'react-bootstrap/FormControl';
 import NavbarContext from '../context/NavbarContext';
 import styles from '../styles/SearchBar.module.css'
 
+
 //Separate searchbar component, used for conditional display 
 const SearchBar = () => {
   const { query, setQuery } = useContext(NavbarContext);

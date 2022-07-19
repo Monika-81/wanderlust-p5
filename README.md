@@ -416,6 +416,8 @@ A search bar function is displayed in the navbar when the user visits the "Home"
 
 ### **Design**
 
+The design idea behind the project is to give the user a feel of a travel diary. With a playful, almost handwritten font and a display of the posts looking like polaroids, post cards/diary entries.
+
 #### **Hero image**
 As part of the main design there is a "hero image" at the top of the page. The image main purpose is to set the mode, color scheme and in itself get the user to associate the site with traveling. The logo "Wanderlust" that rest on top off the hero image acts both as an title to the entire page but also works as a internal link to the home page of the site. Giving the user the option to interact with the image text to take them back to the home page.
 
@@ -618,6 +620,9 @@ function MyApp() {
   - [Briony Brown](https://unsplash.com/@pretty_and_pure)
   - [Minh Pham](https://unsplash.com/@minhphamdesign)
   - [Vicky Hladynets](https://unsplash.com/@vhladynets)
+
+- Icons used comes from [FontAwesome](https://fontawesome.com/)
+- The font used is **Kalam** from [Google Fonts](https://fonts.google.com/specimen/Kalam?query=kalam)
 
 
 ### **Acknowledgement**

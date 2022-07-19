@@ -61,16 +61,16 @@ Let me introduce you further to [**Wanderlust**](https://wanderlust-p5.herokuapp
 
 The goal with this project is to create a content sharing online travel diary that allows the user to create, read, update and delete their content for a fully interactive experience. 
 
-The goals are summarised here:
+The goals are summarized here:
 
 - Make the apps **React** front end content connect smoothly with the **Django REST** back end to store, fetch and delete content.
-- Allow an autherized users to comment, like and follow other users.
+- Allow an authorized users to comment, like and follow other users.
 - Make a responsive app that are easily accessible on every viewport, and with screen readers.
 - Make a easily navigated app, with intuitive features.
 
 ### **UX** 
 
-With the UX principles and project goal in mind I started with the Strategy phace, thinking about the target audience and what features would benefit them. 
+With the UX principles and project goal in mind I started with the Strategy phase, thinking about the target audience and what features would benefit them. 
 
 The target audience are:
 - people in various age groups, mostly adults, who likes to travel
@@ -119,14 +119,14 @@ What the user will be looking for:
 
 11. As a logged in Site User I can create new post so that I can update my travel diary
 12. As a logged in Site User I can comment on posts so that I can interact with the other users
-13. As a logged in Site User I can edit or delete my posts and comment so that I display controll my input on the site
+13. As a logged in Site User I can edit or delete my posts and comment so that I display control my input on the site
 14. As a logged in Site User I can like posts so that others can see if a post is popular and so I can find it easily again
 15. As a logged in Site User I can follow profiles so that I can find it easily again
 16. As a Site User I get notifications when something is wrong or changed so that I understand how to use the app
 
 <br>
 
-To follow an agile approch, a project board (kanban-board) was set up using GitHub Projects [Kanban](https://github.com/Monika-81/wanderlust-p5/projects/1)
+To follow an agile approach, a project board (kanban-board) was set up using GitHub Projects [Kanban](https://github.com/Monika-81/wanderlust-p5/projects/1)
 
 <br>
 
@@ -161,8 +161,8 @@ The wireframes for the project is very basic to get the feeling where I wanted t
 
 ### **Features**
 
-When the site user enters the site they are greated with a feed of the latest posts to the site. The post previews gives a brief introduction to the diary post in the title and subtitle. As well as features the image for the post, admin avatar, icon to like the post and an icon that shows the number of comments. A none logged in user can use the site as "Read only", without any interactions. 
-Below are the excisting features and how they tie in to the user stories and with that the projects goals.
+When the site user enters the site they are greeted with a feed of the latest posts to the site. The post previews gives a brief introduction to the diary post in the title and subtitle. As well as features the image for the post, admin avatar, icon to like the post and an icon that shows the number of comments. A none logged in user can use the site as "Read only", without any interactions. 
+Below are the existing features and how they tie in to the user stories and with that the projects goals.
 
 
 <details>
@@ -195,7 +195,7 @@ If the user forgets to submit input to any of the required fields, they get an e
 <br>
 
 #### **Navigation**
-At the top of the website there is a hero image, logo and an internal navigation bar. The navigation bar is shown whnen the user clicks the burger menu to toggle the menu to expand. The current page the user is visiting is marked for easier navigation on the site. As a none logged in user, the navbar contains the choice to go to the "Home" page, "Sign in" or "Sign out". For a logged in user the sign in/sign up links are exchanged to link to the "Feed" page (posts from profiles the user is following), "Liked" page (posts the user have liked), "Add post", "Profile" (the users own profile page) and "Sign out".  On desktop and landscape oriented screens the navigation bar is located to the top right side of the page, and on portrait oriented devices the navigation bar is fixed at the top of the screen. When a user visits the Home, Feed or Liked page, a search function appairs. 
+At the top of the website there is a hero image, logo and an internal navigation bar. The navigation bar is shown whnen the user clicks the burger menu to toggle the menu to expand. The current page the user is visiting is marked for easier navigation on the site. As a none logged in user, the navbar contains the choice to go to the "Home" page, "Sign in" or "Sign out". For a logged in user the sign in/sign up links are exchanged to link to the "Feed" page (posts from profiles the user is following), "Liked" page (posts the user have liked), "Add post", "Profile" (the users own profile page) and "Sign out".  On desktop and landscape oriented screens the navigation bar is located to the top right side of the page, and on portrait oriented devices the navigation bar is fixed at the top of the screen. When a user visits the Home, Feed or Liked page, a search function appears. 
 
 (**User story 9**)
 <details>
@@ -220,7 +220,7 @@ At the top of the website there is a hero image, logo and an internal navigation
 <br>
 
 #### **Posts**
-The view of the post contains the post, a comments list section and an input box to leave a new comment. At the top of the post the user read the title, subtitle and date the post was created or last edited. Depending on the screen with, the image connected to the post are either displayed underneeth the title or to the right of the title and subtitle. Below the picture the textcontent of the post is rendered in two columns on larger screen size and in one column on smaller screen size. Lastly the user finds the authors name and/or avatar as well as the to social interaction counters, displaying how many comments the post has as well as how many likes. The amount of interaction the site user have access to depends on if the user is just browsing the page, is logged in and created the post as well as if the user have created any comments. A none registered user can see and read the comments but no more, neither comment or like a post. A user that is reading the post can like or unlike the post (airplane icon), leave a comment and edit or delete their comment. The post creator can, except from all of the above, also edit and delete their post. 
+The view of the post contains the post, a comments list section and an input box to leave a new comment. At the top of the post the user read the title, subtitle and date the post was created or last edited. Depending on the screen with, the image connected to the post are either displayed underneath the title or to the right of the title and subtitle. Below the picture the text content of the post is rendered in two columns on larger screen size and in one column on smaller screen size. Lastly the user finds the authors name and/or avatar as well as the to social interaction counters, displaying how many comments the post has as well as how many likes. The amount of interaction the site user have access to depends on if the user is just browsing the page, is logged in and created the post as well as if the user have created any comments. A none registered user can see and read the comments but no more, neither comment or like a post. A user that is reading the post can like or unlike the post (airplane icon), leave a comment and edit or delete their comment. The post creator can, except from all of the above, also edit and delete their post. 
 
 (**User Story 6 & 10**)
 <details>
@@ -266,11 +266,9 @@ To add a post the user has to be logged in and click "Add post" button in the na
 
 
 #### **Edit & Delete Post**
-To edit the post, the user can either find their post through the search bar, their profile page or directly after they have created a new post. From the desired post the user would like to edit or delete, their is a three dot drop down menu at the end of the post. The user gets the choice to either edit or delete the post. 
+To edit the post, the user can either find their post through the search bar, their profile page or directly after they have created a new post. From the desired post the user would like to edit or delete, there is a three dot drop down menu icon at the end of the post. The user gets the choice to either edit or delete the post. 
 
-If the user choses to edit the post, the are taken back to the form create page but the forms fields are prepopulated with the content of the post the user wishes to edit. The user can edit all or none of the fields or cancel the edit.
-
-If the user instead chooses to delete their post, the first get a confirmation message so no post are deleted by misstake. 
+If the user cho0ses to edit the post, they are taken back to the form create page but the forms fields are prepopulated with the content of the post the user wishes to edit. The user can edit all or none of the fields or cancel the edit. If the user instead chooses to delete their post, the first get a confirmation message so no post are deleted by mistake. 
 
 (**User Story 13 & 16**)
 <details>
@@ -293,7 +291,7 @@ If the user instead chooses to delete their post, the first get a confirmation m
 
 
 #### **Comments**
-As a site user you can read all the comments even if you are not logged in. The comments section are located below the post. A none logged in user can not see the box to add a comment. The user that has left a comment on a post has the choice to edit or delete their comment. The function to edit and the delete are almost identical to editing and deleting a post. 
+As a site user you can read all the comments even if you are not logged in. The comments section are located below the post. A none logged in user can not see the box to add a comment. The user that has left a comment on a post has the choice to edit or delete their comment. The function to edit and/or delete are almost identical to editing and deleting a post. 
 
 (**User Story 12 & 13**)
 <details>
@@ -319,7 +317,7 @@ As a site user you can read all the comments even if you are not logged in. The 
 <br>
 
 #### **Like Post**
-To add more interactivity and a more social aspect to the site, the user has the oppertunity to like or unlike post that the user finds interesting as well as a post the user would like to save so they can easily find it again. A user that is not logged in can see the amount of likes but can not interact with the function. 
+To add more interactivity and a more social aspect to the site, the user has the opportunity to like or unlike a post that they finds interesting. As well as a post the user would like to save so they can easily find it again. A user that is not logged in can see the amount of likes but can not interact with the function. 
 
 (**User Story 14**)
 <details>
@@ -340,9 +338,9 @@ To add more interactivity and a more social aspect to the site, the user has the
 <br>
 
 #### **Profile Page**
-From the navigation menu, the user can reach their personal page. The personal page displays a profile picture, the username and an option to write an description about the user. On default their is an anonymous picture and an empty description field. If the profile belong to the user, their is a three dot menu icon next to the profile name, where the user can edit their profile or change their password.
+From the navigation menu, the user can reach their personal page. The personal page displays a profile picture, the username and an option to write an description about the user. On default there is an anonymous picture and an empty description field. If the profile belong to the user, their is a three dot menu icon next to the profile name, where the user can edit their profile or change their password.
 
-Underneath the description area is three counters showing the amounts of post the user have posted, how many profiles they are following and how many other users are following their profile. If the user is visiting the profile off another user, their is also a button displating the choice to follow or unfollow the user.
+Underneath the description area is three counters showing the amounts of post the user have posted, how many profiles they are following and how many other users are following their profile. If the user is visiting the profile off another user, there is also a button displaying the choice to follow or unfollow the user.
 
 Lastly, the profile owners posts are displayed below the profile information. So the user can access all of their own or a specific user's posts (not comments) from the profile page as well. If the user clicks on a post, they will be transported to the page of the post. 
 
@@ -364,7 +362,7 @@ Lastly, the profile owners posts are displayed below the profile information. So
 <br>
 
 #### **Follow Profile**
-The site user has the oppertunity to follow a specific profile they find ineristing, wants to come back to, interact with and so on. The followed profiles posts are displayed in a separate page called "Feed". To follow or unfollow a user, the site user visits the descired profile page and clicks on the button "follow" or "Unfollow" in the profile description. The number of followers that follos a specific profile are displayed both to others and the profile owner them self, on the profile page. 
+The site user has the opportunity to follow a specific profile they find interesting, wants to come back to, interact with and so on. The followed profiles posts are displayed in a separate page called "Feed". To follow or unfollow a user, the site user visits the desired profile page and clicks on the button "follow" or "Unfollow" in the profile description. The number of followers that follows a specific profile are displayed both to others and the profile owner them self, on the profile page. 
 
 (**User Story 15**)
 <details>
@@ -382,7 +380,7 @@ The site user has the oppertunity to follow a specific profile they find inerist
 <br>
 
 #### **Search Function**
-A search bar function is displayed in the navbar when the user visits the "Home", "Feed" or "Liked page", giving the site user the option to search the posts of current site page. The user does not need to be verified to search through the posts. The search renders posts with the searched value in the post title, subtitle, content or username. If the input dosent render a finding, the user gets feedback directly. 
+A search bar function is displayed in the navbar when the user visits the "Home", "Feed" or "Liked page", giving the site user the option to search the posts of current site page. The user does not need to be verified to search through the posts. The search renders posts with the searched value in the post title, subtitle, content or username. If the input doesn't render a finding, the user gets feedback directly. 
 
 (**User Story 8**)
 <details>
@@ -404,8 +402,11 @@ A search bar function is displayed in the navbar when the user visits the "Home"
 - Email registration
 - Notification of new posts or comments
 - Change username and delete account
+- Image resizing to optimize performance
+- Image croping when the user uploads an image
 - Option to add more than one image in a post
-- Adding tags to the post that are searchable
+- Adding searchable tags to a post 
+- Adding custom decorations to the post's 
 
 
 [Back to top](#wanderlust)
@@ -425,13 +426,13 @@ As part of the main design there is a "hero image" at the top of the page. The i
 
 #### **Color scheme**
 
-The goal of the design is to keep a clean and consistent user experience throughout the pages. With manily a light background/dark text set up and accent colors that connects back to the hero image at the top. The colors for the background was picked from the hero image using Chrome DevTools color dropper tool and using the bootstrap 4 color "info" that connects to the hero image color scheme as well. A color palette was created with the help of Colormind to work as a design foundation during the project.
+The goal of the design is to keep a clean and consistent user experience throughout the pages. With mainly a light background/dark text set up and accent colors that connects back to the hero image at the top. The colors for the background was picked from the hero image using Chrome DevTools color dropper tool and using the bootstrap 4 color "info" that connects to the hero image color scheme as well. A color palette was created with the help of Colormind to work as a design foundation during the project.
 
 ![Color Scheme](/src/assets/readme-docs/colorscheme.png)
 
 <br>
 
-A contrast grid was used to see how well the colors worked together and to maximaze the visibility on the site. Note that the dark text works well on all light color backgrounds, as intended.
+A contrast grid was used to see how well the colors worked together and to maximize the visibility on the site. Note that the dark text works well on all light color backgrounds, as intended.
 
 ![Color grid](/src/assets/readme-docs/colorgrid.png)
 
@@ -479,7 +480,7 @@ To make the apps design responsive I used React Bootstrap 4 in combination with 
     -  I used DevTools to test both changes in my code and the responsivity of the site.  
 
 - [EightShapes](https://contrast-grid.eightshapes.com) 
-    - I used Eight Shapes color grid to check the color schemes visibility in diffrent combinations.
+    - I used Eight Shapes color grid to check the color scheme's visibility in different combinations.
 
 - [Lucid Chart](https://www.lucidchart.com/pages/)
     - I used Lucid Chart to design the flowchart for the project.
@@ -630,7 +631,6 @@ function MyApp() {
 - My mentor **Sammy Dartnall** at Code Institute for valuable input, support and encouragement.
 - The Code Institute Tutor support when I got stuck with bugs uploading the content to Heroku.
 - The Slack community for being such an open, warm and sharing place. 
-- **Viet Hoang** for letting me run the app by him and for getting user experience input before, during and at the final stage of the project.
 
 
 [Back to top](#wanderlust)

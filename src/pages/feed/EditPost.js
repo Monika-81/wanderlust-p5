@@ -71,9 +71,6 @@ function EditPost() {
         try {
             await axiosReq.put(`/posts/${id}/`, formData);
             history.push(`/posts/${id}`);
-            <Alert variant='warning' key={id}>
-              Post updated
-            </Alert>
         } catch (err) {
             // console.log(err);
             if (err.response?.status !== 401){
